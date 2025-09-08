@@ -39,4 +39,5 @@ public class Navigation : MonoBehaviour {
 	public void Easy() {
 		Debug.Log ("Easy selected!");
 		SceneManager.LoadScene ("");
+	}
 }
