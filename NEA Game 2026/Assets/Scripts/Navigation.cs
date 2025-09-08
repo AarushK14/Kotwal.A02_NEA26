@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Navigation : MonoBehaviour {
 
@@ -14,15 +16,23 @@ public class Navigation : MonoBehaviour {
 		
 	}
 
-	public void clickedPlay() {
-		
+	public void Play() {
+		Debug.Log("Button A clicked!");
+		SceneManager.LoadScene ("Difficulty Selection");
 	}
 
-	public void clickedSettings() {
-	
+	public void Settings() {
+		Debug.Log("Settings Clicked");
+		SceneManager.LoadScene ("Settings");
 	}
 
-	public void clickedLeaderboard() {
-	
+	public void Leaderboard() {
+		Debug.Log ("Leaderboard Clicked!");
+		SceneManager.LoadScene ("Leaderboard");
+	}
+
+	public void Tutorial() {
+		Debug.Log ("Tutorial clicked!");
+		SceneManager.LoadScene ("Tutorial");
 	}
 }
