@@ -1,4 +1,4 @@
-﻿﻿using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -35,4 +35,8 @@ public class Navigation : MonoBehaviour {
 		Debug.Log ("Tutorial clicked!");
 		SceneManager.LoadScene ("Tutorial");
 	}
+
+	public void Easy() {
+		Debug.Log ("Easy selected!");
+		SceneManager.LoadScene ("");
 }
