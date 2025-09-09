@@ -38,6 +38,14 @@ public class Navigation : MonoBehaviour {
 
 	public void Easy() {
 		Debug.Log ("Easy selected!");
-		SceneManager.LoadScene ("");
+		SceneManager.LoadScene ("Easy lvl 1");
+	}
+	public void Medium() {
+		Debug.Log ("Medium selected!");
+		SceneManager.LoadScene ("Normal lvl 1");
+	}
+	public void Hard() {
+		Debug.Log ("Hard selected!");
+		SceneManager.LoadScene ("Hard lvl 1");
 	}
 }
