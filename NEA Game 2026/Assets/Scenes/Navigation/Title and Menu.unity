@@ -168,7 +168,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 4c943698db237484da7fcc99e9b7dc18, type: 3}
+    m_Font: {fileID: 12800000, guid: 1aac41f73959cc340a25e122220ebfc5, type: 3}
     m_FontSize: 33
     m_FontStyle: 0
     m_BestFit: 0
@@ -246,8 +246,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.2901961, g: 0.5372549, b: 0.43137258, a: 1}
-    m_HighlightedColor: {r: 0.23429158, g: 0.6132076, b: 0.36024374, a: 1}
+    m_NormalColor: {r: 0.9647059, g: 0.9490196, b: 0.5882353, a: 1}
+    m_HighlightedColor: {r: 0.8666667, g: 0.84313726, b: 0.43137255, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -446,8 +446,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.3019608, g: 0.56078434, b: 0.44705886, a: 1}
-    m_HighlightedColor: {r: 0.2432805, g: 0.6698113, b: 0.416946, a: 1}
+    m_NormalColor: {r: 0.9647059, g: 0.9490196, b: 0.5882353, a: 1}
+    m_HighlightedColor: {r: 0.8666667, g: 0.84313726, b: 0.43137255, a: 1}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -568,8 +568,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 4c943698db237484da7fcc99e9b7dc18, type: 3}
-    m_FontSize: 32
+    m_Font: {fileID: 12800000, guid: 1aac41f73959cc340a25e122220ebfc5, type: 3}
+    m_FontSize: 27
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -643,7 +643,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 4c943698db237484da7fcc99e9b7dc18, type: 3}
+    m_Font: {fileID: 12800000, guid: 1aac41f73959cc340a25e122220ebfc5, type: 3}
     m_FontSize: 29
     m_FontStyle: 0
     m_BestFit: 0
@@ -719,8 +719,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.31176573, g: 0.5849056, b: 0.46687078, a: 1}
-    m_HighlightedColor: {r: 0.3531061, g: 0.6509434, b: 0.4954292, a: 1}
+    m_NormalColor: {r: 0.9647059, g: 0.9490196, b: 0.5882353, a: 1}
+    m_HighlightedColor: {r: 0.8679245, g: 0.8415952, b: 0.42986825, a: 1}
     m_PressedColor: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -842,8 +842,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.2901961, g: 0.5372549, b: 0.43137258, a: 1}
-    m_HighlightedColor: {r: 0.27727836, g: 0.6320754, b: 0.42437482, a: 1}
+    m_NormalColor: {r: 0.9647059, g: 0.9490196, b: 0.5882353, a: 1}
+    m_HighlightedColor: {r: 0.8666667, g: 0.84313726, b: 0.43137255, a: 1}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1038,7 +1038,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 4c943698db237484da7fcc99e9b7dc18, type: 3}
+    m_Font: {fileID: 12800000, guid: 1aac41f73959cc340a25e122220ebfc5, type: 3}
     m_FontSize: 31
     m_FontStyle: 0
     m_BestFit: 0
@@ -1097,7 +1097,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 376b1869dd546574e8bc6771257ad457, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 47e01a8324a295f42823abd9f73c526c, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
