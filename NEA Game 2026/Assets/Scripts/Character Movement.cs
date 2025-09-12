@@ -11,10 +11,10 @@ public class CharacterMvement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		movement = new Vector2 (Input.GetAxis ("Horizontal"), Input.GetKey ("Vertical"));
+		/*movement = new Vector2 (Input.GetAxis ("Horizontal"), Input.GetKey ("Vertical"));
 		if (Input.GetKeyDown (KeyCode.RightArrow)) {
 			transform.rotation = Quaternion.Euler (0, 0, 0);
-
-		}
+		
+		}*/
 	}
 }
