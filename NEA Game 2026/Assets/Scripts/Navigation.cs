@@ -48,4 +48,8 @@ public class Navigation : MonoBehaviour {
 		Debug.Log ("Hard selected!");
 		SceneManager.LoadScene ("Hard lvl 1");
 	}
+	public void MainMenu() {
+		Debug.Log ("Return back to main menu");
+		SceneManager.LoadScene ("Title and Menu");
+	}
 }
