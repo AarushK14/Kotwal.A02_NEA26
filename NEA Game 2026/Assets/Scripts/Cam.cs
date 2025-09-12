@@ -17,7 +17,7 @@ public class Cam : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		Playerposition = new Vector3 (player.transform.position.x, transform.position.y, transform.position.x);
+		Playerposition = new Vector3 (player.transform.position.x, player.transform.position.y, -10f);
 
 		if (player.transform.localScale.x > 0) {
 			Playerposition = new Vector3 (Playerposition.x + offset, Playerposition.y, Playerposition.z);
@@ -26,6 +26,6 @@ public class Cam : MonoBehaviour {
 			Playerposition = new Vector3 (Playerposition.x - offset, Playerposition.y, Playerposition.z);
 		}
 
-		transform.position = new Vector3 (player.transform.position.x, player.transform.position.y, transform.position.z);
+		transform.position = new Vector3 (Playerposition.x, player.transform.position.y, -10f);
 	}
 }
