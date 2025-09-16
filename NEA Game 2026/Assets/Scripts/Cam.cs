@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Created: Sprint 1 - Last Edited: Sprint 1
+// Purpose: To allow the camera to follow the player.
+
 public class Cam : MonoBehaviour {
 
 	public GameObject player;

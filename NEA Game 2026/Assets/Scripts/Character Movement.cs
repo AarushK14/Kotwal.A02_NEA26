@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Created: Sprint 1 - Last Edited: Sprint 1
+// Purpose: To allow character move based on the key pressed and add playability to the game.
+
 public class CharacterMvement : MonoBehaviour {
 
 	// Use this for initialization

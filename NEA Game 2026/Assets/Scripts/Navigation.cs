@@ -4,6 +4,9 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+// Created: Sprint 1 - Last Edited: Sprint 1
+// Purpose: To navigate between different scenes
+
 public class Navigation : MonoBehaviour {
 
 	// Use this for initialization
@@ -51,5 +54,10 @@ public class Navigation : MonoBehaviour {
 	public void MainMenu() {
 		Debug.Log ("Return back to main menu");
 		SceneManager.LoadScene ("Title and Menu");
+	}
+
+	public void Profile() {
+		Debug.Log ("Profile clicked");
+		SceneManager.LoadScene ("profiles");
 	}
 }
