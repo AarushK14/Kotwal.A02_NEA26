@@ -7,17 +7,28 @@ using UnityEngine;
 
 public class CharacterMvement : MonoBehaviour {
 
+	Animator MyAnimator;
+
 	// Use this for initialization
 	void Start () {
-		
+		MyAnimator = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		/*movement = new Vector2 (Input.GetAxis ("Horizontal"), Input.GetKey ("Vertical"));
-		if (Input.GetKeyDown (KeyCode.RightArrow)) {
-			transform.rotation = Quaternion.Euler (0, 0, 0);
-		
-		}*/
+
+		if (Input.GetKey (KeyCode.D)) {
+			MyAnimator.SetBool ("run", true);
+			MyAnimator.Play("run");
+		} else if (Input.GetKey (KeyCode.S)) {
+			MyAnimator.SetBool ("roll", true);
+		} else if (Input.GetKey (KeyCode.W)) {
+			MyAnimator.SetBool ("attack", true);
+		} else if (Input.GetKey (KeyCode.Space)) {
+			MyAnimator.Play ("jump");
+		} else if (MyAnimator.GetBool ("dead") == false) {
+			MyAnimator.SetBool ("idle", true);
+			MyAnimator.SetBool ("run", false);
+		}
 	}
 }

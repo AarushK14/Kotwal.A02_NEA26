@@ -408,7 +408,7 @@ GameObject:
   - component: {fileID: 635944340}
   - component: {fileID: 635944341}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: knight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
