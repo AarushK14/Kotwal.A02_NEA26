@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-// Created: Sprint 1 - Last Edited: Sprint 1
+// Created: Sprint 1 - Last Edited: Sprint 2
 // Purpose: To navigate between different scenes
 
 public class Navigation : MonoBehaviour {
@@ -65,5 +65,6 @@ public class Navigation : MonoBehaviour {
 	}
 	public void Next(){
 		Debug.Log ("Next clicked");
+
 	}		
 }
