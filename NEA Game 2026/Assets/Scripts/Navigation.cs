@@ -9,9 +9,12 @@ using UnityEngine.SceneManagement;
 
 public class Navigation : MonoBehaviour {
 
+	public GameObject[] arr={};
+	int index;
+	private GameObject sprite;
 	// Use this for initialization
 	void Start () {
-		
+		index = 1;
 	}
 	
 	// Update is called once per frame
@@ -60,4 +63,7 @@ public class Navigation : MonoBehaviour {
 		Debug.Log ("Profile clicked");
 		SceneManager.LoadScene ("profiles");
 	}
+	public void Next(){
+		Debug.Log ("Next clicked");
+	}		
 }
