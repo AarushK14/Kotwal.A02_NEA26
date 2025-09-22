@@ -5,7 +5,7 @@ using UnityEngine;
 // Created: Sprint 1 - Last Edited: Sprint 2
 // Purpose: To allow character move based on the key pressed and add playability to the game.
 
-public class Movement : MonoBehaviour {
+public class CharacterMovement : MonoBehaviour {
 
 	Animator MyAnimator;
 
@@ -17,11 +17,13 @@ public class Movement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetKey (KeyCode.D)) {
+		if (Input.GetKeyDown (KeyCode.A)) {
 			MyAnimator.SetTrigger ("run");
+			transform.rotation = Quaternion.Euler (0f, 180f, 0f);
 
-		} else if (Input.GetKey (KeyCode.S)) {
-			MyAnimator.SetTrigger ("roll");
+		} else if (Input.GetKeyDown (KeyCode.D)) {
+			MyAnimator.SetTrigger ("run");
+			transform.rotation = Quaternion.Euler (0f, 0f, 0f);
 		}
 
 		else if (Input.GetKey (KeyCode.Space)) {
