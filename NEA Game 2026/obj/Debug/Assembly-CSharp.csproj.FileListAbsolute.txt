@@ -161,3 +161,6 @@ X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\obj\Debug\Assembly-CSharp.dll
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\obj\Debug\Assembly-CSharp.pdb
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.SpatialTrackingModule.dll
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.SpatialTrackingModule.xml
+X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\Cinemachine.dll
+X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\com.unity.cinemachine.editor.dll
+X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.WebGLModule.dll

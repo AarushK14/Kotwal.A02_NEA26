@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Created: Sprint 1 - Last Edited: Sprint 1
+// Created: Sprint 2 - Last Edited: Sprint 2
 // Purpose: To allow the camera to follow the player.
 
 public class Cam : MonoBehaviour {
@@ -19,7 +19,9 @@ public class Cam : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+		transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 3, -10f);
+
 		Playerposition = new Vector3 (player.transform.position.x, player.transform.position.y, -10f);
 
 		if (player.transform.localScale.x > 0) {
@@ -28,7 +30,5 @@ public class Cam : MonoBehaviour {
 		else {
 			Playerposition = new Vector3 (Playerposition.x - offset, Playerposition.y, Playerposition.z);
 		}
-
-		transform.position = new Vector3 (Playerposition.x, player.transform.position.y, -10f);
 	}
 }
