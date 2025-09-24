@@ -17,11 +17,11 @@ public class CharacterMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetKeyDown (KeyCode.A)) {
+		if (Input.GetKeyDown (KeyCode.LeftArrow)) {
 			MyAnimator.SetTrigger ("run");
 			transform.rotation = Quaternion.Euler (0f, 180f, 0f);
 
-		} else if (Input.GetKeyDown (KeyCode.D)) {
+		} else if (Input.GetKeyDown (KeyCode.RightArrow)) {
 			MyAnimator.SetTrigger ("run");
 			transform.rotation = Quaternion.Euler (0f, 0f, 0f);
 		}
@@ -29,9 +29,8 @@ public class CharacterMovement : MonoBehaviour {
 		else if (Input.GetKey (KeyCode.Space)) {
 			MyAnimator.SetTrigger ("jump");
 
-		} else if (MyAnimator.GetBool ("dead") == false) {
-			MyAnimator.SetBool ("idle", true);
-			MyAnimator.SetBool ("run", false);
+		} else if (Input.GetAxis("Horizontal") ==0 ) {
+			MyAnimator.SetTrigger ("idle");
 		}
 	}
 }
