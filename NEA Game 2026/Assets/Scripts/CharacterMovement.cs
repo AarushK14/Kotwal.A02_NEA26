@@ -17,11 +17,11 @@ public class CharacterMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetKeyDown (KeyCode.LeftArrow)) {
+		if (Input.GetKeyDown (KeyCode.A)) {
 			MyAnimator.SetTrigger ("run");
 			transform.rotation = Quaternion.Euler (0f, 180f, 0f);
 
-		} else if (Input.GetKeyDown (KeyCode.RightArrow)) {
+		} else if (Input.GetKeyDown (KeyCode.D)) {
 			MyAnimator.SetTrigger ("run");
 			transform.rotation = Quaternion.Euler (0f, 0f, 0f);
 		}
