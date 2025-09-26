@@ -2,7 +2,7 @@
 
 public class Gunfollow : MonoBehaviour
 {
-	[SerializeField] private Transform aimTransform; 
+	[SerializeField] private Transform aimTransform;
 
 	private Vector3 GetMouseWorldPosition()
 	{
