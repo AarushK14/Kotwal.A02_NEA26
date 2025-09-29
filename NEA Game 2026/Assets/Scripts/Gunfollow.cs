@@ -3,6 +3,9 @@
 public class Gunfollow : MonoBehaviour
 {
 	[SerializeField] private Transform aimTransform;
+	[SerializeField] private GameObject bullet;
+
+	private GameObject bulletInst;
 
 	private Vector3 GetMouseWorldPosition()
 	{
@@ -18,19 +21,24 @@ public class Gunfollow : MonoBehaviour
 
 	private void Update()
 	{
+		rotation ();
+	}
+
+	private void rotation()
+	{
 		Vector3 mousePos = GetMouseWorldPosition();
 		Vector3 aim = (mousePos - aimTransform.position).normalized; // normalised returns the vector with magnitude of 1
 		float angle = Mathf.Atan2(aim.y, aim.x) * Mathf.Rad2Deg; // gets the angle at which the gun is to be rotated
-		while (-100f<angle && angle<100f){
-			aimTransform.eulerAngles = new Vector3(0, 0, angle); // used to rotate the gun sprite towards the mouse location by rotatating it by respectives angle
-		}
+		aimTransform.eulerAngles = new Vector3(0, 0, angle); // used to rotate the gun sprite towards the mouse location by rotatating it by respectives angle
 
-		if (Input.GetKeyDown (KeyCode.A)) {
-			transform.rotation = Quaternion.Euler (0f, 180f, 0f);
+		Vector3 localscale = new Vector3 (1f, 1f, 1f);
+		if (aimTransform.rotation.z > 90 || aimTransform.rotation.z < -90) {
+			localscale.y = -1f;
+		} 
+		else {
+			localscale.y = 1f;
 		}
-
-		if (Input.GetKeyDown (KeyCode.D)) {
-			transform.rotation = Quaternion.Euler (0f, 0f, 0f);
-		}
+		aimTransform.localScale = localscale;
 	}
+
 }
