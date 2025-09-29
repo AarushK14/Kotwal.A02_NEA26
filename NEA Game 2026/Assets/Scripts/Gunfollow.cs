@@ -21,6 +21,16 @@ public class Gunfollow : MonoBehaviour
 		Vector3 mousePos = GetMouseWorldPosition();
 		Vector3 aim = (mousePos - aimTransform.position).normalized; // normalised returns the vector with magnitude of 1
 		float angle = Mathf.Atan2(aim.y, aim.x) * Mathf.Rad2Deg; // gets the angle at which the gun is to be rotated
-		aimTransform.eulerAngles = new Vector3(0, 0, angle); // used to rotate the gun sprite towards the mouse location by rotatating it by respectives angle
+		while (-100f<angle && angle<100f){
+			aimTransform.eulerAngles = new Vector3(0, 0, angle); // used to rotate the gun sprite towards the mouse location by rotatating it by respectives angle
+		}
+
+		if (Input.GetKeyDown (KeyCode.A)) {
+			transform.rotation = Quaternion.Euler (0f, 180f, 0f);
+		}
+
+		if (Input.GetKeyDown (KeyCode.D)) {
+			transform.rotation = Quaternion.Euler (0f, 0f, 0f);
+		}
 	}
 }
