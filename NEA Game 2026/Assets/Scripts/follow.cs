@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 
-public class Gunfollow : MonoBehaviour
+public class follow : MonoBehaviour
 {
 	[SerializeField] private Transform aimTransform;
-	[SerializeField] private GameObject bullet;
+	public GameObject spawn;
+	private Vector3 spawnposition;
+	[SerializeField] GameObject arrow;
 
 	private GameObject bulletInst;
 
@@ -22,6 +24,11 @@ public class Gunfollow : MonoBehaviour
 	private void Update()
 	{
 		rotation ();
+		if (Input.GetKeyDown (KeyCode.S)) {
+			Debug.Log ("arrow shot");
+			spawnposition = new Vector3 (spawn.transform.position.x, spawn.transform.position.y, spawn.transform.position.z);
+			Instantiate (arrow, spawnposition, Quaternion.identity);
+		}
 	}
 
 	private void rotation()
@@ -41,4 +48,7 @@ public class Gunfollow : MonoBehaviour
 		aimTransform.localScale = localscale;
 	}
 
+	public void shoot(){
+		
+	}
 }

@@ -4,22 +4,16 @@ using UnityEngine;
 
 public class shoot : MonoBehaviour {
 
-	GameObject bullet;
+	private float arrowspeed;
+	private Vector3 mousepos;
 
 	// Use this for initialization
 	void Start () {
-		
+		arrowspeed = 5f;
 	}
-	
 	// Update is called once per frame
 	void Update () {
-		shooting ();
-	}
-
-	private void shooting()
-	{
-		if (Input.GetMouseButtonDown(0)) {
-			float Pos = 0;
-		}
+		mousepos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+		transform.position = Vector3.MoveTowards (transform.position, mousepos, arrowspeed * Time.deltaTime);
 	}
 }
