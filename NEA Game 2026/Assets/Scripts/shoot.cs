@@ -2,18 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class shoot : MonoBehaviour {
+// Created: Sprint 2 - Last Edited: Sprint 2
+// Purpose: To manage the movement of the bullet eg speed etc...
 
-	private float arrowspeed;
-	private Vector3 mousepos;
+public class shoot : MonoBehaviour
+{
+	public float speed = 10f;
 
-	// Use this for initialization
-	void Start () {
-		arrowspeed = 5f;
+	private Vector3 moveDirection;
+
+	void Start()
+	{
+		Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		mousePos.z = 0f;
+
+		Vector3 startPos = transform.position;
+		moveDirection = (mousePos - startPos).normalized;
 	}
-	// Update is called once per frame
-	void Update () {
-		mousepos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-		transform.position = Vector3.MoveTowards (transform.position, mousepos, arrowspeed * Time.deltaTime);
+
+	void Update()
+	{
+		transform.position += moveDirection * speed * Time.deltaTime;
 	}
 }
