@@ -1,17 +1,25 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class weapon: MonoBehaviour
+// Created: Sprint 2 - Last Edited: Sprint 2
+// Purpose: To allow the gun to follow the camera and rotate the correct way
+
+public class weapon : MonoBehaviour
 {
-	[SerializeField] private Transform aimTransform; // The weapon (to rotate)
-	[SerializeField] private GameObject arrowprefab; // Arrow prefab
-	[SerializeField] private Transform spawnpos; // Where to spawn the arrow
+	[SerializeField] private Transform aimTransform;
+	[SerializeField] private GameObject arrowprefab;
+	[SerializeField] private Transform spawnpos;
 	[SerializeField] private float speed = 5f;
+
+	private Vector3 moveDirection;
+	private GameObject currentArrow;
 
 	void Update()
 	{
 		RotateWeaponToMouse();
 
-		if (Input.GetKeyDown(KeyCode.S))
+		if (Input.GetMouseButtonDown(0))
 		{
 			ShootArrow();
 		}
@@ -19,10 +27,9 @@ public class weapon: MonoBehaviour
 
 	void RotateWeaponToMouse()
 	{
-		Vector3 mousePos = GetMouseWorldPosition ();
+		Vector3 mousePos = GetMouseWorldPosition();
 		Vector3 direction = (mousePos - aimTransform.position).normalized;
 		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
 		aimTransform.rotation = Quaternion.Euler(0, 0, angle);
 	}
 
@@ -32,15 +39,16 @@ public class weapon: MonoBehaviour
 		Vector3 direction = (mousePos - spawnpos.position).normalized;
 		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-		GameObject arrow = Instantiate(arrowprefab, spawnpos.position, Quaternion.Euler(0f, 0f, angle));
-		arrow.AddComponent<shoot>();
+		currentArrow = Instantiate(arrowprefab, spawnpos.position, Quaternion.Euler(0f, 0f, angle));
+		moveDirection = direction.normalized;
 	}
 
 	Vector3 GetMouseWorldPosition()
 	{
-		Vector3 mouseScreen = Input.mousePosition;
-		mouseScreen.z = 10f; // Distance from camera
-		return Camera.main.ScreenToWorldPoint(mouseScreen);
+		Vector3 mousePos = Input.mousePosition;
+		mousePos.z = 10f;
+		return Camera.main.ScreenToWorldPoint(mousePos);
 	}
 }
+
 	

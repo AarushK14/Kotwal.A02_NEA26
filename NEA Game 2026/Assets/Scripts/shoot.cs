@@ -7,21 +7,29 @@ using UnityEngine;
 
 public class shoot : MonoBehaviour
 {
-	public float speed = 10f;
+
+	[SerializeField] private GameObject arrowprefab;
+	[SerializeField] private Transform spawnpos;
+	[SerializeField] private float speed = 5f;
 
 	private Vector3 moveDirection;
 
 	void Start()
 	{
-		Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		mousePos.z = 0f;
-
-		Vector3 startPos = transform.position;
-		moveDirection = (mousePos - startPos).normalized;
+		Vector3 mousePos = GetMouseWorldPosition();
+		Vector3 direction = (mousePos - spawnpos.position).normalized;
+		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+		moveDirection = direction.normalized;
 	}
 
 	void Update()
 	{
 		transform.position += moveDirection * speed * Time.deltaTime;
+	}
+	Vector3 GetMouseWorldPosition()
+	{
+		Vector3 mousePos = Input.mousePosition;
+		mousePos.z = 10f;
+		return Camera.main.ScreenToWorldPoint(mousePos);
 	}
 }
