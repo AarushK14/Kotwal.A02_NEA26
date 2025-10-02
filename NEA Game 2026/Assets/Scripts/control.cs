@@ -11,10 +11,12 @@ public class control : MonoBehaviour {
 	public float jumpspeed = 5f;
 	private float direction = 0f;
 	private Rigidbody2D player;
+	public bool ong;
 
 	// Use this for initialization
 	void Start () {
 		player = GetComponent<Rigidbody2D> ();
+		ong = true;
 	}
 	
 	// Update is called once per frame
@@ -24,14 +26,19 @@ public class control : MonoBehaviour {
 
 		if (direction > 0f) {
 			player.velocity = new Vector2 (direction * speed, player.velocity.y);
-		} else if (direction < 0f) {
+		} 
+
+		else if (direction < 0f) {
 			player.velocity = new Vector2 (direction * speed, player.velocity.y);
-		} else {
+		} 
+
+		else {
 			player.velocity = new Vector2 (0, player.velocity.y);
 		}
 
-		if (Input.GetButtonDown ("Jump")) {
-			player.velocity = new Vector2 (player.velocity.x, jumpspeed);
+		if (Input.GetKeyDown (KeyCode.W) && ong == true) {
+			player.AddForce(Vector2.up*250);
+			ong = false;
 		}
 	}
 }
