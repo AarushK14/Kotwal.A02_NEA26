@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Created: Sprint 2 - Last Edited: Sprint 2
+
 public class login : MonoBehaviour {
 
 	// Use this for initialization
