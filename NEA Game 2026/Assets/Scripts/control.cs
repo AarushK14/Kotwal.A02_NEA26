@@ -46,4 +46,8 @@ public class control : MonoBehaviour {
 		Debug.Log("Player collided with map!");
 		ong = true;
 	}
+	void resetPosition(){
+		Debug.Log ("SPIKE RECIEVED!");
+		transform.SetPositionAndRotation (new Vector3 (-29.5f, -3.5f, 0f), Quaternion.identity);
+	}
 }
