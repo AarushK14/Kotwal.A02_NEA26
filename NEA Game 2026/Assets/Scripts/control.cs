@@ -43,7 +43,7 @@ public class control : MonoBehaviour {
 	}
 	private void OnCollisionEnter2D(Collision2D other)
 	{
-		Debug.Log("Player collided with map!");
+		//Debug.Log("Player Collided with map!");
 		ong = true;
 	}
 	void resetPosition(){
