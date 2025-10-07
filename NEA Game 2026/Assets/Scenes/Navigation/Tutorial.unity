@@ -14542,24 +14542,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 212126531022959912, guid: e82beff024d9a884d84d5c28e97ddb18,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: -158316761
-      objectReference: {fileID: 0}
-    - target: {fileID: 212126531022959912, guid: e82beff024d9a884d84d5c28e97ddb18,
-        type: 2}
-      propertyPath: m_SortingLayer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4391638962498782, guid: e82beff024d9a884d84d5c28e97ddb18, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4391638962498782, guid: e82beff024d9a884d84d5c28e97ddb18, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 1467153616298528, guid: e82beff024d9a884d84d5c28e97ddb18, type: 2}
       propertyPath: m_Name
       value: Coin
