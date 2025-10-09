@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212126531022959912}
   - component: {fileID: 95012289869507254}
   - component: {fileID: 114286390141435538}
-  - component: {fileID: 61652851514711896}
+  - component: {fileID: 61444546455126368}
   m_Layer: 0
   m_Name: Coin_0
   m_TagString: coin
@@ -43,7 +43,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61652851514711896
+--- !u!61 &61444546455126368
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,7 +55,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.0019408464}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -66,7 +66,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.07, y: 0.08}
+  m_Size: {x: 0.07, y: 0.076118305}
   m_EdgeRadius: 0
 --- !u!95 &95012289869507254
 Animator:
@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4bb722adf447248a691b0a10f3a90b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  coincounter: {fileID: 0}
 --- !u!212 &212126531022959912
 SpriteRenderer:
   m_ObjectHideFlags: 1

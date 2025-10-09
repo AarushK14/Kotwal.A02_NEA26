@@ -7,7 +7,8 @@ using TMPro;
 // Purpose: Controlling the coin, destroying them on collision and also incrementing the coin counter.
 
 public class coin : MonoBehaviour {
-
+	
+	public GameObject Player;
 	public TextMeshPro coincounter;
 	GameObject [] Tcoins;
 	int y;
@@ -16,6 +17,7 @@ public class coin : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Tcoins = GameObject.FindGameObjectsWithTag ("coin");
 		y = Tcoins.Length;
 	}
 	
@@ -23,13 +25,16 @@ public class coin : MonoBehaviour {
 	void Update () {
 		Tcoins = GameObject.FindGameObjectsWithTag ("coin");
 		x = Tcoins.Length;
+		found = y - x;
 		coincounter.text = "Coins: " + found.ToString ();
 	}
 
-	private void OnTriggerEnter2d(Collision2D other){
+	private void OnTriggerEnter2D(Collider2D other){ 
 		if (other.gameObject.tag == "Player"){
 			found = y - x;
+			Debug.Log ("Coins found:" + (found+1));
 			Destroy (this.gameObject);
 		}
 	}
 }
+	
