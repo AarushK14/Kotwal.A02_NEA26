@@ -12,6 +12,8 @@ public class control : MonoBehaviour {
 	private float direction = 0f;
 	private Rigidbody2D player;
 	public bool ong;
+	int lives = 5;
+	Animator MyAnimator;
 
 	// Use this for initialization
 	void Start () {
@@ -49,5 +51,13 @@ public class control : MonoBehaviour {
 	void resetPosition(){
 		Debug.Log ("SPIKE RECIEVED!");
 		transform.SetPositionAndRotation (new Vector3 (-29.5f, -3.5f, 0f), Quaternion.identity);
+		dmg ();
+	}
+
+	public void dmg(){
+		lives -= 1;
+		if (lives < 0) {
+			MyAnimator.SetTrigger ("death");
+		}
 	}
 }
