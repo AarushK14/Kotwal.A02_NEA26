@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class health : MonoBehaviour {
 
@@ -21,6 +23,7 @@ public class health : MonoBehaviour {
 		lives -= 1;
 		if (lives < 0) {
 			MyAnimator.SetTrigger ("death");
+			SceneManager.LoadScene ("Lost");
 		}
 	}
 }

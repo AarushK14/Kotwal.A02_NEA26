@@ -27,4 +27,9 @@ public class enemyanim : MonoBehaviour {
 			MyAnimator.SetTrigger ("attack");
 		}
 	}
+	private void OnTriggerExit2D(Collider2D other){
+		if (other.gameObject.tag == "Player") {
+			MyAnimator.SetTrigger ("idle");
+		}
+	}
 }
