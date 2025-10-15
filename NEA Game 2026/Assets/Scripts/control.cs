@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // Created: Sprint 1 - Last Edited: Sprint 2
 // Purpose: To allow character move based on the key pressed and add playability to the game.
@@ -14,11 +15,14 @@ public class control : MonoBehaviour {
 	public bool ong;
 	int lives = 5;
 	Animator MyAnimator;
+	public bool candie;
 
 	// Use this for initialization
 	void Start () {
 		player = GetComponent<Rigidbody2D> ();
+		MyAnimator = GetComponent<Animator> ();
 		ong = true;
+		candie = false;
 	}
 	
 	// Update is called once per frame
@@ -42,6 +46,7 @@ public class control : MonoBehaviour {
 			player.AddForce(Vector2.up*250);
 			ong = false;
 		}
+		Debug.Log (lives);
 	}
 	private void OnCollisionEnter2D(Collision2D other)
 	{
@@ -50,14 +55,19 @@ public class control : MonoBehaviour {
 	}
 	void resetPosition(){
 		Debug.Log ("SPIKE RECIEVED!");
-		transform.SetPositionAndRotation (new Vector3 (-29.5f, -3.5f, 0f), Quaternion.identity);
-		dmg ();
+		if (candie == false) {
+			transform.SetPositionAndRotation (new Vector3 (-29.5f, -3.5f, 0f), Quaternion.identity);
+			dmg ();
+		}
 	}
 
 	public void dmg(){
 		lives -= 1;
-		if (lives < 0) {
-			MyAnimator.SetTrigger ("death");
+		if (lives <= 0) {
+			candie = true;
+			Debug.Log ("End of game");
+			MyAnimator.Play ("death");
+			SceneManager.LoadScene ("Lost");
 		}
 	}
 }

@@ -13,6 +13,7 @@ public class health : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Debug.Log (lives);
 	}
 	// Update is called once per frame
 	void Update () {

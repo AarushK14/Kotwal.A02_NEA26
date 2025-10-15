@@ -266,6 +266,7 @@ MonoBehaviour:
   speed: 5
   jumpspeed: 7
   ong: 0
+  candie: 0
 --- !u!114 &56976931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1537,6 +1538,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 212156854550409718, guid: fe8f53788a51b9a4d8d40a556c6cb93a,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: -158316761
+      objectReference: {fileID: 0}
+    - target: {fileID: 212156854550409718, guid: fe8f53788a51b9a4d8d40a556c6cb93a,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe8f53788a51b9a4d8d40a556c6cb93a, type: 2}
   m_IsPrefabAsset: 0
@@ -1856,6 +1867,26 @@ Prefab:
     - target: {fileID: 1870622475656964, guid: 85afecd29e56b494494868900fcc0628, type: 2}
       propertyPath: m_Name
       value: monkey
+      objectReference: {fileID: 0}
+    - target: {fileID: 70092788372580972, guid: 85afecd29e56b494494868900fcc0628,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 0.00000009536743
+      objectReference: {fileID: 0}
+    - target: {fileID: 70092788372580972, guid: 85afecd29e56b494494868900fcc0628,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 0.29846153
+      objectReference: {fileID: 0}
+    - target: {fileID: 70092788372580972, guid: 85afecd29e56b494494868900fcc0628,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 0.0021152496
+      objectReference: {fileID: 0}
+    - target: {fileID: 70092788372580972, guid: 85afecd29e56b494494868900fcc0628,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.20269242
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114092746553703624, guid: 85afecd29e56b494494868900fcc0628, type: 2}
