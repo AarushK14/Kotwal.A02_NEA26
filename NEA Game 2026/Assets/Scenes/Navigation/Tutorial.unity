@@ -266,8 +266,8 @@ MonoBehaviour:
   speed: 5
   jumpspeed: 7
   ong: 0
-  candie: 0
   livescounter: {fileID: 1006426884}
+  HealthBar: {fileID: 146870749}
 --- !u!114 &56976931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -846,7 +846,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 146870747}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -855,8 +855,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -496.9, y: -253}
-  m_SizeDelta: {x: 143.9, y: 55.8}
+  m_AnchoredPosition: {x: -497.95, y: -256.4}
+  m_SizeDelta: {x: 148.2, y: 55.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &146870749
 MonoBehaviour:
@@ -2718,7 +2718,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Lives:'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 841423417c83bfe4b9242bfb8ec8c42b, type: 2}
   m_sharedMaterial: {fileID: 21869506075786622, guid: 841423417c83bfe4b9242bfb8ec8c42b,
@@ -2787,14 +2787,14 @@ MonoBehaviour:
   m_margin: {x: -2.2356339, y: 0.13191795, z: -1.2281268, w: 0.000000012813}
   m_textInfo:
     textComponent: {fileID: 1006426884}
-    characterCount: 6
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
-    materialCount: 2
+    lineCount: 0
+    pageCount: 0
+    materialCount: 1
   m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -14929,7 +14929,6 @@ RectTransform:
   m_Children:
   - {fileID: 255661276}
   - {fileID: 146870748}
-  - {fileID: 1801969689}
   m_Father: {fileID: 426913133}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15476,12 +15475,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1801969688}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -701.3, y: -311.3, z: 0}
-  m_LocalScale: {x: 5.900001, y: 6.72142, z: 1}
+  m_LocalRotation: {x: -0, y: 0.0034905854, z: -0, w: 0.9999939}
+  m_LocalPosition: {x: -9.880063, y: -4.9099073, z: 10}
+  m_LocalScale: {x: 5.8950543, y: 6.0400004, z: 0.99916255}
   m_Children: []
-  m_Father: {fileID: 1559799114}
-  m_RootOrder: 2
+  m_Father: {fileID: 2033475596}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1801969690
 SpriteRenderer:
@@ -15927,6 +15926,7 @@ RectTransform:
   - {fileID: 66825079}
   - {fileID: 305272794}
   - {fileID: 1006426883}
+  - {fileID: 1801969689}
   m_Father: {fileID: 369008006}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -0.4, z: 0}
