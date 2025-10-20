@@ -59,4 +59,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Navigation/Tutorial.unity
     guid: c73583f264a4bc544a804b9650179b11
+  - enabled: 1
+    path: Assets/Scenes/Navigation/Lost.unity
+    guid: 19146dfca92020248b0a4c61e73bcf30
   m_configObjects: {}

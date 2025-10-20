@@ -19,7 +19,7 @@ public class Navigation : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		sprite = arr[index];
 	}
 
 	public void Play() {
@@ -65,6 +65,7 @@ public class Navigation : MonoBehaviour {
 	}
 	public void Next(){
 		Debug.Log ("Next clicked");
-
+		while (index>=0 && index<=2)
+			index++;
 	}		
 }

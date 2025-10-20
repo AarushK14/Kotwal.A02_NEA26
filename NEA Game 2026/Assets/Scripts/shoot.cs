@@ -32,8 +32,4 @@ public class shoot : MonoBehaviour
 		mousePos.z = 10f;
 		return Camera.main.ScreenToWorldPoint(mousePos);
 	}
-
-	private void OnCollisionEnter2D(Collision2D other){
-		speed = 0;
-	}
 }

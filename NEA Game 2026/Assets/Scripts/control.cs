@@ -14,7 +14,7 @@ public class control : MonoBehaviour {
 	public float jumpspeed = 5f;
 	private float direction = 0f;
 	private Rigidbody2D player;
-	public bool ong;
+	public bool on_ground;
 	float lives = 10;
 	Animator MyAnimator;
 	private bool candie;
@@ -27,7 +27,7 @@ public class control : MonoBehaviour {
 	void Start () {
 		player = GetComponent<Rigidbody2D> ();
 		MyAnimator = GetComponent<Animator> ();
-		ong = true;
+		on_ground = true;
 		candie = false;
 		defaultlives = lives;
 		lives_Percentage = 1;
@@ -50,9 +50,9 @@ public class control : MonoBehaviour {
 			player.velocity = new Vector2 (0, player.velocity.y);
 		}
 
-		if (Input.GetKeyDown (KeyCode.W) && ong == true) {
+		if (Input.GetKeyDown (KeyCode.W) && on_ground == true) {
 			player.AddForce(Vector2.up*250);
-			ong = false;
+			on_ground = false;
 		}
 		Debug.Log (lives);
 		livescounter.text =(lives_Percentage*100).ToString ()+"%";
@@ -61,17 +61,17 @@ public class control : MonoBehaviour {
 	private void OnCollisionEnter2D(Collision2D other)
 	{
 		//Debug.Log("Player Collided with map!");
-		ong = true;
+		on_ground = true;
 	}
 	void resetPosition(){
 		Debug.Log ("SPIKE RECIEVED!");
 		if (candie == false) {
 			transform.SetPositionAndRotation (new Vector3 (-29.5f, -3.5f, 0f), Quaternion.identity);
-			dmgspike ();
+			DamageSpike ();
 		}
 	}
 
-	public void dmgspike(){
+	public void DamageSpike(){
 		lives -= 1f;
 		lives_Percentage = (lives / defaultlives);
 		if (lives <= 0) {

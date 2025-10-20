@@ -19,9 +19,8 @@ public class weapon : MonoBehaviour
 	{
 		RotateWeaponToMouse();
 
-		if (Input.GetMouseButtonDown(0))
-		{
-			ShootArrow();
+		if (Input.GetMouseButtonDown (0)) {
+			ShootArrow ();
 			Destroy (currentArrow, 1);
 		}
 	}
