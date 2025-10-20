@@ -22,6 +22,7 @@ public class control : MonoBehaviour {
 	private float lives_Percentage;
 	private float defaultlives;
 	public Image HealthBar;
+	public GameObject enemy;
 
 	// Use this for initialization
 	void Start () {
@@ -73,6 +74,16 @@ public class control : MonoBehaviour {
 
 	public void DamageSpike(){
 		lives -= 1f;
+		lives_Percentage = (lives / defaultlives);
+		if (lives <= 0) {
+			candie = true;
+			Debug.Log ("End of game");
+			MyAnimator.Play ("death");
+			SceneManager.LoadScene ("Lost");
+		}
+	}
+	public void DamageEnemy(){
+		lives -= 0.5f;
 		lives_Percentage = (lives / defaultlives);
 		if (lives <= 0) {
 			candie = true;
