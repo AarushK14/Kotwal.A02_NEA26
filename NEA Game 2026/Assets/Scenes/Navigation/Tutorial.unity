@@ -318,6 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreCounter: {fileID: 937802724}
+  coin: {fileID: 1467153616298528, guid: e82beff024d9a884d84d5c28e97ddb18, type: 2}
 --- !u!1 &64015469
 GameObject:
   m_ObjectHideFlags: 0
@@ -2387,7 +2388,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de57000fa0511a64799d9674e3febd9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arr: []
 --- !u!4 &767382933 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4547802545296844, guid: 4bb66c8e4dc61dc4ab5248b9cc341731,

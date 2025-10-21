@@ -6,6 +6,7 @@ using TMPro;
 public class Score : MonoBehaviour {
 
 	public TextMeshPro ScoreCounter;
+	public GameObject coin;
 	int score;
 
 	// Use this for initialization
@@ -16,11 +17,12 @@ public class Score : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Debug.Log (score);
-		ScoreCounter.text = "Score: " + score.ToString();
+		ScoreCounter.text = "Score: " + score.ToString ();
 	}
-	public void OnCollisionEnter2d(Collider2D other){
+	public void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "coin") {
 			score += 2;
 		}
+
 	}
 }

@@ -9,17 +9,17 @@ using UnityEngine.SceneManagement;
 
 public class Navigation : MonoBehaviour {
 
-	public GameObject[] arr={};
-	int index;
+	//public GameObject[] arr={};
+	//int index;
 	private GameObject sprite;
 	// Use this for initialization
 	void Start () {
-		index = 1;
+		//index = 1;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		sprite = arr[index];
+		//sprite = arr[index];
 	}
 
 	public void Play() {
@@ -63,9 +63,9 @@ public class Navigation : MonoBehaviour {
 		Debug.Log ("Profile clicked");
 		SceneManager.LoadScene ("profiles");
 	}
-	public void Next(){
+	public void Next(){/*
 		Debug.Log ("Next clicked");
 		while (index>=0 && index<=2)
 			index++;
-	}		
+	*/}		
 }
