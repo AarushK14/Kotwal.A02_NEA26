@@ -7,12 +7,12 @@ using UnityEngine;
 
 public class weapon : MonoBehaviour
 {
-	[SerializeField] private Transform aimTransform;
-	[SerializeField] private GameObject arrowprefab;
-	[SerializeField] private Transform spawnpos;
-	[SerializeField] private float speed = 5f;
+	public Transform aimTransform;
+	public GameObject arrowprefab;
+	public Transform spawnpos;
+	float speed;
 
-	private Vector3 moveDirection;
+	Vector3 moveDirection;
 	private GameObject currentArrow;
 
 	void Update()

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemyanim : MonoBehaviour {
+public class enemy : MonoBehaviour {
 
 	public GameObject player;
 	Animator MyAnimator;
@@ -25,6 +25,7 @@ public class enemyanim : MonoBehaviour {
 	private void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "Player") {
 			MyAnimator.SetTrigger ("attack");
+
 		}
 	}
 	private void OnTriggerExit2D(Collider2D other){
