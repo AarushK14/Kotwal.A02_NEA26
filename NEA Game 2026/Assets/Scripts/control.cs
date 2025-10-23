@@ -56,6 +56,7 @@ public class control : MonoBehaviour {
 			on_ground = false;
 		}
 		Debug.Log (lives);
+		regen();
 		livescounter.text =(lives_Percentage*100).ToString ()+"%";
 		HealthBar.fillAmount = lives_Percentage;
 	}
@@ -73,6 +74,7 @@ public class control : MonoBehaviour {
 	}
 
 	public void DamageSpike(){
+		MyAnimator.Play ("hit");
 		lives -= 1f;
 		lives_Percentage = (lives / defaultlives);
 		if (lives <= 0) {
@@ -82,8 +84,9 @@ public class control : MonoBehaviour {
 			SceneManager.LoadScene ("Lost");
 		}
 	}
-	public void DamageEnemy(){
-		lives -= 0.5f;
+	public void DamageEnemy(float damage){
+		StartCoroutine(hit());
+		lives -= damage;
 		lives_Percentage = (lives / defaultlives);
 		if (lives <= 0) {
 			candie = true;
@@ -91,5 +94,16 @@ public class control : MonoBehaviour {
 			MyAnimator.Play ("death");
 			SceneManager.LoadScene ("Lost");
 		}
+	}
+	IEnumerator hit(){
+		yield return new WaitForSeconds (0.2f);
+		MyAnimator.Play ("hit");
+	}
+	IEnumerator regen(){
+		while (lives < 10){
+			yield return new WaitForSeconds (5);
+			lives += 0.3f;
+		}
+			lives = 10;
 	}
 }

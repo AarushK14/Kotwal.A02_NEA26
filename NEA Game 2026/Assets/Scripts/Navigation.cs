@@ -67,5 +67,5 @@ public class Navigation : MonoBehaviour {
 		Debug.Log ("Next clicked");
 		while (index>=0 && index<=2)
 			index++;
-	*/}		
+	*/}	
 }

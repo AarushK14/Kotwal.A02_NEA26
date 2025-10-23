@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // Created: Sprint 1 - Last Edited: Sprint 2
 // Purpose: To allow character move based on the key pressed and add playability to the game.
@@ -24,13 +25,14 @@ public class CharacterMovement : MonoBehaviour {
 		} else if (Input.GetKeyDown (KeyCode.D)) {
 			MyAnimator.SetTrigger ("run");
 			transform.rotation = Quaternion.Euler (0f, 0f, 0f);
-		}
-
-		else if (Input.GetKey (KeyCode.Space)) {
+		} else if (Input.GetKey (KeyCode.Space)) {
 			MyAnimator.SetTrigger ("jump");
 
-		} else if (Input.GetAxis("Horizontal") ==0 ) {
+		} else if (Input.GetAxis ("Horizontal") == 0) {
 			MyAnimator.SetTrigger ("idle");
+		} 
+		else if (Input.GetKey (KeyCode.Escape)) {
+			SceneManager.LoadScene ("pause");
 		}
 	}
 }

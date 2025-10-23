@@ -9,7 +9,7 @@ public class health : MonoBehaviour {
 	int lives = 5;
 	GameObject player;
 	GameObject enemy;
-	Animator MyAnimator;
+	public Animator MyAnimator;
 
 	// Use this for initialization
 	void Start () {

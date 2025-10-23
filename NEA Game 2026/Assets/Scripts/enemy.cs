@@ -6,6 +6,7 @@ public class enemy : MonoBehaviour {
 
 	public GameObject player;
 	Animator MyAnimator;
+	float damage = 0.5f;
 
 	// Use this for initialization
 	void Start () {
@@ -25,7 +26,7 @@ public class enemy : MonoBehaviour {
 	private void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "Player") {
 			MyAnimator.SetTrigger ("attack");
-
+			other.gameObject.GetComponent<control> ().DamageEnemy (damage);
 		}
 	}
 	private void OnTriggerExit2D(Collider2D other){

@@ -62,4 +62,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Navigation/Lost.unity
     guid: 19146dfca92020248b0a4c61e73bcf30
+  - enabled: 1
+    path: Assets/Scenes/Navigation/pause.unity
+    guid: 9f3a74cbfa2b1084a88db987f8a5ad45
   m_configObjects: {}

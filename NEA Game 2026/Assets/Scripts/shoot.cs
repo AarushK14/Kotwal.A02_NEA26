@@ -9,9 +9,8 @@ public class shoot : MonoBehaviour
 {
 
 	[SerializeField] private GameObject arrowprefab;
-	[SerializeField] private Transform spawnpos;
+	public Transform spawnpos;
 	[SerializeField] private float speed = 5f;
-
 	private Vector3 moveDirection;
 
 	void Start()
@@ -31,5 +30,11 @@ public class shoot : MonoBehaviour
 		Vector3 mousePos = Input.mousePosition;
 		mousePos.z = 10f;
 		return Camera.main.ScreenToWorldPoint(mousePos);
+	}
+
+	public void OnCollisionEnter2D(Collider2D other){
+		if (other.gameObject.tag == "enemy") {
+			
+		}
 	}
 }
