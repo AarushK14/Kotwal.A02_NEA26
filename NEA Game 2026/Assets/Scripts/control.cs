@@ -59,6 +59,10 @@ public class control : MonoBehaviour {
 		regen();
 		livescounter.text =(lives_Percentage*100).ToString ()+"%";
 		HealthBar.fillAmount = lives_Percentage;
+
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+			SceneManager.LoadScene("pause");
+		}
 	}
 	private void OnCollisionEnter2D(Collision2D other)
 	{
@@ -106,4 +110,5 @@ public class control : MonoBehaviour {
 		}
 			lives = 10;
 	}
+
 }

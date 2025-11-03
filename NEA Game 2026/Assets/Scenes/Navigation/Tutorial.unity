@@ -847,6 +847,7 @@ GameObject:
   - component: {fileID: 146870748}
   - component: {fileID: 146870750}
   - component: {fileID: 146870749}
+  - component: {fileID: 146870751}
   m_Layer: 0
   m_Name: Healthbar
   m_TagString: Untagged
@@ -869,8 +870,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -496.8, y: -258}
-  m_SizeDelta: {x: 148.2, y: 55.8}
+  m_AnchoredPosition: {x: -445, y: -230.5}
+  m_SizeDelta: {x: 131.7, y: 51.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &146870749
 MonoBehaviour:
@@ -906,6 +907,16 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 146870747}
   m_CullTransparentMesh: 0
+--- !u!210 &146870751
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 146870747}
+  m_Enabled: 1
+  m_SortingLayerID: -158316761
+  m_SortingLayer: 3
+  m_SortingOrder: 0
 --- !u!1001 &159188868
 Prefab:
   m_ObjectHideFlags: 0
@@ -1167,7 +1178,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 255661275}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0000037817}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 540727130}
@@ -1176,7 +1187,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -539, y: 237}
+  m_AnchoredPosition: {x: -464.05, y: 207}
   m_SizeDelta: {x: 166.5, y: 46.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &255661277
@@ -15291,7 +15302,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 2033475594}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -15818,7 +15829,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -158316761
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 33
   m_Sprite: {fileID: 21300000, guid: 0825519d73bdaf848b9f8f55ecf8c4ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -16124,7 +16135,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 59
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
