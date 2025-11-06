@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Created: Sprint 2 - Last Edited: Sprint 2
+// Created: Sprint 2 - Last Edited: Sprint 4
 // Purpose: To allow the gun to follow the camera and rotate the correct way
 
 public class weapon : MonoBehaviour

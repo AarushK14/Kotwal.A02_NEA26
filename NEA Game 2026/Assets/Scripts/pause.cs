@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Created: Sprint 3 - Last Edited: Sprint 4
+// Purpose: controlling the pause menu and what different buttons would do
+
 public class pause : MonoBehaviour {
 
 	public GameObject PauseMenu;

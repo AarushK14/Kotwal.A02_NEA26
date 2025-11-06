@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Created: Sprint 2 - Last Edited: Sprint 2
+// Created: Sprint 2 - Last Edited: Sprint 4
 // Purpose: To manage the movement of the bullet eg speed etc...
 
 public class shoot : MonoBehaviour

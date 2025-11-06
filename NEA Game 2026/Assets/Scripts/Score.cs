@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+// Created: Sprint 3 - Last Edited: Sprint 4
+// Purpose: Controlling the score counter and making changes to it based on what item the player collides with
+
 public class Score : MonoBehaviour {
 
 	public TextMeshPro ScoreCounter;

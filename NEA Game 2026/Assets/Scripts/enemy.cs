@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Created: Sprint 3 - Last Edited: Sprint 4
+// Purpose: Controlling the enemy, making sure they play the right animation and controlling which way they face based on users position
+
 public class enemy : MonoBehaviour {
 
 	public GameObject player;
