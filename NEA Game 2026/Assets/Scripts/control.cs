@@ -37,8 +37,6 @@ public class control : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		regen ();
-
 		direction = Input.GetAxis ("Horizontal");
 
 		if (direction > 0f) {
@@ -62,6 +60,10 @@ public class control : MonoBehaviour {
 		HealthBar.fillAmount = lives_Percentage;
 		if (Input.GetKeyDown (KeyCode.Escape)) {
 			SceneManager.LoadScene("pause");
+		}
+
+		while (lives < 10) {
+			regen ();
 		}
 	}
 	private void OnCollisionEnter2D(Collision2D other)
@@ -91,7 +93,6 @@ public class control : MonoBehaviour {
 	}
 	public void DamageEnemy(float damage){
 		StartCoroutine(hit());
-		StartCoroutine(regen());
 		lives -= damage;
 		lives_Percentage = (lives / defaultlives);
 		if (lives <= 0) {
@@ -106,8 +107,8 @@ public class control : MonoBehaviour {
 		MyAnimator.Play ("hit");
 	}
 	IEnumerator regen(){
-		while (lives < 10){
-			yield return new WaitForSeconds (5);
+		if (lives < 9.5f){
+			yield return new WaitForSeconds (3);
 			lives += 0.3f;
 		}
 	}
