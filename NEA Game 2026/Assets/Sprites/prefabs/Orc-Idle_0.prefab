@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212139980470902770}
   - component: {fileID: 95008618419834742}
   - component: {fileID: 61048223839466448}
-  - component: {fileID: 114689689239882018}
+  - component: {fileID: 114614368003302466}
   m_Layer: 0
   m_Name: Orc-Idle_0
   m_TagString: Untagged
@@ -86,7 +86,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114689689239882018
+--- !u!114 &114614368003302466
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

@@ -56,16 +56,13 @@ public class control : MonoBehaviour {
 			on_ground = false;
 		}
 		Debug.Log (lives);
-		livescounter.text =(lives_Percentage*100).ToString ()+"%";
+		livescounter.text =(Mathf.Round(lives_Percentage*100)).ToString ()+"%";
 		HealthBar.fillAmount = lives_Percentage;
 		if (Input.GetKeyDown (KeyCode.Escape)) {
 			SceneManager.LoadScene("pause");
 		}
-
-		while (lives < 10) {
-			regen ();
-		}
 	}
+
 	private void OnCollisionEnter2D(Collision2D other)
 	{
 		//Debug.Log("Player Collided with map!");
@@ -81,7 +78,7 @@ public class control : MonoBehaviour {
 
 	public void DamageSpike(){
 		MyAnimator.Play ("hit");
-		StartCoroutine(regen());
+
 		lives -= 1f;
 		lives_Percentage = (lives / defaultlives);
 		if (lives <= 0) {
@@ -92,6 +89,7 @@ public class control : MonoBehaviour {
 		}
 	}
 	public void DamageEnemy(float damage){
+		
 		StartCoroutine(hit());
 		lives -= damage;
 		lives_Percentage = (lives / defaultlives);
@@ -107,7 +105,7 @@ public class control : MonoBehaviour {
 		MyAnimator.Play ("hit");
 	}
 	IEnumerator regen(){
-		if (lives < 9.5f){
+		while (lives <= 9.5f) {
 			yield return new WaitForSeconds (3);
 			lives += 0.3f;
 		}
