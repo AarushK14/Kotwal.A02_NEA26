@@ -32,7 +32,7 @@ public class shoot : MonoBehaviour
 		return Camera.main.ScreenToWorldPoint(mousePos);
 	}
 
-	public void OnCollisionEnter2D(Collider2D other){
+	public void OnCollisionEnter2D(Collision2D other){
 		if (other.gameObject.tag == "enemy") {
 			
 		}

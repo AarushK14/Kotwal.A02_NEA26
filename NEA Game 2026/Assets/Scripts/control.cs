@@ -37,6 +37,8 @@ public class control : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		regen ();
+
 		direction = Input.GetAxis ("Horizontal");
 
 		if (direction > 0f) {
@@ -56,10 +58,8 @@ public class control : MonoBehaviour {
 			on_ground = false;
 		}
 		Debug.Log (lives);
-		regen();
 		livescounter.text =(lives_Percentage*100).ToString ()+"%";
 		HealthBar.fillAmount = lives_Percentage;
-
 		if (Input.GetKeyDown (KeyCode.Escape)) {
 			SceneManager.LoadScene("pause");
 		}
@@ -79,6 +79,7 @@ public class control : MonoBehaviour {
 
 	public void DamageSpike(){
 		MyAnimator.Play ("hit");
+		StartCoroutine(regen());
 		lives -= 1f;
 		lives_Percentage = (lives / defaultlives);
 		if (lives <= 0) {
@@ -90,6 +91,7 @@ public class control : MonoBehaviour {
 	}
 	public void DamageEnemy(float damage){
 		StartCoroutine(hit());
+		StartCoroutine(regen());
 		lives -= damage;
 		lives_Percentage = (lives / defaultlives);
 		if (lives <= 0) {
@@ -108,7 +110,6 @@ public class control : MonoBehaviour {
 			yield return new WaitForSeconds (5);
 			lives += 0.3f;
 		}
-			lives = 10;
 	}
 
 }
