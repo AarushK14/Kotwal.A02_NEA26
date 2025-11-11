@@ -52,7 +52,7 @@ public class control : MonoBehaviour {
 		}
 
 		if (Input.GetKeyDown (KeyCode.W) && on_ground == true) {
-			player.AddForce(Vector2.up*250);
+			player.AddForce(Vector2.up*378);
 			on_ground = false;
 		}
 		Debug.Log (lives);
@@ -71,7 +71,7 @@ public class control : MonoBehaviour {
 	void resetPosition(){
 		Debug.Log ("SPIKE RECIEVED!");
 		if (candie == false) {
-			transform.SetPositionAndRotation (new Vector3 (-29.5f, -3.5f, 0f), Quaternion.identity);
+			transform.SetPositionAndRotation (new Vector3 (-53.13f, -2.8f, 0f), Quaternion.identity);
 			DamageSpike ();
 		}
 	}
