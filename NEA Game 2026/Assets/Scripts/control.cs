@@ -10,8 +10,7 @@ using UnityEngine.UI;
 
 public class control : MonoBehaviour {
 
-	public float speed = 5f;
-	public float jumpspeed = 5f;
+	public float PlayerSpeed;
 	private float direction = 0f;
 	private Rigidbody2D player;
 	public bool on_ground;
@@ -40,11 +39,11 @@ public class control : MonoBehaviour {
 		direction = Input.GetAxis ("Horizontal");
 
 		if (direction > 0f) {
-			player.velocity = new Vector2 (direction * speed, player.velocity.y);
+			player.velocity = new Vector2 (direction * PlayerSpeed, player.velocity.y);
 		} 
 
 		else if (direction < 0f) {
-			player.velocity = new Vector2 (direction * speed, player.velocity.y);
+			player.velocity = new Vector2 (direction * PlayerSpeed, player.velocity.y);
 		} 
 
 		else {
