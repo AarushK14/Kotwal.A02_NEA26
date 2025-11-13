@@ -23,6 +23,8 @@ public class control : MonoBehaviour {
 	public Image HealthBar;
 	public GameObject enemy;
 	public GameObject debuff;
+	SpriteRenderer m_SpriteRenderer;
+	public TextMeshProUGUI debuffText;
 
 	// Use this for initialization
 	void Start () {
@@ -33,6 +35,7 @@ public class control : MonoBehaviour {
 		defaultlives = lives;
 		lives_Percentage = 1;
 		PlayerSpeed = 10f;
+		m_SpriteRenderer = GetComponent<SpriteRenderer> ();
 	}
 	
 	// Update is called once per frame
@@ -72,7 +75,7 @@ public class control : MonoBehaviour {
 	void resetPosition(){
 		Debug.Log ("SPIKE RECIEVED!");
 		if (candie == false) {
-			transform.SetPositionAndRotation (new Vector3 (-53.13f, -2.8f, 0f), Quaternion.identity);
+			transform.SetPositionAndRotation (new Vector3 (-57.13f, -2.8f, 0f), Quaternion.identity);
 			DamageSpike ();
 		}
 	}
@@ -117,9 +120,20 @@ public class control : MonoBehaviour {
 
 	IEnumerator OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "debuff") {
+			m_SpriteRenderer.color = Color.red;
+			debuffText.text = debuffText.text + "Slow";
 			PlayerSpeed = 3f;
 			yield return new WaitForSeconds (8f);
 			PlayerSpeed = 10f;
+			m_SpriteRenderer.color = Color.white;
+			debuffText.text = "Active Debuff: ";
+		}
+		else if (other.gameObject.tag == "buff") {
+			m_SpriteRenderer.color = Color.green;
+			PlayerSpeed = 15f;
+			yield return new WaitForSeconds (8f);
+			PlayerSpeed = 10f;
+			m_SpriteRenderer.color = Color.white;
 		}
 	}
 }

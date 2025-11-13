@@ -40,19 +40,19 @@ public class Navigation : MonoBehaviour {
 	// this bit of code will take you to the tutoral where you can learn the contols of the game
 	public void Tutorial() {
 		Debug.Log ("Tutorial clicked!");
-		SceneManager.LoadScene ("Tutorial");
+		SceneManager.LoadScene ("tutorial");
 	}
 
 	// when in the difficulty selection scene, this would take you to the easy level
 	public void Easy() {
 		Debug.Log ("Easy selected!");
-		SceneManager.LoadScene ("Easy lvl 1");
+		SceneManager.LoadScene ("lvl 1");
 	}
 
 	// this would take you to the medium difficulty levels
 	public void Medium() {
 		Debug.Log ("Medium selected!");
-		SceneManager.LoadScene ("Normal lvl 1");
+		SceneManager.LoadScene ("lvl 2");
 	}
 
 	// this will take you to the hard levels

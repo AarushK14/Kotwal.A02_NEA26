@@ -6,8 +6,8 @@ TagManager:
   tags:
   - coin
   - enemy
-  - regen
   - debuff
+  - buff
   layers:
   - Default
   - TransparentFX
