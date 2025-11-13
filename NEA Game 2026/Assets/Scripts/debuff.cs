@@ -6,11 +6,10 @@ public class debuff : MonoBehaviour {
 
 	public GameObject Debuff;
 	public GameObject player;
-	private control ControlScript;
 
 	// Use this for initialization
 	void Start () {
-		ControlScript = GetComponent < control >();
+		
 	}
 	
 	// Update is called once per frame
@@ -21,7 +20,6 @@ public class debuff : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "Player"){
 			Destroy (this.gameObject);
-			ControlScript.PlayerSpeed = 3f;
 		}
 	}
 }

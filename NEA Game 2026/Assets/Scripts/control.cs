@@ -22,6 +22,7 @@ public class control : MonoBehaviour {
 	private float defaultlives;
 	public Image HealthBar;
 	public GameObject enemy;
+	public GameObject debuff;
 
 	// Use this for initialization
 	void Start () {
@@ -31,6 +32,7 @@ public class control : MonoBehaviour {
 		candie = false;
 		defaultlives = lives;
 		lives_Percentage = 1;
+		PlayerSpeed = 10f;
 	}
 	
 	// Update is called once per frame
@@ -87,6 +89,7 @@ public class control : MonoBehaviour {
 			SceneManager.LoadScene ("Lost");
 		}
 	}
+
 	public void DamageEnemy(float damage){
 		
 		StartCoroutine(hit());
@@ -99,10 +102,12 @@ public class control : MonoBehaviour {
 			SceneManager.LoadScene ("Lost");
 		}
 	}
+
 	IEnumerator hit(){
 		yield return new WaitForSeconds (0.2f);
 		MyAnimator.Play ("hit");
 	}
+
 	IEnumerator regen(){
 		while (lives <= 9.5f) {
 			yield return new WaitForSeconds (3);
@@ -110,4 +115,11 @@ public class control : MonoBehaviour {
 		}
 	}
 
+	IEnumerator OnTriggerEnter2D(Collider2D other){
+		if (other.gameObject.tag == "debuff") {
+			PlayerSpeed = 3f;
+			yield return new WaitForSeconds (8f);
+			PlayerSpeed = 10f;
+		}
+	}
 }
