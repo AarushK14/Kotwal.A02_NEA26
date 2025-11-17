@@ -25,6 +25,8 @@ public class control : MonoBehaviour {
 	public GameObject debuff;
 	SpriteRenderer m_SpriteRenderer;
 	public TextMeshProUGUI debuffText;
+	float attackTime;
+	float jumpForce;
 
 	// Use this for initialization
 	void Start () {
@@ -36,6 +38,8 @@ public class control : MonoBehaviour {
 		lives_Percentage = 1;
 		PlayerSpeed = 10f;
 		m_SpriteRenderer = GetComponent<SpriteRenderer> ();
+		attackTime = Time.fixedTime;
+		jumpForce = 380f;
 	}
 	
 	// Update is called once per frame
@@ -56,7 +60,7 @@ public class control : MonoBehaviour {
 		}
 
 		if (Input.GetKeyDown (KeyCode.W) && on_ground == true) {
-			player.AddForce(Vector2.up*378);
+			player.AddForce(Vector2.up*jumpForce);
 			on_ground = false;
 		}
 		Debug.Log (lives);
@@ -93,22 +97,25 @@ public class control : MonoBehaviour {
 		}
 	}
 
-	public void DamageEnemy(float damage){
-		
-		StartCoroutine(hit());
-		lives -= damage;
-		lives_Percentage = (lives / defaultlives);
-		if (lives <= 0) {
-			candie = true;
-			Debug.Log ("End of game");
-			MyAnimator.Play ("death");
-			SceneManager.LoadScene ("Lost");
+	void OnTriggerStay2D(Collider2D other){
+		if (other.gameObject.tag == "enemy" && attackTime <= Time.fixedTime-2){
+			attackTime = Time.fixedTime;
+			StartCoroutine(hit());
+			lives -= 0.5f;
+			lives_Percentage = (lives / defaultlives);
+			if (lives <= 0) {
+				candie = true;
+				Debug.Log ("End of game");
+				MyAnimator.Play ("death");
+				SceneManager.LoadScene ("Lost");
+			}
 		}
 	}
 
 	IEnumerator hit(){
-		yield return new WaitForSeconds (0.2f);
 		MyAnimator.Play ("hit");
+		lives -= 0.5f;
+		yield return new WaitForSeconds (2f);
 	}
 
 	IEnumerator regen(){
@@ -131,8 +138,10 @@ public class control : MonoBehaviour {
 		else if (other.gameObject.tag == "buff") {
 			m_SpriteRenderer.color = Color.green;
 			PlayerSpeed = 15f;
+			jumpForce = 500;
 			yield return new WaitForSeconds (8f);
 			PlayerSpeed = 10f;
+			jumpForce = 380f;
 			m_SpriteRenderer.color = Color.white;
 		}
 	}
