@@ -17,7 +17,7 @@ public class control : MonoBehaviour {
 	float lives = 10;
 	Animator MyAnimator;
 	private bool candie;
-	public TextMeshPro livescounter;
+	public TextMeshProUGUI livescounter;
 	private float lives_Percentage;
 	private float defaultlives;
 	public Image HealthBar;

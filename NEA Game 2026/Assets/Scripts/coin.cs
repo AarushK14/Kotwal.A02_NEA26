@@ -9,7 +9,7 @@ using TMPro;
 public class coin : MonoBehaviour {
 	
 	public GameObject Player;
-	public TextMeshPro coincounter;
+	public TextMeshProUGUI coincounter;
 	GameObject [] Tcoins;
 	int y;
 	int x;
