@@ -8,7 +8,7 @@ using TMPro;
 
 public class Score : MonoBehaviour {
 
-	public TextMeshPro ScoreCounter;
+	public TextMeshProUGUI ScoreCounter;
 	public GameObject coin;
 	int score;
 
