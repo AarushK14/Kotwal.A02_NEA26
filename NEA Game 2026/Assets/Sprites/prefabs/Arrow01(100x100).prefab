@@ -51,7 +51,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.09, y: 0}
@@ -78,7 +78,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e4d6e5b5bc52f4aa2a487a41beec4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowprefab: {fileID: 1664210763521730}
   spawnpos: {fileID: 0}
   speed: 7
 --- !u!212 &212244307158984598

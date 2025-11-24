@@ -9,10 +9,12 @@ public class enemy : MonoBehaviour {
 
 	public GameObject player;
 	Animator MyAnimator;
+	private weapon weaponRef;
 
 	// Use this for initialization
 	void Start () {
 		MyAnimator = GetComponent<Animator> ();
+		weaponRef = GetComponent<weapon> ();
 	}
 	
 	// Update is called once per frame
@@ -25,13 +27,14 @@ public class enemy : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D other){
-		if (other.gameObject.tag == "Player") {
+	IEnumerator OnTriggerEnter2D(Collider2D collision){
+		if (collision.tag == "Player") {
 			MyAnimator.SetTrigger ("attack");
-			// yield return new WaitForSeconds (2f);
-		if (other.gameObject.tag == "arrow") {
-				Destroy (this.gameObject);
-			}
+			yield return new WaitForSeconds (2f);
+		}
+		if (collision.tag == "arrow") {
+			Destroy (collision.gameObject);
+			Destroy (this.gameObject);
 		}
 	}
 	private void OnTriggerExit2D(Collider2D other){

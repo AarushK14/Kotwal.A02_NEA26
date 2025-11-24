@@ -8,7 +8,6 @@ using UnityEngine;
 public class shoot : MonoBehaviour
 {
 
-	public GameObject arrowprefab;
 	public Transform spawnpos;
 	[SerializeField] private float speed = 5f;
 	private Vector3 moveDirection;
@@ -31,9 +30,5 @@ public class shoot : MonoBehaviour
 		Vector3 mousePos = Input.mousePosition;
 		mousePos.z = 10f;
 		return Camera.main.ScreenToWorldPoint(mousePos);
-	}
-
-	public void DestroyPrefab(){
-		Destroy (arrowprefab);
 	}
 }

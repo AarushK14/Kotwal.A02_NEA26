@@ -22,7 +22,7 @@ public class weapon : MonoBehaviour
 		if (Input.GetMouseButtonDown (0)) {
 			ShootArrow ();
 			Destroy (currentArrow, 1);
-		}
+			}
 	}
 
 	void RotateWeaponToMouse()
