@@ -8,7 +8,7 @@ using UnityEngine;
 public class shoot : MonoBehaviour
 {
 
-	[SerializeField] private GameObject arrowprefab;
+	public GameObject arrowprefab;
 	public Transform spawnpos;
 	[SerializeField] private float speed = 5f;
 	private Vector3 moveDirection;
@@ -25,6 +25,7 @@ public class shoot : MonoBehaviour
 	{
 		transform.position += moveDirection * speed * Time.deltaTime;
 	}
+
 	Vector3 GetMouseWorldPosition()
 	{
 		Vector3 mousePos = Input.mousePosition;
@@ -32,9 +33,7 @@ public class shoot : MonoBehaviour
 		return Camera.main.ScreenToWorldPoint(mousePos);
 	}
 
-	public void OnCollisionEnter2D(Collision2D other){
-		if (other.gameObject.tag == "enemy") {
-			
-		}
+	public void DestroyPrefab(){
+		Destroy (arrowprefab);
 	}
 }

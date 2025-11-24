@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 95008618419834742}
   - component: {fileID: 61048223839466448}
   - component: {fileID: 114614368003302466}
+  - component: {fileID: 50879507299374922}
+  - component: {fileID: 70941238424869898}
   m_Layer: 0
   m_Name: Orc-Idle_0
   m_TagString: enemy
@@ -37,12 +39,32 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1754635945908504}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.04, y: 2.77, z: 0.043309204}
+  m_LocalPosition: {x: -16.02, y: 2.68, z: 0.043309204}
   m_LocalScale: {x: 15, y: 15, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50879507299374922
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1754635945908504}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &61048223839466448
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -68,6 +90,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2116468, y: 0.15}
   m_EdgeRadius: 0
+--- !u!70 &70941238424869898
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1754635945908504}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.03, y: 0.01}
+  m_Size: {x: 0.17, y: 0.0001}
+  m_Direction: 0
 --- !u!95 &95008618419834742
 Animator:
   serializedVersion: 3

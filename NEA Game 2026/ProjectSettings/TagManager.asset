@@ -8,6 +8,8 @@ TagManager:
   - enemy
   - debuff
   - buff
+  - regen
+  - arrow
   layers:
   - Default
   - TransparentFX

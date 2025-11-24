@@ -25,10 +25,13 @@ public class enemy : MonoBehaviour {
 		}
 	}
 
-	IEnumerator OnTriggerEnter2D(Collider2D other){
+	void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "Player") {
 			MyAnimator.SetTrigger ("attack");
-			yield return new WaitForSeconds (2f);
+			// yield return new WaitForSeconds (2f);
+		if (other.gameObject.tag == "arrow") {
+				Destroy (this.gameObject);
+			}
 		}
 	}
 	private void OnTriggerExit2D(Collider2D other){

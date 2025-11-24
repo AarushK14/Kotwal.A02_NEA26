@@ -178,7 +178,7 @@ Prefab:
         type: 2}
       propertyPath: coincounter
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1454280499}
     - target: {fileID: 114286390141435538, guid: e82beff024d9a884d84d5c28e97ddb18,
         type: 2}
       propertyPath: Player
@@ -2164,7 +2164,7 @@ Prefab:
         type: 2}
       propertyPath: coincounter
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1454280499}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e82beff024d9a884d84d5c28e97ddb18, type: 2}
   m_IsPrefabAsset: 0
@@ -3147,49 +3147,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 61882133987240210, guid: 49ebf104d20cc36489d8916a5b5b498e,
         type: 2}
-      propertyPath: m_Size.y
-      value: 0.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 61882133987240210, guid: 49ebf104d20cc36489d8916a5b5b498e,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 61882133987240210, guid: 49ebf104d20cc36489d8916a5b5b498e,
-        type: 2}
-      propertyPath: m_Offset.x
-      value: 0.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 212244307158984598, guid: 49ebf104d20cc36489d8916a5b5b498e,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212244307158984598, guid: 49ebf104d20cc36489d8916a5b5b498e,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212244307158984598, guid: 49ebf104d20cc36489d8916a5b5b498e,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212244307158984598, guid: 49ebf104d20cc36489d8916a5b5b498e,
-        type: 2}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4099244138179732, guid: 49ebf104d20cc36489d8916a5b5b498e, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4099244138179732, guid: 49ebf104d20cc36489d8916a5b5b498e, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 61882133987240210, guid: 49ebf104d20cc36489d8916a5b5b498e,
-        type: 2}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
@@ -3434,7 +3391,7 @@ Prefab:
         type: 2}
       propertyPath: coincounter
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1454280499}
     - target: {fileID: 1467153616298528, guid: e82beff024d9a884d84d5c28e97ddb18, type: 2}
       propertyPath: m_Name
       value: Coin (5)
@@ -4200,7 +4157,7 @@ Prefab:
         type: 2}
       propertyPath: coincounter
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1454280499}
     - target: {fileID: 114286390141435538, guid: e82beff024d9a884d84d5c28e97ddb18,
         type: 2}
       propertyPath: Player
@@ -4257,7 +4214,7 @@ Prefab:
         type: 2}
       propertyPath: coincounter
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1454280499}
     - target: {fileID: 1467153616298528, guid: e82beff024d9a884d84d5c28e97ddb18, type: 2}
       propertyPath: m_Name
       value: Coin (6)
@@ -18462,7 +18419,7 @@ Prefab:
         type: 2}
       propertyPath: coincounter
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1454280499}
     - target: {fileID: 114286390141435538, guid: e82beff024d9a884d84d5c28e97ddb18,
         type: 2}
       propertyPath: Player
@@ -18519,7 +18476,7 @@ Prefab:
         type: 2}
       propertyPath: coincounter
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1454280499}
     - target: {fileID: 1467153616298528, guid: e82beff024d9a884d84d5c28e97ddb18, type: 2}
       propertyPath: m_Name
       value: Coin
@@ -19391,11 +19348,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4545014815490684, guid: d24d8a7eef010bb429cc87b160872bb5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -16.04
+      value: -16.02
       objectReference: {fileID: 0}
     - target: {fileID: 4545014815490684, guid: d24d8a7eef010bb429cc87b160872bb5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.77
+      value: 2.68
       objectReference: {fileID: 0}
     - target: {fileID: 4545014815490684, guid: d24d8a7eef010bb429cc87b160872bb5, type: 2}
       propertyPath: m_LocalPosition.z
@@ -19429,6 +19386,11 @@ Prefab:
     - target: {fileID: 1754635945908504, guid: d24d8a7eef010bb429cc87b160872bb5, type: 2}
       propertyPath: m_Name
       value: enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 50879507299374922, guid: d24d8a7eef010bb429cc87b160872bb5,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d24d8a7eef010bb429cc87b160872bb5, type: 2}
