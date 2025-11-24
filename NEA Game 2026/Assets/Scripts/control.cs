@@ -63,9 +63,11 @@ public class control : MonoBehaviour {
 			player.AddForce(Vector2.up*jumpForce);
 			on_ground = false;
 		}
+
 		Debug.Log (lives);
 		livescounter.text =(Mathf.Round(lives_Percentage*100)).ToString ()+"%";
 		HealthBar.fillAmount = lives_Percentage;
+
 		if (Input.GetKeyDown (KeyCode.Escape)) {
 			SceneManager.LoadScene("pause");
 		}
@@ -76,6 +78,7 @@ public class control : MonoBehaviour {
 		//Debug.Log("Player Collided with map!");
 		on_ground = true;
 	}
+
 	void resetPosition(){
 		Debug.Log ("SPIKE RECIEVED!");
 		if (candie == false) {

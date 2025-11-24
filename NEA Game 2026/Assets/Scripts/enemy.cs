@@ -27,19 +27,26 @@ public class enemy : MonoBehaviour {
 		}
 	}
 
-	IEnumerator OnTriggerEnter2D(Collider2D collision){
+	void OnTriggerEnter2D(Collider2D collision){
+
 		if (collision.tag == "Player") {
 			MyAnimator.SetTrigger ("attack");
-			yield return new WaitForSeconds (2f);
+			StartCoroutine (playHit ());
 		}
+
 		if (collision.tag == "arrow") {
 			Destroy (collision.gameObject);
 			Destroy (this.gameObject);
 		}
 	}
+
 	private void OnTriggerExit2D(Collider2D other){
 		if (other.gameObject.tag == "Player") {
 			MyAnimator.SetTrigger ("idle");
 		}
+	}
+
+	IEnumerator playHit(){
+		yield return new WaitForSeconds (2f);
 	}
 }

@@ -23,6 +23,7 @@ public class weapon : MonoBehaviour
 			ShootArrow ();
 			Destroy (currentArrow, 1);
 			}
+			
 	}
 
 	void RotateWeaponToMouse()
