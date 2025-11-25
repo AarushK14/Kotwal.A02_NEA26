@@ -10,6 +10,7 @@ public class enemy : MonoBehaviour {
 	public GameObject player;
 	Animator MyAnimator;
 	private weapon weaponRef;
+	float enemyHealth;
 
 	// Use this for initialization
 	void Start () {
@@ -50,3 +51,5 @@ public class enemy : MonoBehaviour {
 		yield return new WaitForSeconds (2f);
 	}
 }
+
+// ideas: get the health for enemy, add a smiliar sytem to the player one for health and health bar.
