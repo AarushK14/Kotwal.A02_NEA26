@@ -27,6 +27,8 @@ public class control : MonoBehaviour {
 	public TextMeshProUGUI debuffText;
 	float attackTime;
 	float jumpForce;
+	public TextMeshProUGUI instructions;
+	public TextMeshProUGUI Tip;
 
 	// Use this for initialization
 	void Start () {
@@ -40,6 +42,7 @@ public class control : MonoBehaviour {
 		m_SpriteRenderer = GetComponent<SpriteRenderer> ();
 		attackTime = Time.fixedTime;
 		jumpForce = 380f;
+		instructions.text = "Press A/D to move and W to jump";
 	}
 	
 	// Update is called once per frame
@@ -62,6 +65,7 @@ public class control : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.W) && on_ground == true) {
 			player.AddForce(Vector2.up*jumpForce);
 			on_ground = false;
+			instructions.text = "";
 		}
 
 		Debug.Log (lives);
@@ -75,7 +79,7 @@ public class control : MonoBehaviour {
 
 	private void OnCollisionEnter2D(Collision2D other)
 	{
-		//Debug.Log("Player Collided with map!");
+		Debug.Log("Player Collided with map!");
 		on_ground = true;
 	}
 
@@ -84,6 +88,7 @@ public class control : MonoBehaviour {
 		if (candie == false) {
 			transform.SetPositionAndRotation (new Vector3 (-57.13f, -2.8f, 0f), Quaternion.identity);
 			DamageSpike ();
+			instructions.text = "You got spiked!";
 		}
 	}
 
@@ -102,6 +107,7 @@ public class control : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other){
 		if (other.gameObject.tag == "enemy" && attackTime <= Time.fixedTime-2){
+			instructions.text = "you're under attack! shoot to kill them";
 			attackTime = Time.fixedTime;
 			StartCoroutine(hit());
 			lives -= 0.5f;
@@ -122,10 +128,8 @@ public class control : MonoBehaviour {
 	}
 
 	IEnumerator regen(){
-		while (lives <= 9.5f) {
-			yield return new WaitForSeconds (3);
-			lives += 0.3f;
-		}
+		lives += 0.3f;
+		yield return new WaitForSeconds (2);
 	}
 
 	IEnumerator OnTriggerEnter2D(Collider2D other){
@@ -133,19 +137,31 @@ public class control : MonoBehaviour {
 			m_SpriteRenderer.color = Color.red;
 			debuffText.text = debuffText.text + "Slow";
 			PlayerSpeed = 3f;
+			instructions.text = "This is debuff, it slows you down";
 			yield return new WaitForSeconds (8f);
 			PlayerSpeed = 10f;
 			m_SpriteRenderer.color = Color.white;
 			debuffText.text = "Active Debuff: ";
-		}
+			instructions.text = "";
+		} 
+
 		else if (other.gameObject.tag == "buff") {
 			m_SpriteRenderer.color = Color.green;
 			PlayerSpeed = 15f;
 			jumpForce = 500;
+			instructions.text = "This is a buff!";
+			StartCoroutine (regen ());
 			yield return new WaitForSeconds (8f);
 			PlayerSpeed = 10f;
 			jumpForce = 380f;
 			m_SpriteRenderer.color = Color.white;
+			instructions.text = "";
+		} 
+
+		else if (other.gameObject.tag == "coin") {
+			Tip.text = "Tip: This is a coin! it increases your score";
+			yield return new WaitForSeconds (3f);
+			Tip.text = "";
 		}
 	}
 }

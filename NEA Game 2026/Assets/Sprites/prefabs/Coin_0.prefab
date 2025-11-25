@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   coincounter: {fileID: 0}
+  instructions: {fileID: 0}
 --- !u!212 &212126531022959912
 SpriteRenderer:
   m_ObjectHideFlags: 1

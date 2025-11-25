@@ -25,7 +25,7 @@ public class CharacterMovement : MonoBehaviour {
 		} else if (Input.GetKeyDown (KeyCode.D)) {
 			MyAnimator.SetTrigger ("run");
 			transform.rotation = Quaternion.Euler (0f, 0f, 0f);
-		} else if (Input.GetKey (KeyCode.Space)) {
+		} else if (Input.GetKey (KeyCode.W)) {
 			MyAnimator.SetTrigger ("jump");
 
 		} else if (Input.GetAxis ("Horizontal") == 0) {
