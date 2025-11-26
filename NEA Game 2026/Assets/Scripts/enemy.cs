@@ -10,12 +10,15 @@ public class enemy : MonoBehaviour {
 	public GameObject player;
 	Animator MyAnimator;
 	private weapon weaponRef;
-	float enemyHealth;
+	public float enemyHealth;
+	private DifficultySystem variableRef;
 
 	// Use this for initialization
 	void Start () {
 		MyAnimator = GetComponent<Animator> ();
 		weaponRef = GetComponent<weapon> ();
+		variableRef = GetComponent<DifficultySystem>();
+		enemyHealth = variableRef.enemyHealth;
 	}
 	
 	// Update is called once per frame
@@ -37,7 +40,10 @@ public class enemy : MonoBehaviour {
 
 		if (collision.tag == "arrow") {
 			Destroy (collision.gameObject);
-			Destroy (this.gameObject);
+			enemyHealth -= 1;
+			if (enemyHealth == 0) {
+				Destroy (this.gameObject);
+			}
 		}
 	}
 

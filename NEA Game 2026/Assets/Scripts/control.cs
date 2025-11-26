@@ -14,7 +14,7 @@ public class control : MonoBehaviour {
 	private float direction = 0f;
 	private Rigidbody2D player;
 	public bool on_ground;
-	float lives = 10;
+	float lives;
 	Animator MyAnimator;
 	private bool can_Die;
 	public TextMeshProUGUI livescounter;
@@ -29,28 +29,33 @@ public class control : MonoBehaviour {
 	float jumpForce;
 	public TextMeshProUGUI instructions;
 	public TextMeshProUGUI Tip;
-	public Transform spawnPoint;
-	Vector3 spawnPointer;
+	public Transform spawnPointer;
+	Vector3 spawnPoint;
+	private DifficultySystem variableRef;
 
 	// Use this for initialization
 	void Start () {
 		player = GetComponent<Rigidbody2D> ();
 		MyAnimator = GetComponent<Animator> ();
+		variableRef = GetComponent<DifficultySystem> ();
 		on_ground = true;
 		can_Die = false;
+		lives = variableRef.lives;
 		defaultlives = lives;
 		lives_Percentage = 1;
-		PlayerSpeed = 10f;
+		PlayerSpeed = variableRef.PlayerSpeed;
 		m_SpriteRenderer = GetComponent<SpriteRenderer> ();
 		attackTime = Time.fixedTime;
-		jumpForce = 380f;
+		jumpForce = variableRef.jumpForce;
 		instructions.text = "Press A/D to move and W to jump";
-		spawnPointer = Vector3 (spawnPoint.transform.position.x, spawnPoint.transform.position.y, 0);
+		spawnPoint = spawnPointer.position;
+
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		
 		direction = Input.GetAxis ("Horizontal");
 
 		if (direction > 0f) {
@@ -78,6 +83,9 @@ public class control : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Escape)) {
 			SceneManager.LoadScene("pause");
 		}
+
+		regen ();
+
 	}
 
 	private void OnCollisionEnter2D(Collision2D other)
@@ -88,8 +96,8 @@ public class control : MonoBehaviour {
 
 	void resetPosition(){
 		Debug.Log ("SPIKE RECIEVED!");
-		if (candie == false) {
-			transform.SetPositionAndRotation (new Vector3 (-57.13f, -2.8f, 0f), Quaternion.identity);
+		if (can_Die == false) {
+			transform.SetPositionAndRotation (spawnPoint, Quaternion.identity);
 			DamageSpike ();
 			instructions.text = "You got spiked!";
 		}
@@ -110,13 +118,15 @@ public class control : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other){
 		if (other.gameObject.tag == "enemy" && attackTime <= Time.fixedTime-2){
-			instructions.text = "you're under attack! shoot to kill them";
+			if (SceneManager.GetActiveScene ().name == "tutorial") {
+				instructions.text = "you're under attack! shoot to kill them";
+			}
 			attackTime = Time.fixedTime;
 			StartCoroutine(hit());
 			lives -= 0.5f;
 			lives_Percentage = (lives / defaultlives);
 			if (lives <= 0) {
-				candie = true;
+				can_Die = true;
 				Debug.Log ("End of game");
 				MyAnimator.Play ("death");
 				SceneManager.LoadScene ("Lost");
@@ -136,35 +146,48 @@ public class control : MonoBehaviour {
 	}
 
 	IEnumerator OnTriggerEnter2D(Collider2D other){
+
 		if (other.gameObject.tag == "debuff") {
 			m_SpriteRenderer.color = Color.red;
 			debuffText.text = debuffText.text + "Slow";
 			PlayerSpeed = 3f;
-			instructions.text = "This is debuff, it slows you down";
+			if (SceneManager.GetActiveScene ().name == "tutorial") {
+				instructions.text = "This is debuff, it slows you down";
+			}
 			yield return new WaitForSeconds (8f);
 			PlayerSpeed = 10f;
 			m_SpriteRenderer.color = Color.white;
 			debuffText.text = "Active Debuff: ";
-			instructions.text = "";
+			if (SceneManager.GetActiveScene ().name == "tutorial") {
+				instructions.text = "";
+			}
 		} 
 
 		else if (other.gameObject.tag == "buff") {
 			m_SpriteRenderer.color = Color.green;
 			PlayerSpeed = 15f;
 			jumpForce = 500;
-			instructions.text = "This is a buff!";
+			if (SceneManager.GetActiveScene ().name == "tutorial") {
+				instructions.text = "This is a buff!";
+			}
 			StartCoroutine (regen ());
 			yield return new WaitForSeconds (8f);
 			PlayerSpeed = 10f;
 			jumpForce = 380f;
 			m_SpriteRenderer.color = Color.white;
-			instructions.text = "";
+			if (SceneManager.GetActiveScene ().name == "tutorial") {
+				instructions.text = "";
+			}
 		} 
 
 		else if (other.gameObject.tag == "coin") {
 			Tip.text = "Tip: This is a coin! it increases your score";
 			yield return new WaitForSeconds (3f);
 			Tip.text = "";
+		} 
+
+		else if (other.gameObject.tag == "alter") {
+			SceneManager.LoadScene ("lvl 1");
 		}
 	}
 }

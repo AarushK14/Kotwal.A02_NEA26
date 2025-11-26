@@ -9,7 +9,7 @@ public class shoot : MonoBehaviour
 {
 
 	public Transform spawnpos;
-	private float speed = 5f;
+	private float speed = 10f;
 	private Vector3 moveDirection;
 
 	void Start()

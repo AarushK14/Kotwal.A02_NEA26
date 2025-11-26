@@ -6,21 +6,34 @@ using UnityEngine.SceneManagement;
 public class DifficultySystem : MonoBehaviour {
 
 	public float PlayerSpeed;
-	float lives;
-	float enemyHealth;
-	float jumpForce;
+	public float lives;
+	public float enemyHealth;
+	public float jumpForce;
 
 	// Use this for initialization
 	void Start (){
-	
-	}
-	
-	// Update is called once per frame
-	/*void Update () {
-		if ((SceneManager.GetActiveScene()) == "tutorial"){
+		if (SceneManager.GetActiveScene().name == "tutorial"){
 			lives = 10f;
 			enemyHealth = 1f;
 			PlayerSpeed = 10f;
+			jumpForce = 380f;
 		}
-	}*/
+		else if (SceneManager.GetActiveScene().name == "lvl 1"){
+			lives = 7f;
+			enemyHealth = 2f;
+			PlayerSpeed = 10f;
+			jumpForce = 380f;
+		}
+		else if (SceneManager.GetActiveScene().name == "lvl 2"){
+			lives = 5f;
+			enemyHealth = 3f;
+			PlayerSpeed = 10f;
+			jumpForce = 380f;
+		}
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
 }

@@ -10,6 +10,7 @@ TagManager:
   - buff
   - regen
   - arrow
+  - alter
   layers:
   - Default
   - TransparentFX

@@ -22,7 +22,8 @@ public class weapon : MonoBehaviour
 		if (Input.GetMouseButtonDown (0)) {
 			ShootArrow ();
 			Destroy (currentArrow, 1);
-			}
+			countDown ();
+		}
 			
 	}
 
@@ -49,6 +50,10 @@ public class weapon : MonoBehaviour
 		Vector3 mousePos = Input.mousePosition;
 		mousePos.z = 10f;
 		return Camera.main.ScreenToWorldPoint(mousePos);
+	}
+
+	IEnumerator countDown(){
+		yield return new WaitForSeconds (5f);
 	}
 }
 
