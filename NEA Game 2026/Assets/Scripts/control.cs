@@ -16,7 +16,7 @@ public class control : MonoBehaviour {
 	public bool on_ground;
 	float lives = 10;
 	Animator MyAnimator;
-	private bool candie;
+	private bool can_Die;
 	public TextMeshProUGUI livescounter;
 	private float lives_Percentage;
 	private float defaultlives;
@@ -29,13 +29,15 @@ public class control : MonoBehaviour {
 	float jumpForce;
 	public TextMeshProUGUI instructions;
 	public TextMeshProUGUI Tip;
+	public Transform spawnPoint;
+	Vector3 spawnPointer;
 
 	// Use this for initialization
 	void Start () {
 		player = GetComponent<Rigidbody2D> ();
 		MyAnimator = GetComponent<Animator> ();
 		on_ground = true;
-		candie = false;
+		can_Die = false;
 		defaultlives = lives;
 		lives_Percentage = 1;
 		PlayerSpeed = 10f;
@@ -43,6 +45,7 @@ public class control : MonoBehaviour {
 		attackTime = Time.fixedTime;
 		jumpForce = 380f;
 		instructions.text = "Press A/D to move and W to jump";
+		spawnPointer = Vector3 (spawnPoint.transform.position.x, spawnPoint.transform.position.y, 0);
 	}
 	
 	// Update is called once per frame
@@ -98,7 +101,7 @@ public class control : MonoBehaviour {
 		lives -= 1f;
 		lives_Percentage = (lives / defaultlives);
 		if (lives <= 0) {
-			candie = true;
+			can_Die = true;
 			Debug.Log ("End of game");
 			MyAnimator.Play ("death");
 			SceneManager.LoadScene ("Lost");
