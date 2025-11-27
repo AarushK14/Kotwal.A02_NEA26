@@ -11,6 +11,7 @@ TagManager:
   - regen
   - arrow
   - alter
+  - coinCounter
   layers:
   - Default
   - TransparentFX

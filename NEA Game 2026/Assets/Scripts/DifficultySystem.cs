@@ -14,19 +14,19 @@ public class DifficultySystem : MonoBehaviour {
 	void Start (){
 		if (SceneManager.GetActiveScene().name == "tutorial"){
 			lives = 10f;
-			enemyHealth = 1f;
+			enemyHealth = 1;
 			PlayerSpeed = 10f;
 			jumpForce = 380f;
 		}
 		else if (SceneManager.GetActiveScene().name == "lvl 1"){
 			lives = 7f;
-			enemyHealth = 2f;
+			enemyHealth = 2;
 			PlayerSpeed = 10f;
 			jumpForce = 380f;
 		}
 		else if (SceneManager.GetActiveScene().name == "lvl 2"){
 			lives = 5f;
-			enemyHealth = 3f;
+			enemyHealth = 3;
 			PlayerSpeed = 10f;
 			jumpForce = 380f;
 		}

@@ -43,11 +43,13 @@ public class control : MonoBehaviour {
 		lives = variableRef.lives;
 		defaultlives = lives;
 		lives_Percentage = 1;
-		PlayerSpeed = variableRef.PlayerSpeed;
+		PlayerSpeed = 10;
 		m_SpriteRenderer = GetComponent<SpriteRenderer> ();
 		attackTime = Time.fixedTime;
 		jumpForce = variableRef.jumpForce;
-		instructions.text = "Press A/D to move and W to jump";
+		if (SceneManager.GetActiveScene ().name == "tutorial") {
+			instructions.text = "Press A/D to move and W to jump";
+		}
 		spawnPoint = spawnPointer.position;
 
 	}
@@ -73,7 +75,9 @@ public class control : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.W) && on_ground == true) {
 			player.AddForce(Vector2.up*jumpForce);
 			on_ground = false;
-			instructions.text = "";
+			if (SceneManager.GetActiveScene ().name == "tutorial") {
+				instructions.text = "";
+			}
 		}
 
 		Debug.Log (lives);
@@ -99,7 +103,9 @@ public class control : MonoBehaviour {
 		if (can_Die == false) {
 			transform.SetPositionAndRotation (spawnPoint, Quaternion.identity);
 			DamageSpike ();
-			instructions.text = "You got spiked!";
+			if (SceneManager.GetActiveScene ().name == "tutorial") {
+				instructions.text = "You got spiked!";
+			}
 		}
 	}
 
