@@ -35,6 +35,7 @@ public class enemy : MonoBehaviour {
 
 		if (collision.tag == "Player") {
 			MyAnimator.SetTrigger ("attack");
+
 			StartCoroutine (playHit ());
 		}
 

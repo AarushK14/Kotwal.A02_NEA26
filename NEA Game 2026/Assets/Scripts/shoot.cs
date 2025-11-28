@@ -9,20 +9,23 @@ public class shoot : MonoBehaviour
 {
 
 	public Transform spawnpos;
-	private float speed = 10f;
+	float ArrowSpeed;
 	private Vector3 moveDirection;
+	private DifficultySystem VariableRef;
 
 	void Start()
 	{
+		VariableRef = GetComponent<DifficultySystem> ();
 		Vector3 mousePos = GetMouseWorldPosition();
 		Vector3 direction = (mousePos - spawnpos.position).normalized;
 		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 		moveDirection = direction.normalized;
+		ArrowSpeed = VariableRef.ArrowSpeed;
 	}
 
 	void Update()
 	{
-		transform.position += moveDirection * speed * Time.deltaTime;
+		transform.position += moveDirection * ArrowSpeed * Time.deltaTime;
 	}
 
 	Vector3 GetMouseWorldPosition()

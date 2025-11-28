@@ -12,6 +12,7 @@ TagManager:
   - arrow
   - alter
   - coinCounter
+  - map
   layers:
   - Default
   - TransparentFX

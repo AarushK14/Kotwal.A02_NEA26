@@ -87,12 +87,9 @@ public class control : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Escape)) {
 			SceneManager.LoadScene("pause");
 		}
-
-		regen ();
-
 	}
 
-	private void OnCollisionEnter2D(Collision2D other)
+	void OnCollisionEnter2D(Collision2D other)
 	{
 		Debug.Log("Player Collided with map!");
 		on_ground = true;
@@ -124,9 +121,6 @@ public class control : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other){
 		if (other.gameObject.tag == "enemy" && attackTime <= Time.fixedTime-2){
-			if (SceneManager.GetActiveScene ().name == "tutorial") {
-				instructions.text = "you're under attack! shoot to kill them";
-			}
 			attackTime = Time.fixedTime;
 			StartCoroutine(hit());
 			lives -= 0.5f;
@@ -137,18 +131,15 @@ public class control : MonoBehaviour {
 				MyAnimator.Play ("death");
 				SceneManager.LoadScene ("Lost");
 			}
+			if (SceneManager.GetActiveScene ().name == "tutorial") {
+				instructions.text = "you're under attack! shoot to kill them";
+			}
 		}
 	}
 
 	IEnumerator hit(){
 		MyAnimator.Play ("hit");
-		lives -= 0.5f;
 		yield return new WaitForSeconds (0.5f);
-	}
-
-	IEnumerator regen(){
-		lives += 0.3f;
-		yield return new WaitForSeconds (2);
 	}
 
 	IEnumerator OnTriggerEnter2D(Collider2D other){
@@ -176,7 +167,6 @@ public class control : MonoBehaviour {
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
 				instructions.text = "This is a buff!";
 			}
-			StartCoroutine (regen ());
 			yield return new WaitForSeconds (8f);
 			PlayerSpeed = 10f;
 			jumpForce = 380f;
@@ -194,6 +184,20 @@ public class control : MonoBehaviour {
 
 		else if (other.gameObject.tag == "alter") {
 			SceneManager.LoadScene ("lvl 1");
+		}
+	}
+
+	IEnumerator CountDown(){
+		yield return new WaitForSeconds (2);
+	}
+
+	void OnCollisionStay2D(Collision2D other){
+		if (other.gameObject.tag == "map") {
+			if (lives < 9.5f) {
+				lives += 0.3f;
+				lives_Percentage = (lives / defaultlives);
+				StartCoroutine (CountDown ());
+			}
 		}
 	}
 }

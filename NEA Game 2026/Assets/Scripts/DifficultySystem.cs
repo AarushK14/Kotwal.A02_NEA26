@@ -9,9 +9,14 @@ public class DifficultySystem : MonoBehaviour {
 	public float lives;
 	public float enemyHealth;
 	public float jumpForce;
+	public float ArrowSpeed;
+
 
 	// Use this for initialization
 	void Start (){
+		
+		ArrowSpeed = 10f;
+
 		if (SceneManager.GetActiveScene().name == "tutorial"){
 			lives = 10f;
 			enemyHealth = 1;
