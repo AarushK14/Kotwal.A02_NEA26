@@ -9,7 +9,7 @@ public class shoot : MonoBehaviour
 {
 
 	public Transform spawnpos;
-	float ArrowSpeed;
+	public float ArrowSpeed;
 	private Vector3 moveDirection;
 	private DifficultySystem VariableRef;
 

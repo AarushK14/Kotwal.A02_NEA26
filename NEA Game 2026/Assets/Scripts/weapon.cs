@@ -10,7 +10,7 @@ public class weapon : MonoBehaviour
 	public Transform aimTransform;
 	public GameObject arrowprefab;
 	public Transform spawnpos;
-	float speed;
+	public float ArrowSpeed;
 
 	Vector3 moveDirection;
 	private GameObject currentArrow;
@@ -53,7 +53,7 @@ public class weapon : MonoBehaviour
 	}
 
 	IEnumerator countDown(){
-		yield return new WaitForSeconds (5f);
+		yield return new WaitForSeconds (2f);
 	}
 }
 

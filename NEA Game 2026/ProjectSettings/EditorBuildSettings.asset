@@ -27,8 +27,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Navigation/Settings.unity
     guid: c08aa24d07842f44d983d1dd21d7e000
   - enabled: 1
-    path: Assets/Scenes/Navigation/tutorial.unity
+    path: Assets/Scenes/Levels/tutorial.unity
     guid: c73583f264a4bc544a804b9650179b11
+  - enabled: 1
+    path: Assets/Scenes/Levels/lvl 3.unity
+    guid: 443b41f4c52de8f49a2127a0d6b7cb3b
   - enabled: 1
     path: Assets/Scenes/Navigation/Lost.unity
     guid: 19146dfca92020248b0a4c61e73bcf30
