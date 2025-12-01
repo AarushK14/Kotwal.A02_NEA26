@@ -32,6 +32,7 @@ public class control : MonoBehaviour {
 	public Transform spawnPointer;
 	Vector3 spawnPoint;
 	private DifficultySystem variableRef;
+	public float knockbackForce;
 
 	// Use this for initialization
 	void Start () {
@@ -124,6 +125,7 @@ public class control : MonoBehaviour {
 			attackTime = Time.fixedTime;
 			StartCoroutine(hit());
 			lives -= 0.5f;
+			Rigidbody2D rb = GetComponent<Rigidbody2D>();
 			lives_Percentage = (lives / defaultlives);
 			if (lives <= 0) {
 				can_Die = true;
