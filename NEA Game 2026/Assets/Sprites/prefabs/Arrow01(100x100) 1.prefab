@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212256448128907682}
   - component: {fileID: 114012746037810106}
   - component: {fileID: 61679692985008860}
+  - component: {fileID: 114377763843693100}
   m_Layer: 0
   m_Name: Arrow01(100x100) 1
   m_TagString: arrow
@@ -79,6 +80,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnpos: {fileID: 0}
+  ArrowSpeed: 0
+--- !u!114 &114377763843693100
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1593061078116086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e47cf85490f5f3743a54be9e83abad61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aimTransform: {fileID: 0}
+  arrowprefab: {fileID: 1593061078116086}
+  spawnpos: {fileID: 0}
+  ArrowSpeed: 0
+  currentArrow: {fileID: 0}
 --- !u!212 &212256448128907682
 SpriteRenderer:
   m_ObjectHideFlags: 1

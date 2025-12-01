@@ -2,47 +2,53 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Created: Sprint 2 - Last Edited: Sprint 4
-// Purpose: To allow the gun to follow the camera and rotate the correct way
-
 public class weapon : MonoBehaviour
 {
 	public Transform aimTransform;
 	public GameObject arrowprefab;
 	public Transform spawnpos;
-	public float ArrowSpeed;
 
-	Vector3 moveDirection;
-	private GameObject currentArrow;
+	GameObject currentArrow;
 
 	void Update()
 	{
 		RotateWeaponToMouse();
 
-		if (Input.GetMouseButtonDown (0)) {
-			ShootArrow ();
-			Destroy (currentArrow, 1);
-			countDown ();
+		if (Input.GetMouseButtonDown(0))
+		{
+			ShootArrow();
 		}
-			
 	}
 
 	void RotateWeaponToMouse()
 	{
 		Vector3 mousePos = GetMouseWorldPosition();
-		Vector3 direction = (mousePos - aimTransform.position).normalized;
+		Vector3 direction = mousePos - aimTransform.position;
+
 		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 		aimTransform.rotation = Quaternion.Euler(0, 0, angle);
 	}
 
 	void ShootArrow()
 	{
+		if (currentArrow != null)
+				return;
+		// Direction to mouse
 		Vector3 mousePos = GetMouseWorldPosition();
 		Vector3 direction = (mousePos - spawnpos.position).normalized;
+
+		// Angle to rotate arrow
 		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
+		// Instantiate arrow
 		currentArrow = Instantiate(arrowprefab, spawnpos.position, Quaternion.Euler(0f, 0f, angle));
-		moveDirection = direction.normalized;
+
+		// Send direction into shoot script
+		shoot s = currentArrow.GetComponent<shoot>();
+		s.Direction(direction);
+
+		// Destroy after 1 second
+		Destroy(currentArrow, 1f);
 	}
 
 	Vector3 GetMouseWorldPosition()
@@ -51,10 +57,4 @@ public class weapon : MonoBehaviour
 		mousePos.z = 10f;
 		return Camera.main.ScreenToWorldPoint(mousePos);
 	}
-
-	IEnumerator countDown(){
-		yield return new WaitForSeconds (2f);
-	}
 }
-
-	

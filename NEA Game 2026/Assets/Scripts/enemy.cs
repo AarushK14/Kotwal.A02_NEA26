@@ -9,14 +9,12 @@ public class enemy : MonoBehaviour {
 
 	public GameObject player;
 	Animator MyAnimator;
-	private weapon weaponRef;
 	public float enemyHealth;
 	private DifficultySystem variableRef;
 
 	// Use this for initialization
 	void Start () {
 		MyAnimator = GetComponent<Animator> ();
-		weaponRef = GetComponent<weapon> ();
 		variableRef = GetComponent<DifficultySystem>();
 		enemyHealth = variableRef.enemyHealth;
 	}
