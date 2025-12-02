@@ -10,13 +10,21 @@ using UnityEngine.SceneManagement;
 public class Navigation : MonoBehaviour {
 
 	private GameObject sprite;
+	GameObject pauseMenu;
+	public string CurrentScene;
 
 	// Use this for initialization
 	void Start () {
+		pauseMenu = GameObject.FindGameObjectWithTag ("pauseMenu");
+		pauseMenu.SetActive(false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+			pauseMenu.SetActive(true);
+			Time.timeScale = 0f;
+		}
 	}
 
 	// this would take you to the difficulty selection scene
@@ -41,6 +49,7 @@ public class Navigation : MonoBehaviour {
 	public void Tutorial() {
 		Debug.Log ("Tutorial clicked!");
 		SceneManager.LoadScene ("tutorial");
+		Time.timeScale = 1f;
 	}
 
 	// when in the difficulty selection scene, this would take you to the easy level
@@ -71,5 +80,15 @@ public class Navigation : MonoBehaviour {
 	public void Profile() {
 		Debug.Log ("Profile clicked");
 		SceneManager.LoadScene ("profiles");
+	}
+		
+	public void resume(){
+		Time.timeScale = 1f;
+		pauseMenu.SetActive (false);
+	}
+
+	public void restart(){
+		CurrentScene = SceneManager.GetActiveScene ().name;
+		SceneManager.LoadScene (CurrentScene);
 	}
 }

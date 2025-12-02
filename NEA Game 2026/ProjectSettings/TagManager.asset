@@ -13,6 +13,7 @@ TagManager:
   - alter
   - coinCounter
   - map
+  - pauseMenu
   layers:
   - Default
   - TransparentFX
