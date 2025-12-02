@@ -48,25 +48,28 @@ public class Navigation : MonoBehaviour {
 	// this bit of code will take you to the tutoral where you can learn the contols of the game
 	public void Tutorial() {
 		Debug.Log ("Tutorial clicked!");
-		SceneManager.LoadScene ("tutorial");
 		Time.timeScale = 1f;
+		SceneManager.LoadScene ("tutorial");
 	}
 
 	// when in the difficulty selection scene, this would take you to the easy level
 	public void Easy() {
 		Debug.Log ("Easy selected!");
+		Time.timeScale = 1f;
 		SceneManager.LoadScene ("lvl 1");
 	}
 
 	// this would take you to the medium difficulty levels
 	public void Medium() {
 		Debug.Log ("Medium selected!");
+		Time.timeScale = 1f;
 		SceneManager.LoadScene ("lvl 2");
 	}
 
 	// this will take you to the hard levels
 	public void Hard() {
 		Debug.Log ("Hard selected!");
+		Time.timeScale = 1f;
 		SceneManager.LoadScene ("Hard lvl 1");
 	}
 
@@ -90,5 +93,6 @@ public class Navigation : MonoBehaviour {
 	public void restart(){
 		CurrentScene = SceneManager.GetActiveScene ().name;
 		SceneManager.LoadScene (CurrentScene);
+		Time.timeScale = 1f;
 	}
 }

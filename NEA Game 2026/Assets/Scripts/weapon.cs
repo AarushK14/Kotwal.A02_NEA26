@@ -23,7 +23,7 @@ public class weapon : MonoBehaviour
 	void RotateWeaponToMouse()
 	{
 		Vector3 mousePos = GetMouseWorldPosition();
-		Vector3 direction = mousePos - aimTransform.position;
+		Vector2 direction = mousePos - aimTransform.position;
 
 		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 		aimTransform.rotation = Quaternion.Euler(0, 0, angle);

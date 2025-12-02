@@ -19,7 +19,6 @@ public class coin : MonoBehaviour {
 	void Start () {
 		Tcoins = GameObject.FindGameObjectsWithTag ("coin");
 		y = Tcoins.Length;
-		coincounter = GameObject.FindGameObjectWithTag ("coinCounter").GetComponent<TextMeshProUGUI>();
 	}
 	
 	// Update is called once per frame

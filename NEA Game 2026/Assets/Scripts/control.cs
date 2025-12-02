@@ -84,10 +84,6 @@ public class control : MonoBehaviour {
 		Debug.Log (lives);
 		livescounter.text =(Mathf.Round(lives_Percentage*100)).ToString ()+"%";
 		HealthBar.fillAmount = lives_Percentage;
-
-		if (Input.GetKeyDown (KeyCode.Escape)) {
-			SceneManager.LoadScene("pause");
-		}
 	}
 
 	void OnCollisionEnter2D(Collision2D other)
@@ -125,7 +121,6 @@ public class control : MonoBehaviour {
 			attackTime = Time.fixedTime;
 			StartCoroutine(hit());
 			lives -= 0.5f;
-			Rigidbody2D rb = GetComponent<Rigidbody2D>();
 			lives_Percentage = (lives / defaultlives);
 			if (lives <= 0) {
 				can_Die = true;
