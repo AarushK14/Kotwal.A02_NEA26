@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class debuff : MonoBehaviour {
 
-	public GameObject Debuff;
 	public GameObject player;
 
 	// Use this for initialization

@@ -173,6 +173,24 @@ public class control : MonoBehaviour {
 			}
 		} 
 
+		if (other.gameObject.tag == "debuff2") {
+			m_SpriteRenderer.color = Color.blue;
+			debuffText.text = debuffText.text + "freeze";
+			PlayerSpeed = 0f;
+			jumpForce = 0f;
+			if (SceneManager.GetActiveScene ().name == "tutorial") {
+				instructions.text = "This is another debuff, it freezes";
+			}
+			yield return new WaitForSeconds (8f);
+			PlayerSpeed = 10f;
+			jumpForce = 380f;
+			m_SpriteRenderer.color = Color.white;
+			debuffText.text = "Active Debuff: ";
+			if (SceneManager.GetActiveScene ().name == "tutorial") {
+				instructions.text = "";
+			}
+		} 
+
 		else if (other.gameObject.tag == "coin") {
 			Tip.text = "Tip: This is a coin! it increases your score";
 			yield return new WaitForSeconds (3f);

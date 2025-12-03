@@ -14,6 +14,12 @@ TagManager:
   - coinCounter
   - map
   - pauseMenu
+  - enemy2
+  - buff2
+  - buff3
+  - debuff2
+  - debuff3
+  - enemyOrb
   layers:
   - Default
   - TransparentFX
