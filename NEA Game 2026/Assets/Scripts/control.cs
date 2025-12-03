@@ -118,6 +118,7 @@ public class control : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other){
 		if (other.gameObject.tag == "enemy" && attackTime <= Time.fixedTime-2){
+
 			attackTime = Time.fixedTime;
 			StartCoroutine(hit());
 			lives -= 0.5f;
@@ -189,17 +190,15 @@ public class control : MonoBehaviour {
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
 				instructions.text = "";
 			}
-		} 
-
-		else if (other.gameObject.tag == "coin") {
+		} else if (other.gameObject.tag == "coin") {
 			Tip.text = "Tip: This is a coin! it increases your score";
 			yield return new WaitForSeconds (3f);
 			Tip.text = "";
-		} 
-
-		else if (other.gameObject.tag == "alter") {
+		} else if (other.gameObject.tag == "alter") {
 			SceneManager.LoadScene ("lvl 1");
 		}
+
+	
 	}
 
 	IEnumerator CountDown(){
@@ -214,5 +213,7 @@ public class control : MonoBehaviour {
 				StartCoroutine (CountDown ());
 			}
 		}
+
+
 	}
 }

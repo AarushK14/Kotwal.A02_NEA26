@@ -22,10 +22,10 @@ public class enemy : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (player.transform.position.x < transform.position.x) {
-			transform.rotation = Quaternion.Euler (0, 0, 0);
+			transform.localScale = new Vector2 (-17f, 17f);
 		} 
 		else {
-			transform.rotation = Quaternion.Euler (0, 180, 0);
+			transform.localScale = new Vector2 (17f, 17f);
 		}
 	}
 
@@ -38,6 +38,8 @@ public class enemy : MonoBehaviour {
 				Destroy (this.gameObject);
 			}
 		}
+
+
 	}
 
 	void OnTriggerStay2D(Collider2D collision){
@@ -45,16 +47,20 @@ public class enemy : MonoBehaviour {
 			MyAnimator.SetTrigger ("attack");
 			StartCoroutine (playHit ());
 		}
+
 	}
 
 	private void OnTriggerExit2D(Collider2D other){
 		if (other.gameObject.tag == "Player") {
+			Debug.Log ("this works!");
 			MyAnimator.SetTrigger ("idle");
+			Debug.Log ("this works too!");
 		}
 	}
 
 	IEnumerator playHit(){
 		yield return new WaitForSeconds (2f);
+		MyAnimator.SetTrigger ("idle");
 	}
 }
 
