@@ -60,7 +60,6 @@ public class enemy : MonoBehaviour {
 
 	IEnumerator playHit(){
 		yield return new WaitForSeconds (2f);
-		MyAnimator.SetTrigger ("idle");
 	}
 }
 
