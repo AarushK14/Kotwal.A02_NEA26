@@ -33,6 +33,7 @@ public class control : MonoBehaviour {
 	Vector3 spawnPoint;
 	private DifficultySystem variableRef;
 	public float knockbackForce;
+	bool vulnerable;
 
 	// Use this for initialization
 	void Start () {
@@ -52,7 +53,7 @@ public class control : MonoBehaviour {
 			instructions.text = "Press A/D to move and W to jump";
 		}
 		spawnPoint = spawnPointer.position;
-
+		vulnerable = false;
 	}
 	
 	// Update is called once per frame
@@ -108,7 +109,7 @@ public class control : MonoBehaviour {
 
 		lives -= 1f;
 		lives_Percentage = (lives / defaultlives);
-		if (lives <= 0) {
+		if (lives <= 0 || vulnerable == true) {
 			can_Die = true;
 			Debug.Log ("End of game");
 			MyAnimator.Play ("death");
@@ -123,7 +124,7 @@ public class control : MonoBehaviour {
 			StartCoroutine(hit());
 			lives -= 0.5f;
 			lives_Percentage = (lives / defaultlives);
-			if (lives <= 0) {
+			if (lives <= 0 || vulnerable == true) {
 				can_Die = true;
 				Debug.Log ("End of game");
 				MyAnimator.Play ("death");
@@ -159,7 +160,7 @@ public class control : MonoBehaviour {
 		} 
 
 		else if (other.gameObject.tag == "buff") {
-			m_SpriteRenderer.color = Color.green;
+			m_SpriteRenderer.color = Color.cyan;
 			PlayerSpeed = 15f;
 			jumpForce = 500;
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
@@ -190,11 +191,44 @@ public class control : MonoBehaviour {
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
 				instructions.text = "";
 			}
-		} else if (other.gameObject.tag == "coin") {
+		} 
+
+		if (other.gameObject.tag == "debuff3") {
+			m_SpriteRenderer.color = Color.yellow;
+			debuffText.text = debuffText.text + "instant death";
+			vulnerable = true;
+			if (SceneManager.GetActiveScene ().name == "tutorial") {
+				instructions.text = "This is another debuff, it kills you instantly";
+			}
+			yield return new WaitForSeconds (5f);
+			m_SpriteRenderer.color = Color.white;
+			vulnerable = false;
+			debuffText.text = "Active Debuff: ";
+			if (SceneManager.GetActiveScene ().name == "tutorial") {
+				instructions.text = "";
+			}
+		
+		} else if (other.gameObject.tag == "buff2") {
+			m_SpriteRenderer.color = Color.green;
+			lives = 10f;
+			lives_Percentage = (lives / defaultlives);
+			if (SceneManager.GetActiveScene ().name == "tutorial") {
+				instructions.text = "This is a buff! it increases your health";
+			}
+			yield return new WaitForSeconds (8f);
+			m_SpriteRenderer.color = Color.white;
+			if (SceneManager.GetActiveScene ().name == "tutorial") {
+				instructions.text = "";
+			}
+		}
+
+		else if (other.gameObject.tag == "coin") {
 			Tip.text = "Tip: This is a coin! it increases your score";
 			yield return new WaitForSeconds (3f);
 			Tip.text = "";
-		} else if (other.gameObject.tag == "alter") {
+		}
+
+		else if (other.gameObject.tag == "alter") {
 			SceneManager.LoadScene ("lvl 1");
 		}
 
