@@ -15,25 +15,25 @@ public class Enemy2_Animations : MonoBehaviour {
 	void Start () {
 		MyAnimator = GetComponent<Animator> ();
 		enemy2 = GetComponent<Rigidbody2D> ();
-		currentPoint = rightMarker.transform;
+		currentPoint = GameObject.FindGameObjectWithTag("rightMarker").transform;
 		MyAnimator.SetBool ("walk", true);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		Vector2 point = currentPoint.position - transform.position;
-		if (currentPoint == rightMarker.transform) {
+		if (currentPoint == GameObject.FindGameObjectWithTag("rightMarker").transform) {
 			enemy2.velocity = new Vector2 (enemySpeed, 0);
 		} 
 		else 
 		{
 			enemy2.velocity = new Vector2 (-enemySpeed, 0);
 		}
-		if (Vector2.Distance (transform.position, currentPoint.position) < 0.5f && currentPoint == rightMarker.transform) {
-			currentPoint = leftMarker.transform;
+		if (Vector2.Distance (transform.position, currentPoint.position) < 0.5f && currentPoint == GameObject.FindGameObjectWithTag("rightMarker").transform) {
+			currentPoint = GameObject.FindGameObjectWithTag("leftMarker").transform;
 		}
-		if (Vector2.Distance (transform.position, currentPoint.position) < 0.5f && currentPoint == leftMarker.transform) {
-			currentPoint = rightMarker.transform;
+		if (Vector2.Distance (transform.position, currentPoint.position) < 0.5f && currentPoint == GameObject.FindGameObjectWithTag("leftMarker").transform) {
+			currentPoint = GameObject.FindGameObjectWithTag("rightMarker").transform;
 		}
 	}
 }

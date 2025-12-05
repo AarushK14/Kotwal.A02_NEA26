@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1022608036495880}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.81, y: 26.91, z: 0.043309204}
+  m_LocalPosition: {x: 7.233818, y: -6.035753, z: 0.043309204}
   m_LocalScale: {x: 13.392, y: 14.232, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +76,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.02699554, y: 0.06888466}
+  m_Offset: {x: 0.0032706186, y: -0.006155107}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -87,7 +87,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.302388, y: 0.5769683}
+  m_Size: {x: 0.23496453, y: 0.18458757}
   m_EdgeRadius: 0
 --- !u!95 &95858887517235442
 Animator:
@@ -119,9 +119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpeed: 5
-  leftMarker: {fileID: 1168082608357434, guid: ed965dd87a7e4d24cbef9cca671d399e, type: 2}
-  rightMarker: {fileID: 1069755860637000, guid: 2a473393e7ff18c489ee5df4c4c94079,
-    type: 2}
+  leftMarker: {fileID: 0}
+  rightMarker: {fileID: 0}
 --- !u!212 &212040795206560200
 SpriteRenderer:
   m_ObjectHideFlags: 1

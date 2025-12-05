@@ -106,7 +106,6 @@ public class CharacterMovement : MonoBehaviour {
 
 	public void DamageSpike(){
 		MyAnimator.Play ("hit");
-
 		lives -= 1f;
 		lives_Percentage = (lives / defaultlives);
 		if (lives <= 0 || vulnerable == true) {
@@ -210,7 +209,7 @@ public class CharacterMovement : MonoBehaviour {
 		
 		} else if (other.gameObject.tag == "buff2") {
 			m_SpriteRenderer.color = Color.green;
-			lives = 10f;
+			lives = defaultlives;
 			lives_Percentage = (lives / defaultlives);
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
 				instructions.text = "This is a buff! it increases your health";
@@ -242,6 +241,9 @@ public class CharacterMovement : MonoBehaviour {
 		else if (other.gameObject.tag == "alter") {
 				SceneManager.LoadScene ("lvl 1");
 			}
+		}
+		if (other.gameObject.tag == "Respawn") {
+			transform.SetPositionAndRotation (spawnPoint, Quaternion.identity);
 		}
 	}
 
