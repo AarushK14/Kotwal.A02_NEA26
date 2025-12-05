@@ -17,11 +17,13 @@ public class enemy : MonoBehaviour {
 		MyAnimator = GetComponent<Animator> ();
 		variableRef = GetComponent<DifficultySystem>();
 		enemyHealth = variableRef.enemyHealth;
+		player = GameObject.FindGameObjectWithTag ("Player");
+		debuffActive = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (player.transform.position.x < transform.position.x) {
+		if (player.transform.position.x > transform.position.x) {
 			transform.localScale = new Vector2 (-17f, 17f);
 		} 
 		else {

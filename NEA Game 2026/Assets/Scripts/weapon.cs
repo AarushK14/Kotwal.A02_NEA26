@@ -7,8 +7,12 @@ public class weapon : MonoBehaviour
 	public Transform aimTransform;
 	public GameObject arrowprefab;
 	public Transform spawnpos;
-
+	public bool debuffActive;
 	GameObject currentArrow;
+
+	void Start(){
+		
+	}
 
 	void Update()
 	{
@@ -31,8 +35,14 @@ public class weapon : MonoBehaviour
 
 	void ShootArrow()
 	{
-		if (currentArrow != null)
+		if (debuffActive == false) {
+			if (currentArrow != null)
 				return;
+		} else if (debuffActive == true) {
+			if (currentArrow == null)
+				return;
+		}
+
 		// Direction to mouse
 		Vector3 mousePos = GetMouseWorldPosition();
 		Vector3 direction = (mousePos - spawnpos.position).normalized;

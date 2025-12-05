@@ -222,6 +222,19 @@ public class control : MonoBehaviour {
 			}
 		}
 
+		else if (other.gameObject.tag == "buff3") {
+			m_SpriteRenderer.color = Color.magenta;
+			weapon w = weapon.GetComponent<weapon>();
+			w.debuffActive (true);
+			if (SceneManager.GetActiveScene ().name == "tutorial") {
+				instructions.text = "This is a buff! it increases your firerate";
+			}
+			yield return new WaitForSeconds (5f);
+			m_SpriteRenderer.color = Color.white;
+			if (SceneManager.GetActiveScene ().name == "tutorial") {
+				instructions.text = "";
+			}
+
 		else if (other.gameObject.tag == "coin") {
 			Tip.text = "Tip: This is a coin! it increases your score";
 			yield return new WaitForSeconds (3f);
