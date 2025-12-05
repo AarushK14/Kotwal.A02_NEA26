@@ -20,6 +20,8 @@ TagManager:
   - debuff2
   - debuff3
   - enemyOrb
+  - leftMarker
+  - rightMarker
   layers:
   - Default
   - TransparentFX

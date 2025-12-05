@@ -18,7 +18,6 @@ public class enemy : MonoBehaviour {
 		variableRef = GetComponent<DifficultySystem>();
 		enemyHealth = variableRef.enemyHealth;
 		player = GameObject.FindGameObjectWithTag ("Player");
-		debuffActive = false;
 	}
 	
 	// Update is called once per frame

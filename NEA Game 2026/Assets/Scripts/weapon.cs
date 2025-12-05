@@ -11,7 +11,7 @@ public class weapon : MonoBehaviour
 	GameObject currentArrow;
 
 	void Start(){
-		
+		debuffActive = false;
 	}
 
 	void Update()
@@ -37,9 +37,6 @@ public class weapon : MonoBehaviour
 	{
 		if (debuffActive == false) {
 			if (currentArrow != null)
-				return;
-		} else if (debuffActive == true) {
-			if (currentArrow == null)
 				return;
 		}
 

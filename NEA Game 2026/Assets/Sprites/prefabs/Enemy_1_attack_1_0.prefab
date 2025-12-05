@@ -22,9 +22,11 @@ GameObject:
   - component: {fileID: 212040795206560200}
   - component: {fileID: 95858887517235442}
   - component: {fileID: 61155274084998896}
+  - component: {fileID: 114775130567223508}
+  - component: {fileID: 50536765493790410}
   m_Layer: 0
   m_Name: Enemy_1_attack_1_0
-  m_TagString: Untagged
+  m_TagString: enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,12 +38,32 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1022608036495880}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.233818, y: -6.035753, z: 0.043309204}
+  m_LocalPosition: {x: 15.81, y: 26.91, z: 0.043309204}
   m_LocalScale: {x: 13.392, y: 14.232, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50536765493790410
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1022608036495880}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!61 &61155274084998896
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -54,7 +76,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.09803432, y: 0.023845792}
+  m_Offset: {x: -0.02699554, y: 0.06888466}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -65,7 +87,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.2763548, y: 0.6802279}
+  m_Size: {x: 1.302388, y: 0.5769683}
   m_EdgeRadius: 0
 --- !u!95 &95858887517235442
 Animator:
@@ -85,6 +107,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114775130567223508
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1022608036495880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3790b303b8fe5a4f8fdf0937dddb82a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpeed: 5
+  leftMarker: {fileID: 1168082608357434, guid: ed965dd87a7e4d24cbef9cca671d399e, type: 2}
+  rightMarker: {fileID: 1069755860637000, guid: 2a473393e7ff18c489ee5df4c4c94079,
+    type: 2}
 --- !u!212 &212040795206560200
 SpriteRenderer:
   m_ObjectHideFlags: 1
