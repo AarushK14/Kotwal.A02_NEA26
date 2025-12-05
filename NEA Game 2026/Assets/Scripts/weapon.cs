@@ -7,11 +7,11 @@ public class weapon : MonoBehaviour
 	public Transform aimTransform;
 	public GameObject arrowprefab;
 	public Transform spawnpos;
-	public bool debuffActive;
+	public bool buffActive;
 	GameObject currentArrow;
 
 	void Start(){
-		debuffActive = false;
+		buffActive = false;
 	}
 
 	void Update()
@@ -35,7 +35,7 @@ public class weapon : MonoBehaviour
 
 	void ShootArrow()
 	{
-		if (debuffActive == false) {
+		if (buffActive == false) {
 			if (currentArrow != null)
 				return;
 		}

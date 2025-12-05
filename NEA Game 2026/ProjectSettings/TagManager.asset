@@ -22,6 +22,7 @@ TagManager:
   - enemyOrb
   - leftMarker
   - rightMarker
+  - tilemap_respawn
   layers:
   - Default
   - TransparentFX

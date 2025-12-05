@@ -21,7 +21,6 @@ public class CharacterMovement : MonoBehaviour {
 	private float lives_Percentage;
 	private float defaultlives;
 	public Image HealthBar;
-	public GameObject enemy;
 	public GameObject debuff;
 	SpriteRenderer m_SpriteRenderer;
 	public TextMeshProUGUI debuffText;
@@ -34,6 +33,8 @@ public class CharacterMovement : MonoBehaviour {
 	private DifficultySystem variableRef;
 	public float knockbackForce;
 	bool vulnerable;
+	private string objectName;
+	public weapon w;
 
 	// Use this for initialization
 	void Start () {
@@ -54,6 +55,7 @@ public class CharacterMovement : MonoBehaviour {
 		}
 		spawnPoint = spawnPointer.position;
 		vulnerable = false;
+		weapon w = GetComponent<weapon> ();
 	}
 	
 	// Update is called once per frame
@@ -140,38 +142,26 @@ public class CharacterMovement : MonoBehaviour {
 		yield return new WaitForSeconds (0.5f);
 	}
 
-	IEnumerator OnTriggerEnter2D(Collider2D other){
+	void OnTriggerEnter2D(Collider2D other){
 
 		if (other.gameObject.tag == "debuff") {
+			objectName = other.gameObject.tag;
 			m_SpriteRenderer.color = Color.red;
 			debuffText.text = debuffText.text + "Slow";
 			PlayerSpeed = 3f;
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
 				instructions.text = "This is debuff, it slows you down";
 			}
-			yield return new WaitForSeconds (8f);
-			PlayerSpeed = 10f;
-			m_SpriteRenderer.color = Color.white;
-			debuffText.text = "Active Debuff: ";
-			if (SceneManager.GetActiveScene ().name == "tutorial") {
-				instructions.text = "";
-			}
-		} 
+			StartCoroutine (CountDown ());
 
-		else if (other.gameObject.tag == "buff") {
+		} else if (other.gameObject.tag == "buff") {
 			m_SpriteRenderer.color = Color.cyan;
 			PlayerSpeed = 15f;
 			jumpForce = 500;
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
 				instructions.text = "This is a buff!";
 			}
-			yield return new WaitForSeconds (8f);
-			PlayerSpeed = 10f;
-			jumpForce = 380f;
-			m_SpriteRenderer.color = Color.white;
-			if (SceneManager.GetActiveScene ().name == "tutorial") {
-				instructions.text = "";
-			}
+			StartCoroutine (CountDown ());
 		} 
 
 		if (other.gameObject.tag == "debuff2") {
@@ -182,14 +172,7 @@ public class CharacterMovement : MonoBehaviour {
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
 				instructions.text = "This is another debuff, it freezes";
 			}
-			yield return new WaitForSeconds (8f);
-			PlayerSpeed = 10f;
-			jumpForce = 380f;
-			m_SpriteRenderer.color = Color.white;
-			debuffText.text = "Active Debuff: ";
-			if (SceneManager.GetActiveScene ().name == "tutorial") {
-				instructions.text = "";
-			}
+			StartCoroutine (CountDown ());
 		} 
 
 		if (other.gameObject.tag == "debuff3") {
@@ -199,13 +182,7 @@ public class CharacterMovement : MonoBehaviour {
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
 				instructions.text = "This is another debuff, it kills you instantly";
 			}
-			yield return new WaitForSeconds (5f);
-			m_SpriteRenderer.color = Color.white;
-			vulnerable = false;
-			debuffText.text = "Active Debuff: ";
-			if (SceneManager.GetActiveScene ().name == "tutorial") {
-				instructions.text = "";
-			}
+			StartCoroutine (CountDown ());
 		
 		} else if (other.gameObject.tag == "buff2") {
 			m_SpriteRenderer.color = Color.green;
@@ -214,52 +191,83 @@ public class CharacterMovement : MonoBehaviour {
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
 				instructions.text = "This is a buff! it increases your health";
 			}
-			yield return new WaitForSeconds (8f);
-			m_SpriteRenderer.color = Color.white;
-			if (SceneManager.GetActiveScene ().name == "tutorial") {
-				instructions.text = "";
-			}
-		} 
-		else if (other.gameObject.tag == "buff3") {
+
+		} else if (other.gameObject.tag == "buff3") {
 			m_SpriteRenderer.color = Color.gray;
-			weapon w = GetComponent<weapon> ();
-			w.debuffActive = true;
+			w.buffActive = true;
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
 				instructions.text = "This is a buff! it increases your firerate";
 			}
-			yield return new WaitForSeconds (5f);
-			m_SpriteRenderer.color = Color.white;
-			w.debuffActive = false;
+			StartCoroutine (CountDown ());
+		} else if (other.gameObject.tag == "coin") {
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
-				instructions.text = "";
-			} 
-		else if (other.gameObject.tag == "coin") {
 				Tip.text = "Tip: This is a coin! it increases your score";
-				yield return new WaitForSeconds (3f);
-				Tip.text = "";
+				StartCoroutine (CountDown ());
 			}
-		else if (other.gameObject.tag == "alter") {
-				SceneManager.LoadScene ("lvl 1");
-			}
+		} else if (other.gameObject.tag == "alter") {
+			SceneManager.LoadScene ("lvl 1");
 		}
-		if (other.gameObject.tag == "Respawn") {
+		if (other.gameObject.tag == "tilemap_respawn") {
 			transform.SetPositionAndRotation (spawnPoint, Quaternion.identity);
 		}
 	}
 
 	IEnumerator CountDown(){
-		yield return new WaitForSeconds (2);
-	}
-
-	void OnCollisionStay2D(Collision2D other){
-		if (other.gameObject.tag == "map") {
-			if (lives < 9.5f) {
-				lives += 0.3f;
-				lives_Percentage = (lives / defaultlives);
-				StartCoroutine (CountDown ());
+		if (objectName == "debuff") {
+			yield return new WaitForSeconds (8f);
+			PlayerSpeed = 10f;
+			m_SpriteRenderer.color = Color.white;
+			debuffText.text = "Active Debuff: ";
+			if (SceneManager.GetActiveScene ().name == "tutorial") {
+				instructions.text = "";
 			}
 		}
-
-
+		if (objectName == "debuff2") {
+			yield return new WaitForSeconds (8f);
+			PlayerSpeed = 10f;
+			jumpForce = 380f;
+			m_SpriteRenderer.color = Color.white;
+			debuffText.text = "Active Debuff: ";
+			if (SceneManager.GetActiveScene ().name == "tutorial") {
+				instructions.text = "";
+			}
+		}
+		if (objectName == "debuff3") {
+			yield return new WaitForSeconds (5f);
+			m_SpriteRenderer.color = Color.white;
+			vulnerable = false;
+			debuffText.text = "Active Debuff: ";
+			if (SceneManager.GetActiveScene ().name == "tutorial") {
+				instructions.text = "";
+			}
+		}
+		if (objectName == "buff") {
+			yield return new WaitForSeconds (8f);
+			PlayerSpeed = 10f;
+			jumpForce = 380f;
+			m_SpriteRenderer.color = Color.white;
+			if (SceneManager.GetActiveScene ().name == "tutorial") {
+				instructions.text = "";
+			}
+		}
+		if (objectName == "buff2") {
+			yield return new WaitForSeconds (8f);
+			m_SpriteRenderer.color = Color.white;
+			if (SceneManager.GetActiveScene ().name == "tutorial") {
+				instructions.text = "";
+			}
+		}
+		if (objectName == "buff3") {
+			yield return new WaitForSeconds (5f);
+			m_SpriteRenderer.color = Color.white;
+			w.buffActive = false;
+			if (SceneManager.GetActiveScene ().name == "tutorial") {
+				instructions.text = "";
+			} 
+		}
+		if (objectName == "coin") {
+			yield return new WaitForSeconds (3f);
+			Tip.text = "";
+		}
 	}
 }
