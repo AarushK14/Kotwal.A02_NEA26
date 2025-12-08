@@ -64,4 +64,12 @@ public class weapon : MonoBehaviour
 		mousePos.z = 10f;
 		return Camera.main.ScreenToWorldPoint(mousePos);
 	}
+
+	public void BuffActiveTrue(){
+		buffActive = true;
+	}
+
+	public void BuffActiveFalse(){
+		buffActive = false;
+	}
 }

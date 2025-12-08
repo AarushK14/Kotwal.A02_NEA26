@@ -34,7 +34,6 @@ public class CharacterMovement : MonoBehaviour {
 	public float knockbackForce;
 	bool vulnerable;
 	private string objectName;
-	public weapon w;
 
 	// Use this for initialization
 	void Start () {
@@ -55,13 +54,12 @@ public class CharacterMovement : MonoBehaviour {
 		}
 		spawnPoint = spawnPointer.position;
 		vulnerable = false;
-		weapon w = GetComponent<weapon> ();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		
+		weapon w = GetComponent<weapon> ();
 		direction = Input.GetAxis ("Horizontal");
 
 		if (direction > 0f) {
@@ -155,6 +153,7 @@ public class CharacterMovement : MonoBehaviour {
 			StartCoroutine (CountDown ());
 
 		} else if (other.gameObject.tag == "buff") {
+			objectName = other.gameObject.tag;
 			m_SpriteRenderer.color = Color.cyan;
 			PlayerSpeed = 15f;
 			jumpForce = 500;
@@ -165,10 +164,10 @@ public class CharacterMovement : MonoBehaviour {
 		} 
 
 		if (other.gameObject.tag == "debuff2") {
+			objectName = other.gameObject.tag;
 			m_SpriteRenderer.color = Color.blue;
 			debuffText.text = debuffText.text + "freeze";
-			PlayerSpeed = 0f;
-			jumpForce = 0f;
+			player.constraints = RigidbodyConstraints2D.FreezePosition;
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
 				instructions.text = "This is another debuff, it freezes";
 			}
@@ -176,6 +175,7 @@ public class CharacterMovement : MonoBehaviour {
 		} 
 
 		if (other.gameObject.tag == "debuff3") {
+			objectName = other.gameObject.tag;
 			m_SpriteRenderer.color = Color.yellow;
 			debuffText.text = debuffText.text + "instant death";
 			vulnerable = true;
@@ -185,6 +185,7 @@ public class CharacterMovement : MonoBehaviour {
 			StartCoroutine (CountDown ());
 		
 		} else if (other.gameObject.tag == "buff2") {
+			objectName = other.gameObject.tag;
 			m_SpriteRenderer.color = Color.green;
 			lives = defaultlives;
 			lives_Percentage = (lives / defaultlives);
@@ -193,22 +194,26 @@ public class CharacterMovement : MonoBehaviour {
 			}
 
 		} else if (other.gameObject.tag == "buff3") {
+			objectName = other.gameObject.tag;
 			m_SpriteRenderer.color = Color.gray;
-			w.buffActive = true;
+			GetComponent<weapon> ().BuffActiveTrue ();
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
 				instructions.text = "This is a buff! it increases your firerate";
 			}
 			StartCoroutine (CountDown ());
 		} else if (other.gameObject.tag == "coin") {
+			objectName = other.gameObject.tag;
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
 				Tip.text = "Tip: This is a coin! it increases your score";
 				StartCoroutine (CountDown ());
 			}
 		} else if (other.gameObject.tag == "alter") {
 			SceneManager.LoadScene ("lvl 1");
+			objectName = other.gameObject.tag;
 		}
 		if (other.gameObject.tag == "tilemap_respawn") {
 			transform.SetPositionAndRotation (spawnPoint, Quaternion.identity);
+			objectName = other.gameObject.tag;
 		}
 	}
 
@@ -224,8 +229,7 @@ public class CharacterMovement : MonoBehaviour {
 		}
 		if (objectName == "debuff2") {
 			yield return new WaitForSeconds (8f);
-			PlayerSpeed = 10f;
-			jumpForce = 380f;
+			player.constraints = RigidbodyConstraints2D.FreezeRotation;
 			m_SpriteRenderer.color = Color.white;
 			debuffText.text = "Active Debuff: ";
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
@@ -260,7 +264,7 @@ public class CharacterMovement : MonoBehaviour {
 		if (objectName == "buff3") {
 			yield return new WaitForSeconds (5f);
 			m_SpriteRenderer.color = Color.white;
-			w.buffActive = false;
+			GetComponent<weapon> ().BuffActiveFalse ();
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
 				instructions.text = "";
 			} 

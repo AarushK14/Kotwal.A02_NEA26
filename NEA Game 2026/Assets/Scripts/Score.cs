@@ -10,7 +10,7 @@ public class Score : MonoBehaviour {
 
 	public TextMeshProUGUI ScoreCounter;
 	public GameObject coin;
-	int score;
+	public int score;
 
 	// Use this for initialization
 	void Start () {
