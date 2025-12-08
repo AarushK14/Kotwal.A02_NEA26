@@ -6,8 +6,6 @@ TagManager:
   tags:
   - coin
   - enemy
-  - debuff
-  - buff
   - regen
   - arrow
   - alter
@@ -15,14 +13,17 @@ TagManager:
   - map
   - pauseMenu
   - enemy2
-  - buff2
-  - buff3
-  - debuff2
-  - debuff3
   - enemyOrb
   - leftMarker
   - rightMarker
   - tilemap_respawn
+  - slow
+  - freeze
+  - instantDeath
+  - firerate
+  - speed
+  - fullHealth
+  - enemy2Range
   layers:
   - Default
   - TransparentFX

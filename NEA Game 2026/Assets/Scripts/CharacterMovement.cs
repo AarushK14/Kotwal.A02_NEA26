@@ -142,7 +142,7 @@ public class CharacterMovement : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other){
 
-		if (other.gameObject.tag == "debuff") {
+		if (other.gameObject.tag == "slow") {
 			objectName = other.gameObject.tag;
 			m_SpriteRenderer.color = Color.red;
 			debuffText.text = debuffText.text + "Slow";
@@ -152,7 +152,7 @@ public class CharacterMovement : MonoBehaviour {
 			}
 			StartCoroutine (CountDown ());
 
-		} else if (other.gameObject.tag == "buff") {
+		} else if (other.gameObject.tag == "speed") {
 			objectName = other.gameObject.tag;
 			m_SpriteRenderer.color = Color.cyan;
 			PlayerSpeed = 15f;
@@ -163,7 +163,7 @@ public class CharacterMovement : MonoBehaviour {
 			StartCoroutine (CountDown ());
 		} 
 
-		if (other.gameObject.tag == "debuff2") {
+		if (other.gameObject.tag == "freeze") {
 			objectName = other.gameObject.tag;
 			m_SpriteRenderer.color = Color.blue;
 			debuffText.text = debuffText.text + "freeze";
@@ -174,7 +174,7 @@ public class CharacterMovement : MonoBehaviour {
 			StartCoroutine (CountDown ());
 		} 
 
-		if (other.gameObject.tag == "debuff3") {
+		if (other.gameObject.tag == "instantDeath") {
 			objectName = other.gameObject.tag;
 			m_SpriteRenderer.color = Color.yellow;
 			debuffText.text = debuffText.text + "instant death";
@@ -184,7 +184,7 @@ public class CharacterMovement : MonoBehaviour {
 			}
 			StartCoroutine (CountDown ());
 		
-		} else if (other.gameObject.tag == "buff2") {
+		} else if (other.gameObject.tag == "fullHealth") {
 			objectName = other.gameObject.tag;
 			m_SpriteRenderer.color = Color.green;
 			lives = defaultlives;
@@ -192,8 +192,9 @@ public class CharacterMovement : MonoBehaviour {
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
 				instructions.text = "This is a buff! it increases your health";
 			}
+			StartCoroutine (CountDown ());
 
-		} else if (other.gameObject.tag == "buff3") {
+		} else if (other.gameObject.tag == "firerate") {
 			objectName = other.gameObject.tag;
 			m_SpriteRenderer.color = Color.gray;
 			GetComponent<weapon> ().BuffActiveTrue ();
@@ -218,7 +219,7 @@ public class CharacterMovement : MonoBehaviour {
 	}
 
 	IEnumerator CountDown(){
-		if (objectName == "debuff") {
+		if (objectName == "slow") {
 			yield return new WaitForSeconds (8f);
 			PlayerSpeed = 10f;
 			m_SpriteRenderer.color = Color.white;
@@ -227,7 +228,7 @@ public class CharacterMovement : MonoBehaviour {
 				instructions.text = "";
 			}
 		}
-		if (objectName == "debuff2") {
+		if (objectName == "freeze") {
 			yield return new WaitForSeconds (8f);
 			player.constraints = RigidbodyConstraints2D.FreezeRotation;
 			m_SpriteRenderer.color = Color.white;
@@ -236,7 +237,7 @@ public class CharacterMovement : MonoBehaviour {
 				instructions.text = "";
 			}
 		}
-		if (objectName == "debuff3") {
+		if (objectName == "instantDeath") {
 			yield return new WaitForSeconds (5f);
 			m_SpriteRenderer.color = Color.white;
 			vulnerable = false;
@@ -245,7 +246,7 @@ public class CharacterMovement : MonoBehaviour {
 				instructions.text = "";
 			}
 		}
-		if (objectName == "buff") {
+		if (objectName == "speed") {
 			yield return new WaitForSeconds (8f);
 			PlayerSpeed = 10f;
 			jumpForce = 380f;
@@ -254,14 +255,14 @@ public class CharacterMovement : MonoBehaviour {
 				instructions.text = "";
 			}
 		}
-		if (objectName == "buff2") {
+		if (objectName == "fullHealth") {
 			yield return new WaitForSeconds (8f);
 			m_SpriteRenderer.color = Color.white;
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
 				instructions.text = "";
 			}
 		}
-		if (objectName == "buff3") {
+		if (objectName == "firerate") {
 			yield return new WaitForSeconds (5f);
 			m_SpriteRenderer.color = Color.white;
 			GetComponent<weapon> ().BuffActiveFalse ();

@@ -7,33 +7,39 @@ public class Enemy2_Animations : MonoBehaviour {
 	private Animator MyAnimator;
 	public float enemySpeed;
 	private Rigidbody2D enemy2;
-	public GameObject leftMarker;
-	public GameObject rightMarker;
-	private Transform currentPoint;
+	private string dir;
+	Vector3 scaleLeft;
+	Vector3 scaleRight;
 
 	// Use this for initialization
 	void Start () {
+		enemySpeed = 6;
 		MyAnimator = GetComponent<Animator> ();
-		enemy2 = GetComponent<Rigidbody2D> ();
-		currentPoint = GameObject.FindGameObjectWithTag("rightMarker").transform;
 		MyAnimator.SetBool ("walk", true);
+		dir = "left";
+		scaleLeft = new Vector3 (13, 13, 1);
+		scaleRight = new Vector3 (-13, 13, 1);
 	}
-	
 	// Update is called once per frame
 	void Update () {
-		Vector2 point = currentPoint.position - transform.position;
-		if (currentPoint == GameObject.FindGameObjectWithTag("rightMarker").transform) {
-			enemy2.velocity = new Vector2 (enemySpeed, 0);
-		} 
-		else 
-		{
-			enemy2.velocity = new Vector2 (-enemySpeed, 0);
+		if (dir == "left") {
+			transform.Translate (-1 * Time.deltaTime * enemySpeed, 0, 0);
 		}
-		if (Vector2.Distance (transform.position, currentPoint.position) < 0.5f && currentPoint == GameObject.FindGameObjectWithTag("rightMarker").transform) {
-			currentPoint = GameObject.FindGameObjectWithTag("leftMarker").transform;
+		if (dir == "right") {
+			transform.Translate (1 * Time.deltaTime * enemySpeed, 0, 0);
 		}
-		if (Vector2.Distance (transform.position, currentPoint.position) < 0.5f && currentPoint == GameObject.FindGameObjectWithTag("leftMarker").transform) {
-			currentPoint = GameObject.FindGameObjectWithTag("rightMarker").transform;
+	}
+
+	void OnTriggerEnter2D(Collider2D other){
+		if (other.gameObject.tag == "leftMarker") {
+			transform.localScale = scaleRight;
+			transform.Translate(1* Time.deltaTime * enemySpeed, 0, 0);
+			dir = "right";
+		}
+		if (other.gameObject.tag == "rightMarker") {
+			transform.localScale = scaleLeft;
+			transform.Translate(-1* Time.deltaTime * enemySpeed, 0, 0);
+			dir = "left";
 		}
 	}
 }

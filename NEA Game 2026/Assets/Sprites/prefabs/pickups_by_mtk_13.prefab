@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114774739041775298}
   m_Layer: 0
   m_Name: pickups_by_mtk_13
-  m_TagString: buff3
+  m_TagString: firerate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1711471389149272}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.656, y: 1.87, z: 0.1328125}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalPosition: {x: 76.28414, y: -15.256713, z: 0.1328125}
+  m_LocalScale: {x: 7, y: 7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buffItem: {fileID: 1711471389149272}
-  player: {fileID: 1580683418878924, guid: 6e35b27654f1b0340924cd62dc282301, type: 2}
+  player: {fileID: 0}
 --- !u!212 &212246667568610110
 SpriteRenderer:
   m_ObjectHideFlags: 1

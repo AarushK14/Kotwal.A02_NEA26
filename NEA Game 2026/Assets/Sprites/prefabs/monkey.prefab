@@ -89,8 +89,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1580683418878924}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28.573, y: 2.816, z: 0}
-  m_LocalScale: {x: 10.235, y: 10.49, z: 1}
+  m_LocalPosition: {x: -53.4, y: -1.45, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children:
   - {fileID: 4487045830563884}
   m_Father: {fileID: 0}
@@ -126,7 +126,7 @@ Rigidbody2D:
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!70 &70768061790394684
@@ -281,7 +281,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreCounter: {fileID: 0}
-  coin: {fileID: 1467153616298528, guid: e82beff024d9a884d84d5c28e97ddb18, type: 2}
+  coin: {fileID: 0}
+  score: 0
 --- !u!114 &114304296211640364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -294,9 +295,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aimTransform: {fileID: 4487045830563884}
-  arrowprefab: {fileID: 1664210763521730, guid: 49ebf104d20cc36489d8916a5b5b498e,
+  arrowprefab: {fileID: 1593061078116086, guid: 1ba36dc29774b524b9573c489a637840,
     type: 2}
   spawnpos: {fileID: 4878426445748560}
+  buffActive: 0
 --- !u!114 &114348856747164266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -323,6 +325,7 @@ MonoBehaviour:
   lives: 0
   enemyHealth: 0
   jumpForce: 0
+  ArrowSpeed: 0
 --- !u!114 &114785318814280834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -338,12 +341,12 @@ MonoBehaviour:
   on_ground: 0
   livescounter: {fileID: 0}
   HealthBar: {fileID: 0}
-  enemy: {fileID: 0}
   debuff: {fileID: 0}
   debuffText: {fileID: 0}
   instructions: {fileID: 0}
   Tip: {fileID: 0}
   spawnPointer: {fileID: 0}
+  knockbackForce: 0
 --- !u!212 &212359499869398344
 SpriteRenderer:
   m_ObjectHideFlags: 1

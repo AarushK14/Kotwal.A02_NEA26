@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114708918741644458}
   m_Layer: 0
   m_Name: Banana_0
-  m_TagString: buff
+  m_TagString: speed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1795982674053046}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 37.270397, y: -18.012894, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 7, y: 7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buffItem: {fileID: 1795982674053046}
-  player: {fileID: 1580683418878924, guid: 6e35b27654f1b0340924cd62dc282301, type: 2}
+  player: {fileID: 0}
 --- !u!212 &212310936408632286
 SpriteRenderer:
   m_ObjectHideFlags: 1
