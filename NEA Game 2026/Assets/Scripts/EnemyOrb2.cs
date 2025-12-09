@@ -17,6 +17,10 @@ public class EnemyOrb2 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		orbFollow ();
+	}
+
+	public void orbFollow(){
 		float distance = speed * Time.deltaTime;
 		transform.position = Vector3.MoveTowards (transform.position, target.position, distance);
 	}

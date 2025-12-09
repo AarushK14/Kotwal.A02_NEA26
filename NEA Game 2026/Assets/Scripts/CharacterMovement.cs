@@ -133,6 +133,9 @@ public class CharacterMovement : MonoBehaviour {
 				instructions.text = "you're under attack! shoot to kill them";
 			}
 		}
+		if (other.gameObject.tag == "enemy2Range") {
+			GetComponent<EnemyOrb2>().SendMessage("orbFollow");
+		}
 	}
 
 	IEnumerator hit(){
