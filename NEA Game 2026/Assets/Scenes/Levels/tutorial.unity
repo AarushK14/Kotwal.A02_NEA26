@@ -3905,6 +3905,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1400622585}
   - component: {fileID: 1400622586}
+  - component: {fileID: 1400622587}
   m_Layer: 0
   m_Name: pickups_by_mtk_1
   m_TagString: Untagged
@@ -3920,7 +3921,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1400622584}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.924065, y: -11.370182, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 858004710}
@@ -3959,8 +3960,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -158316761
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: 5ddff743a854cb6479d36b0fec359ad6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3973,6 +3974,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1400622587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1400622584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b0fb64dcfd57944d9ff30edb19b63bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  player: {fileID: 426913133}
+  SpawnPos: {fileID: 787513259}
 --- !u!1 &1416077116
 GameObject:
   m_ObjectHideFlags: 0
