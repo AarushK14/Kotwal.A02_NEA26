@@ -209,8 +209,19 @@ public class CharacterMovement : MonoBehaviour {
 				StartCoroutine (CountDown ());
 			}
 		} else if (other.gameObject.tag == "alter") {
-			SceneManager.LoadScene ("lvl 1");
 			objectName = other.gameObject.tag;
+			if (SceneManager.GetActiveScene ().name == "tutorial") {
+				SceneManager.LoadScene ("lvl 1");
+			}
+			if (SceneManager.GetActiveScene ().name == "lvl 1") {
+				SceneManager.LoadScene ("lvl 2");
+			}
+			if (SceneManager.GetActiveScene ().name == "lvl 2") {
+				SceneManager.LoadScene ("lvl 3");
+			}
+			if (SceneManager.GetActiveScene ().name == "lvl 3") {
+				SceneManager.LoadScene ("win");
+			}
 		}
 		if (other.gameObject.tag == "tilemap_respawn") {
 			transform.SetPositionAndRotation (spawnPoint, Quaternion.identity);

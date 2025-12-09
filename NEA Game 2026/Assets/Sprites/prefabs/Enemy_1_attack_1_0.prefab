@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4138310628012396}
   - component: {fileID: 212040795206560200}
   - component: {fileID: 95858887517235442}
-  - component: {fileID: 61155274084998896}
   - component: {fileID: 114775130567223508}
   - component: {fileID: 50536765493790410}
+  - component: {fileID: 61210074320710580}
   m_Layer: 0
   m_Name: Enemy_1_attack_1_0
   m_TagString: enemy2
@@ -31,6 +31,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1073470783754904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4084631570879332}
+  m_Layer: 0
+  m_Name: Enemy2OrbSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4084631570879332
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1073470783754904}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.03, y: -0.01, z: -0.3984375}
+  m_LocalScale: {x: 0.07692307, y: 0.07692307, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4138310628012396}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4138310628012396
 Transform:
   m_ObjectHideFlags: 1
@@ -40,7 +68,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 7.233818, y: -6.035753, z: 0.043309204}
   m_LocalScale: {x: 13, y: 13, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4084631570879332}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -64,7 +93,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61155274084998896
+--- !u!61 &61210074320710580
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -76,7 +105,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0032706186, y: -0.006155107}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -87,7 +116,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.23496453, y: 0.18458757}
+  m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
 --- !u!95 &95858887517235442
 Animator:

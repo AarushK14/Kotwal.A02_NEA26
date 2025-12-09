@@ -10,6 +10,10 @@ public class Enemy2_Animations : MonoBehaviour {
 	private string dir;
 	Vector3 scaleLeft;
 	Vector3 scaleRight;
+	public GameObject orb;
+	public GameObject player;
+	public float orbSpeed;
+	public Transform SpawnPos;
 
 	// Use this for initialization
 	void Start () {
