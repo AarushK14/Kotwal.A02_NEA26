@@ -4,24 +4,35 @@ using UnityEngine;
 
 public class EnemyOrb2 : MonoBehaviour {
 
-	public float speed = 1f;
-	public Transform player;
-	public  Transform SpawnPos;
-	private Transform target; 
+	public Transform orbSpawnPos;
+	private Transform target;
+	public float Orbspeed;
+	GameObject player;
 
 	// Use this for initialization
-	void Start () {
-		transform.position = new Vector3(SpawnPos.position.x,SpawnPos.position.y,SpawnPos.position.z);
-		target = player.transform;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		orbFollow ();
+	void Awake(){
+		print ("Orb awake");
 	}
 
-	public void orbFollow(){
-		float distance = speed * Time.deltaTime;
+	void Start () {
+		print ("Orb start");
+
+		Orbspeed = 7f;
+		player = GameObject.FindGameObjectWithTag("Player");
+		transform.position = new Vector3 (orbSpawnPos.position.x, orbSpawnPos.position.y, orbSpawnPos.position.z);
+	}
+
+	// Update is called once per frame
+	void Update () {
+		target = player.transform;
+		float distance = Orbspeed * Time.deltaTime;
 		transform.position = Vector3.MoveTowards (transform.position, target.position, distance);
+	}
+
+	void OnDestroy()
+	{
+
+		print ("i was destroyed");
+
 	}
 }

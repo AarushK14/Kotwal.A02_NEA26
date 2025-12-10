@@ -34,6 +34,8 @@ public class CharacterMovement : MonoBehaviour {
 	public float knockbackForce;
 	bool vulnerable;
 	private string objectName;
+	public GameObject orb;
+	public Transform orbSpawnPos;
 
 	// Use this for initialization
 	void Start () {
@@ -133,9 +135,6 @@ public class CharacterMovement : MonoBehaviour {
 				instructions.text = "you're under attack! shoot to kill them";
 			}
 		}
-		if (other.gameObject.tag == "enemy2Range") {
-			GetComponent<EnemyOrb2>().SendMessage("orbFollow");
-		}
 	}
 
 	IEnumerator hit(){
@@ -230,6 +229,15 @@ public class CharacterMovement : MonoBehaviour {
 			transform.SetPositionAndRotation (spawnPoint, Quaternion.identity);
 			objectName = other.gameObject.tag;
 		}
+		if (other.gameObject.tag == "enemy2Range") {
+			Debug.Log ("detected!");
+			SpawnOrb ();
+		}
+		if (other.gameObject.tag == "enemyOrb") {
+			lives -= 1f;
+			lives_Percentage = (lives / defaultlives);
+			Destroy (orb);
+		}
 	}
 
 	IEnumerator CountDown(){
@@ -288,5 +296,9 @@ public class CharacterMovement : MonoBehaviour {
 			yield return new WaitForSeconds (3f);
 			Tip.text = "";
 		}
+	}
+
+	public void SpawnOrb(){
+		Instantiate (orb,orbSpawnPos.position,Quaternion.identity);
 	}
 }
