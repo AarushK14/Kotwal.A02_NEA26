@@ -7,6 +7,12 @@ public class SoundManager : MonoBehaviour {
 	private AudioSource audioControl;
 	public AudioClip arrowShoot;
 	public AudioClip arrowHit;
+	public AudioClip freeze;
+	public AudioClip death;
+	public AudioClip healthPickup;
+	public AudioClip general;
+	public AudioClip firerate;
+	public AudioClip coin;
 
 	// Use this for initialization
 	void Start () {
@@ -25,4 +31,25 @@ public class SoundManager : MonoBehaviour {
 	void arrowHitSound(){
 		audioControl.PlayOneShot (arrowHit);
 	}
+
+	void freezeDebuff(){
+		audioControl.PlayOneShot (freeze);
+	}
+
+	void deathAnim(){
+		audioControl.PlayOneShot (death);
+	}
+
+	void health(){
+		audioControl.PlayOneShot (healthPickup);
+	}
+
+	void generlaBuffDebuff(){
+		audioControl.PlayOneShot (general);
+	}
+
+	void fireRateBuff(){
+		audioControl.PlayOneShot (firerate);
+	}
+
 }

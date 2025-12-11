@@ -147,6 +147,7 @@ public class CharacterMovement : MonoBehaviour {
 
 		if (other.gameObject.tag == "slow") {
 			objectName = other.gameObject.tag;
+			player.SendMessage ("generlaBuffDebuff");
 			m_SpriteRenderer.color = Color.red;
 			debuffText.text = debuffText.text + "Slow";
 			PlayerSpeed = 3f;
@@ -157,6 +158,7 @@ public class CharacterMovement : MonoBehaviour {
 
 		} else if (other.gameObject.tag == "speed") {
 			objectName = other.gameObject.tag;
+			player.SendMessage ("generlaBuffDebuff");
 			m_SpriteRenderer.color = Color.cyan;
 			PlayerSpeed = 15f;
 			jumpForce = 500;
@@ -168,6 +170,7 @@ public class CharacterMovement : MonoBehaviour {
 
 		if (other.gameObject.tag == "freeze") {
 			objectName = other.gameObject.tag;
+			player.SendMessage ("freezeDebuff");
 			m_SpriteRenderer.color = Color.blue;
 			debuffText.text = debuffText.text + "freeze";
 			player.constraints = RigidbodyConstraints2D.FreezePosition;
@@ -179,6 +182,7 @@ public class CharacterMovement : MonoBehaviour {
 
 		if (other.gameObject.tag == "instantDeath") {
 			objectName = other.gameObject.tag;
+			player.SendMessage ("health");
 			m_SpriteRenderer.color = Color.yellow;
 			debuffText.text = debuffText.text + "instant death";
 			vulnerable = true;
@@ -189,6 +193,7 @@ public class CharacterMovement : MonoBehaviour {
 		
 		} else if (other.gameObject.tag == "fullHealth") {
 			objectName = other.gameObject.tag;
+			player.SendMessage ("health");
 			m_SpriteRenderer.color = Color.green;
 			lives = defaultlives;
 			lives_Percentage = (lives / defaultlives);
@@ -199,6 +204,7 @@ public class CharacterMovement : MonoBehaviour {
 
 		} else if (other.gameObject.tag == "firerate") {
 			objectName = other.gameObject.tag;
+			player.SendMessage ("fireRateBuff");
 			m_SpriteRenderer.color = Color.gray;
 			GetComponent<weapon> ().BuffActiveTrue ();
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
@@ -207,6 +213,7 @@ public class CharacterMovement : MonoBehaviour {
 			StartCoroutine (CountDown ());
 		} else if (other.gameObject.tag == "coin") {
 			objectName = other.gameObject.tag;
+			player.SendMessage ("fireRateBuff");
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
 				Tip.text = "Tip: This is a coin! it increases your score";
 				StartCoroutine (CountDown ());
