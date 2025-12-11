@@ -9,9 +9,11 @@ public class weapon : MonoBehaviour
 	public Transform spawnpos;
 	public bool buffActive;
 	GameObject currentArrow;
+	GameObject player;
 
 	void Start(){
 		buffActive = false;
+		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 
 	void Update()
@@ -49,6 +51,7 @@ public class weapon : MonoBehaviour
 
 		// Instantiate arrow
 		currentArrow = Instantiate(arrowprefab, spawnpos.position, Quaternion.Euler(0f, 0f, angle));
+		player.SendMessage ("arrowShootSound");
 
 		// Send direction into shoot script
 		shoot s = currentArrow.GetComponent<shoot>();

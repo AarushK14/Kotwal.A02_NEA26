@@ -23,7 +23,13 @@ public class EnemyOrb2 : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		if (other.gameObject.tag == "Player"){
+		Debug.Log ("Triggered by: " + other);
+		if (other.tag == "Player"){
+			Destroy (this.gameObject);
+		}
+		else if (other.gameObject.tag == "arrow") {
+			Debug.Log ("Sucess");
+			Destroy (other.gameObject);
 			Destroy (this.gameObject);
 		}
 	}

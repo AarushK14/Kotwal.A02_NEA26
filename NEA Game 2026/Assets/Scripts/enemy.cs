@@ -33,15 +33,13 @@ public class enemy : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collision){
 
 		if (collision.tag == "arrow") {
+			player.SendMessage ("arrowHitSound");
 			Destroy (collision.gameObject);
 			enemyHealth -= 1;
 			if (enemyHealth == 0) {
 				Destroy (this.gameObject);
 			}
-
 		}
-
-
 	}
 
 	void OnTriggerStay2D(Collider2D collision){

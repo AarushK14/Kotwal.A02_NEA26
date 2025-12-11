@@ -220,10 +220,7 @@ public class CharacterMovement : MonoBehaviour {
 				SceneManager.LoadScene ("lvl 2");
 			}
 			if (SceneManager.GetActiveScene ().name == "lvl 2") {
-				SceneManager.LoadScene ("lvl 3");
-			}
-			if (SceneManager.GetActiveScene ().name == "lvl 3") {
-				SceneManager.LoadScene ("win");
+				SceneManager.LoadScene ("Win");
 			}
 		}
 		if (other.gameObject.tag == "tilemap_respawn") {
