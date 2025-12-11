@@ -16,10 +16,9 @@ public class EnemyOrb2 : MonoBehaviour {
 
 	void Start () {
 		print ("Orb start");
-
 		Orbspeed = 7f;
 		player = GameObject.FindGameObjectWithTag("Player");
-		transform.position = new Vector3 (orbSpawnPos.position.x, orbSpawnPos.position.y, orbSpawnPos.position.z);
+		//transform.position = new Vector3 (orbSpawnPos.position.x, orbSpawnPos.position.y, orbSpawnPos.position.z);
 	}
 
 	// Update is called once per frame
@@ -27,12 +26,12 @@ public class EnemyOrb2 : MonoBehaviour {
 		target = player.transform;
 		float distance = Orbspeed * Time.deltaTime;
 		transform.position = Vector3.MoveTowards (transform.position, target.position, distance);
+		Destroy (this.gameObject, 2f);
 	}
 
-	void OnDestroy()
-	{
-
-		print ("i was destroyed");
-
+	void OnTriggerEnter2D(Collider2D other){
+		if (other.gameObject.tag == "Player"){
+			Destroy (this.gameObject);
+		}
 	}
 }

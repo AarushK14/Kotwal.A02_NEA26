@@ -35,7 +35,8 @@ public class CharacterMovement : MonoBehaviour {
 	bool vulnerable;
 	private string objectName;
 	public GameObject orb;
-	public Transform orbSpawnPos;
+	private Transform orbSpawnPos;
+	private Transform enemy2;
 
 	// Use this for initialization
 	void Start () {
@@ -231,12 +232,17 @@ public class CharacterMovement : MonoBehaviour {
 		}
 		if (other.gameObject.tag == "enemy2Range") {
 			Debug.Log ("detected!");
-			SpawnOrb ();
+			SpawnOrb (other.transform);
 		}
 		if (other.gameObject.tag == "enemyOrb") {
 			lives -= 1f;
 			lives_Percentage = (lives / defaultlives);
-			Destroy (orb);
+			if (lives <= 0 || vulnerable == true) {
+				can_Die = true;
+				Debug.Log ("End of game");
+				MyAnimator.Play ("death");
+				SceneManager.LoadScene ("Lost");
+			}
 		}
 	}
 
@@ -298,7 +304,7 @@ public class CharacterMovement : MonoBehaviour {
 		}
 	}
 
-	public void SpawnOrb(){
-		Instantiate (orb,orbSpawnPos.position,Quaternion.identity);
+	public void SpawnOrb(Transform pos){
+		Instantiate (orb,pos.position,Quaternion.identity);
 	}
 }
