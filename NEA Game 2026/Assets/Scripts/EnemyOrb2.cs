@@ -4,21 +4,14 @@ using UnityEngine;
 
 public class EnemyOrb2 : MonoBehaviour {
 
-	public Transform orbSpawnPos;
 	private Transform target;
 	public float Orbspeed;
 	GameObject player;
 
 	// Use this for initialization
-	void Awake(){
-		print ("Orb awake");
-	}
-
 	void Start () {
-		print ("Orb start");
-		Orbspeed = 7f;
+		Orbspeed = 7;
 		player = GameObject.FindGameObjectWithTag("Player");
-		//transform.position = new Vector3 (orbSpawnPos.position.x, orbSpawnPos.position.y, orbSpawnPos.position.z);
 	}
 
 	// Update is called once per frame
