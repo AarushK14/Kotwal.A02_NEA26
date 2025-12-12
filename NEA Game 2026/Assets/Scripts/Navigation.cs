@@ -15,8 +15,10 @@ public class Navigation : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		pauseMenu = GameObject.FindGameObjectWithTag ("pauseMenu");
-		pauseMenu.SetActive(false);
+		if (SceneManager.GetActiveScene ().name == "tutorial" || SceneManager.GetActiveScene ().name == "lvl 1" || SceneManager.GetActiveScene ().name == "lvl 2" || SceneManager.GetActiveScene ().name == "lvl 3") {
+			pauseMenu = GameObject.FindGameObjectWithTag ("pauseMenu");
+			pauseMenu.SetActive (false);
+		}
 	}
 	
 	// Update is called once per frame
@@ -29,7 +31,6 @@ public class Navigation : MonoBehaviour {
 
 	// this would take you to the difficulty selection scene
 	public void Play() {
-		Debug.Log("Button A clicked!");
 		SceneManager.LoadScene ("Difficulty Selection");
 	}
 
@@ -56,21 +57,27 @@ public class Navigation : MonoBehaviour {
 	public void Easy() {
 		Debug.Log ("Easy selected!");
 		Time.timeScale = 1f;
+		PlayerPrefs.SetInt ("difficulty", 1);
 		SceneManager.LoadScene ("lvl 1");
+		Debug.Log(PlayerPrefs.GetInt ("difficulty"));
 	}
 
 	// this would take you to the medium difficulty levels
 	public void Medium() {
 		Debug.Log ("Medium selected!");
 		Time.timeScale = 1f;
-		SceneManager.LoadScene ("lvl 2");
+		PlayerPrefs.SetInt ("difficulty", 2);
+		SceneManager.LoadScene ("lvl 1");
+		Debug.Log(PlayerPrefs.GetInt ("difficulty"));
 	}
 
 	// this will take you to the hard levels
 	public void Hard() {
 		Debug.Log ("Hard selected!");
 		Time.timeScale = 1f;
-		SceneManager.LoadScene ("Hard lvl 1");
+		PlayerPrefs.SetInt ("difficulty", 3);
+		SceneManager.LoadScene ("lvl 1");
+		Debug.Log(PlayerPrefs.GetInt ("difficulty"));
 	}
 
 	// this would get attacted to the back button which allows the player to go back to the main menu if they wish to

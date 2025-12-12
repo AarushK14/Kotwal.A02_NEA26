@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // Created: Sprint 3 - Last Edited: Sprint 4
 // Purpose: Controlling the enemy, making sure they play the right animation and controlling which way they face based on users position
@@ -23,10 +24,16 @@ public class enemy : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (player.transform.position.x > transform.position.x) {
-			transform.localScale = new Vector2 (-17f, 17f);
+			if (SceneManager.GetActiveScene ().name == "tutorial" || SceneManager.GetActiveScene ().name == "lvl 1") {
+				transform.localScale = new Vector2 (-17f, 17f);
+			} else {
+				transform.localScale = new Vector2 (-12f, 12f);
+			}
 		} 
-		else {
+		if (SceneManager.GetActiveScene ().name == "tutorial" || SceneManager.GetActiveScene ().name == "lvl 1") {
 			transform.localScale = new Vector2 (17f, 17f);
+		} else {
+			transform.localScale = new Vector2 (12f, 12f);
 		}
 	}
 

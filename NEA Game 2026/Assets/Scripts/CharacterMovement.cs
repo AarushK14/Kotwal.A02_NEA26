@@ -21,7 +21,6 @@ public class CharacterMovement : MonoBehaviour {
 	private float lives_Percentage;
 	private float defaultlives;
 	public Image HealthBar;
-	public GameObject debuff;
 	SpriteRenderer m_SpriteRenderer;
 	public TextMeshProUGUI debuffText;
 	float attackTime;
@@ -31,12 +30,12 @@ public class CharacterMovement : MonoBehaviour {
 	public Transform spawnPointer;
 	Vector3 spawnPoint;
 	private DifficultySystem variableRef;
-	public float knockbackForce;
 	bool vulnerable;
 	private string objectName;
 	public GameObject orb;
 	private Transform orbSpawnPos;
 	private Transform enemy2;
+	bool orbSpawn;
 
 	// Use this for initialization
 	void Start () {
@@ -57,6 +56,7 @@ public class CharacterMovement : MonoBehaviour {
 		}
 		spawnPoint = spawnPointer.position;
 		vulnerable = false;
+		orbSpawn = true;
 	}
 	
 	// Update is called once per frame
@@ -84,20 +84,20 @@ public class CharacterMovement : MonoBehaviour {
 				instructions.text = "";
 			}
 		}
-
-		Debug.Log (lives);
 		livescounter.text =(Mathf.Round(lives_Percentage*100)).ToString ()+"%";
 		HealthBar.fillAmount = lives_Percentage;
+		if (GetComponent<Enemy2> ().enemyhealth < 0) {
+			orbSpawn = false;
+		}
 	}
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		Debug.Log("Player Collided with map!");
 		on_ground = true;
 	}
 
 	void resetPosition(){
-		Debug.Log ("SPIKE RECIEVED!");
+		player.SendMessage ("hurtSound");
 		if (can_Die == false) {
 			transform.SetPositionAndRotation (spawnPoint, Quaternion.identity);
 			DamageSpike ();
@@ -121,7 +121,6 @@ public class CharacterMovement : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other){
 		if (other.gameObject.tag == "enemy" && attackTime <= Time.fixedTime-2){
-
 			attackTime = Time.fixedTime;
 			StartCoroutine(hit());
 			lives -= 0.5f;
@@ -213,7 +212,7 @@ public class CharacterMovement : MonoBehaviour {
 			StartCoroutine (CountDown ());
 		} else if (other.gameObject.tag == "coin") {
 			objectName = other.gameObject.tag;
-			player.SendMessage ("fireRateBuff");
+			player.SendMessage ("coinPickup");
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
 				Tip.text = "Tip: This is a coin! it increases your score";
 				StartCoroutine (CountDown ());
@@ -235,11 +234,19 @@ public class CharacterMovement : MonoBehaviour {
 			objectName = other.gameObject.tag;
 		}
 		if (other.gameObject.tag == "enemy2Range") {
-			Debug.Log ("detected!");
-			SpawnOrb (other.transform);
+			if (orbSpawn == true) {	
+				objectName = other.gameObject.tag;
+				Debug.Log ("detected!");
+				SpawnOrb (other.transform);
+				if (SceneManager.GetActiveScene ().name == "tutorial") {
+					instructions.text = "you're under attack! shoot the orb to kill the ranged enemy";
+				}
+				StartCoroutine (CountDown ());
+			}
 		}
 		if (other.gameObject.tag == "enemyOrb") {
 			lives -= 1f;
+			player.SendMessage("hurtSound");
 			lives_Percentage = (lives / defaultlives);
 			if (lives <= 0 || vulnerable == true) {
 				can_Die = true;
@@ -304,7 +311,15 @@ public class CharacterMovement : MonoBehaviour {
 		}
 		if (objectName == "coin") {
 			yield return new WaitForSeconds (3f);
-			Tip.text = "";
+			if (SceneManager.GetActiveScene ().name == "tutorial") {
+				Tip.text = "";
+			}
+		}
+		if (objectName == "enemy2Range") {
+			yield return new WaitForSeconds (5f);
+			if (SceneManager.GetActiveScene ().name == "tutorial") {
+				instructions.text = "";
+			}
 		}
 	}
 

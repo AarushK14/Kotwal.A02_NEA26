@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 114176410433895114}
   - component: {fileID: 82736985718198614}
   - component: {fileID: 114463891243301282}
+  - component: {fileID: 114225818853052998}
   m_Layer: 0
   m_Name: monkey
   m_TagString: Player
@@ -89,8 +90,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1580683418878924}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -53.4, y: -1.45, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalPosition: {x: -52.555, y: -1.665, z: 0}
+  m_LocalScale: {x: 10.78, y: 9.83, z: 1}
   m_Children:
   - {fileID: 4487045830563884}
   m_Father: {fileID: 0}
@@ -154,7 +155,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -163,7 +164,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.188736
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -283,6 +284,25 @@ MonoBehaviour:
   ScoreCounter: {fileID: 0}
   coin: {fileID: 0}
   score: 0
+--- !u!114 &114225818853052998
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1580683418878924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56687cf096f913d44aaa57478497a6f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowShoot: {fileID: 8300000, guid: 3693277b5de25df4abbf9dd9a3cfc84d, type: 3}
+  arrowHit: {fileID: 8300000, guid: 7b4df0e627d7e3343b52c0dae97fee92, type: 3}
+  freeze: {fileID: 8300000, guid: 75f16a2f817353e428b3dbb6c5fa2270, type: 3}
+  hurt: {fileID: 8300000, guid: 398abb6a42125774d8a40499efa8089b, type: 3}
+  healthPickup: {fileID: 8300000, guid: b4e2ab81b5b38bc4c9919a94271fc038, type: 3}
+  general: {fileID: 8300000, guid: 84ff2ae8db13f4a49899f9a32534328b, type: 3}
+  firerate: {fileID: 8300000, guid: 71fcc885a523b7741b3f07e8e2c029bc, type: 3}
+  coin: {fileID: 8300000, guid: 31638e7201a1e6d4db9ff8b931cb4cb9, type: 3}
 --- !u!114 &114304296211640364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -326,6 +346,7 @@ MonoBehaviour:
   enemyHealth: 0
   jumpForce: 0
   ArrowSpeed: 0
+  Orbspeed: 0
 --- !u!114 &114785318814280834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -347,6 +368,7 @@ MonoBehaviour:
   Tip: {fileID: 0}
   spawnPointer: {fileID: 0}
   knockbackForce: 0
+  orb: {fileID: 1257625173442692, guid: 39a9076a612e4b549bebbc364eb52f1d, type: 2}
 --- !u!212 &212359499869398344
 SpriteRenderer:
   m_ObjectHideFlags: 1

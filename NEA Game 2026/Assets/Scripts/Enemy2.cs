@@ -10,6 +10,7 @@ public class Enemy2 : MonoBehaviour {
 	private string dir;
 	Vector3 scaleLeft;
 	Vector3 scaleRight;
+	public int enemyhealth;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +20,7 @@ public class Enemy2 : MonoBehaviour {
 		dir = "left";
 		scaleLeft = new Vector3 (13, 13, 1);
 		scaleRight = new Vector3 (-13, 13, 1);
+		enemyhealth = GetComponent<DifficultySystem> ().enemy2health;
 	}
 	// Update is called once per frame
 	void Update () {
@@ -40,6 +42,14 @@ public class Enemy2 : MonoBehaviour {
 			transform.localScale = scaleLeft;
 			transform.Translate(-1* Time.deltaTime * enemySpeed, 0, 0);
 			dir = "left";
+		}
+	}
+
+	void LoseLife(){
+		enemyhealth = enemyhealth - 1;
+		Debug.Log (enemyhealth);
+		if (enemyhealth < 0) {
+			Destroy (this.gameObject);
 		}
 	}
 }

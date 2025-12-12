@@ -19,7 +19,6 @@ public class Score : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (score);
 		ScoreCounter.text = "Score: " + score.ToString ();
 	}
 	public void OnTriggerEnter2D(Collider2D other){

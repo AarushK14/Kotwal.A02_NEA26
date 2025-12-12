@@ -7,11 +7,13 @@ public class EnemyOrb2 : MonoBehaviour {
 	private Transform target;
 	public float Orbspeed;
 	GameObject player;
+	GameObject enemy2;
 
 	// Use this for initialization
 	void Start () {
 		Orbspeed = 7;
 		player = GameObject.FindGameObjectWithTag("Player");
+		enemy2 = GameObject.FindGameObjectWithTag ("enemy2");
 	}
 
 	// Update is called once per frame
@@ -31,6 +33,7 @@ public class EnemyOrb2 : MonoBehaviour {
 			Debug.Log ("Sucess");
 			Destroy (other.gameObject);
 			Destroy (this.gameObject);
+			enemy2.SendMessage ("LoseLife");
 		}
 	}
 }

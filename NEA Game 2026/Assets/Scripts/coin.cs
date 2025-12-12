@@ -33,7 +33,7 @@ public class coin : MonoBehaviour {
 	private void OnTriggerEnter2D(Collider2D other){ 
 		if (other.gameObject.tag == "Player"){
 			found = y - x;
-			Debug.Log ("Coins found:" + (found+1));
+			//Debug.Log ("Coins found:" + (found+1));
 			Destroy (this.gameObject);
 		}
 	}

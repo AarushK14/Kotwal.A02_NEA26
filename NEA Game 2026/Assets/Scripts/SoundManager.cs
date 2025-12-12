@@ -8,7 +8,7 @@ public class SoundManager : MonoBehaviour {
 	public AudioClip arrowShoot;
 	public AudioClip arrowHit;
 	public AudioClip freeze;
-	public AudioClip death;
+	public AudioClip hurt;
 	public AudioClip healthPickup;
 	public AudioClip general;
 	public AudioClip firerate;
@@ -36,8 +36,8 @@ public class SoundManager : MonoBehaviour {
 		audioControl.PlayOneShot (freeze);
 	}
 
-	void deathAnim(){
-		audioControl.PlayOneShot (death);
+	void hurtSound(){
+		audioControl.PlayOneShot (hurt);
 	}
 
 	void health(){
@@ -52,4 +52,7 @@ public class SoundManager : MonoBehaviour {
 		audioControl.PlayOneShot (firerate);
 	}
 
+	void coinPickup(){
+		audioControl.PlayOneShot (coin);
+	}
 }

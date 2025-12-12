@@ -11,6 +11,7 @@ public class DifficultySystem : MonoBehaviour {
 	public float jumpForce;
 	public float ArrowSpeed;
 	public float Orbspeed;
+	public int enemy2health;
 
 	// Use this for initialization
 	void Start (){
@@ -20,23 +21,18 @@ public class DifficultySystem : MonoBehaviour {
 		if (SceneManager.GetActiveScene().name == "tutorial"){
 			lives = 10f;
 			enemyHealth = 1;
-			PlayerSpeed = 10f;
+			PlayerSpeed = 10;
 			jumpForce = 380f;
-			Orbspeed = 5f;
+			Orbspeed = 3;
+			enemy2health = 3;
 		}
-		else if (SceneManager.GetActiveScene().name == "lvl 1"){
-			lives = 7f;
-			enemyHealth = 2;
+		else{
+			lives = 11- 2*PlayerPrefs.GetInt("difficulty");
+			enemyHealth = 1+PlayerPrefs.GetInt("difficulty");
 			PlayerSpeed = 10f;
 			jumpForce = 380f;
-			Orbspeed = 7f;
-		}
-		else if (SceneManager.GetActiveScene().name == "lvl 2"){
-			lives = 5f;
-			enemyHealth = 3;
-			PlayerSpeed = 10f;
-			jumpForce = 380f;
-			Orbspeed = 10f;
+			Orbspeed = PlayerPrefs.GetInt("difficulty")*5;
+			enemy2health = 5 + PlayerPrefs.GetInt ("difficulty");
 		}
 	}
 	
