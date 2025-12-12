@@ -36,6 +36,7 @@ public class CharacterMovement : MonoBehaviour {
 	private Transform orbSpawnPos;
 	private Transform enemy2;
 	bool orbSpawn;
+	int e2h;
 
 	// Use this for initialization
 	void Start () {
@@ -57,6 +58,7 @@ public class CharacterMovement : MonoBehaviour {
 		spawnPoint = spawnPointer.position;
 		vulnerable = false;
 		orbSpawn = true;
+		e2h = GetComponent<DifficultySystem> ().enemy2health;
 	}
 	
 	// Update is called once per frame
@@ -86,7 +88,7 @@ public class CharacterMovement : MonoBehaviour {
 		}
 		livescounter.text =(Mathf.Round(lives_Percentage*100)).ToString ()+"%";
 		HealthBar.fillAmount = lives_Percentage;
-		if (GetComponent<Enemy2> ().enemyhealth < 0) {
+		if (e2h < 0) {
 			orbSpawn = false;
 		}
 	}
