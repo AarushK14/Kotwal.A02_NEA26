@@ -17,8 +17,12 @@ public class enemy : MonoBehaviour {
 	void Start () {
 		MyAnimator = GetComponent<Animator> ();
 		variableRef = GetComponent<DifficultySystem>();
-		enemyHealth = variableRef.enemyHealth;
 		player = GameObject.FindGameObjectWithTag ("Player");
+		if (SceneManager.GetActiveScene ().name == "tutorial") {
+			enemyHealth = 2f;
+		} else {
+			enemyHealth	= 2f + PlayerPrefs.GetInt ("difficulty");	
+		}
 	}
 	
 	// Update is called once per frame

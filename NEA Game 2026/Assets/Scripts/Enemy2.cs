@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy2 : MonoBehaviour {
 
@@ -11,7 +12,8 @@ public class Enemy2 : MonoBehaviour {
 	Vector3 scaleLeft;
 	Vector3 scaleRight;
 	private DifficultySystem VariableRef;
-	private int health;
+	public int health;
+	public GameObject orb;
 
 	// Use this for initialization
 	void Start () {
@@ -21,8 +23,11 @@ public class Enemy2 : MonoBehaviour {
 		dir = "left";
 		scaleLeft = new Vector3 (13, 13, 1);
 		scaleRight = new Vector3 (-13, 13, 1);
-		VariableRef = GetComponent<DifficultySystem> ();
-		health = VariableRef.enemy2health;
+		if (SceneManager.GetActiveScene ().name == "tutorial") {
+			health = 5;
+		} else {
+			health = 5 + PlayerPrefs.GetInt ("difficulty");
+		}
 	}
 	// Update is called once per frame
 	void Update () {
@@ -45,13 +50,29 @@ public class Enemy2 : MonoBehaviour {
 			transform.Translate(-1* Time.deltaTime * enemySpeed, 0, 0);
 			dir = "left";
 		}
+		if (other.gameObject.tag == "Player") {
+			Debug.Log ("detected!");
+			SpawnOrb (this.transform);
+			if (SceneManager.GetActiveScene ().name == "tutorial") {	
+				GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>().instructions.text = "you're under attack! shoot the orb to kill the ranged enemy";
+			}
+
+			if (health == 0) {
+				Destroy (other.gameObject);
+			}
+		}
+
 	}
 
-	void LoseLife(){
+	public void LoseLife(){
 		health = health - 1;
 		Debug.Log (health);
-		if (health < 0) {
+		if (health == 0) {
 			Destroy (this.gameObject);
 		}
+	}
+
+	public void SpawnOrb(Transform pos){
+		Instantiate (orb,pos.position,Quaternion.identity,this.gameObject.transform);
 	}
 }

@@ -25,7 +25,6 @@ public class EnemyOrb2 : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		Debug.Log ("Triggered by: " + other);
 		if (other.tag == "Player"){
 			Destroy (this.gameObject);
 		}
@@ -33,7 +32,7 @@ public class EnemyOrb2 : MonoBehaviour {
 			Debug.Log ("Sucess");
 			Destroy (other.gameObject);
 			Destroy (this.gameObject);
-			enemy2.SendMessage ("LoseLife");
+			GetComponentInParent<Enemy2>().SendMessage ("LoseLife");
 		}
 	}
 }

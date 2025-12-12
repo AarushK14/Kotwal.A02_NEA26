@@ -32,11 +32,8 @@ public class CharacterMovement : MonoBehaviour {
 	private DifficultySystem variableRef;
 	bool vulnerable;
 	private string objectName;
-	public GameObject orb;
 	private Transform orbSpawnPos;
 	private Transform enemy2;
-	bool orbSpawn;
-	int e2h;
 
 	// Use this for initialization
 	void Start () {
@@ -57,14 +54,11 @@ public class CharacterMovement : MonoBehaviour {
 		}
 		spawnPoint = spawnPointer.position;
 		vulnerable = false;
-		orbSpawn = true;
-		e2h = GetComponent<DifficultySystem> ().enemy2health;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		weapon w = GetComponent<weapon> ();
 		direction = Input.GetAxis ("Horizontal");
 
 		if (direction > 0f) {
@@ -88,9 +82,6 @@ public class CharacterMovement : MonoBehaviour {
 		}
 		livescounter.text =(Mathf.Round(lives_Percentage*100)).ToString ()+"%";
 		HealthBar.fillAmount = lives_Percentage;
-		if (e2h < 0) {
-			orbSpawn = false;
-		}
 	}
 
 	void OnCollisionEnter2D(Collision2D other)
@@ -144,7 +135,8 @@ public class CharacterMovement : MonoBehaviour {
 		yield return new WaitForSeconds (0.5f);
 	}
 
-	void OnTriggerEnter2D(Collider2D other){
+	void OnTriggerEnter2D (Collider2D other)
+	{
 
 		if (other.gameObject.tag == "slow") {
 			objectName = other.gameObject.tag;
@@ -235,17 +227,6 @@ public class CharacterMovement : MonoBehaviour {
 			transform.SetPositionAndRotation (spawnPoint, Quaternion.identity);
 			objectName = other.gameObject.tag;
 		}
-		if (other.gameObject.tag == "enemy2Range") {
-			if (orbSpawn == true) {	
-				objectName = other.gameObject.tag;
-				Debug.Log ("detected!");
-				SpawnOrb (other.transform);
-				if (SceneManager.GetActiveScene ().name == "tutorial") {
-					instructions.text = "you're under attack! shoot the orb to kill the ranged enemy";
-				}
-				StartCoroutine (CountDown ());
-			}
-		}
 		if (other.gameObject.tag == "enemyOrb") {
 			lives -= 1f;
 			player.SendMessage("hurtSound");
@@ -325,7 +306,5 @@ public class CharacterMovement : MonoBehaviour {
 		}
 	}
 
-	public void SpawnOrb(Transform pos){
-		Instantiate (orb,pos.position,Quaternion.identity);
-	}
+
 }
