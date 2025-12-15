@@ -67,7 +67,10 @@ public class Enemy2 : MonoBehaviour {
 	public void LoseLife(){
 		health = health - 1;
 		Debug.Log (health);
-		GetComponent<Score> ().advancedEnemy ();
+		Score scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<Score> ();
+		if (scoreManager != null) {
+			scoreManager.advancedEnemy();
+		}
 		if (health == 0) {
 			MyAnimator.SetBool ("death", true);
 			Destroy (this.gameObject);

@@ -19,7 +19,7 @@ public class EnemyOrb2 : MonoBehaviour {
 			Orbspeed = 3f;
 			Debug.Log (Orbspeed);
 		} else {
-			Orbspeed = PlayerPrefs.GetInt ("difficulty",0) * 5;;
+			Orbspeed = PlayerPrefs.GetInt ("difficulty",0) * 5;
 			Debug.Log (Orbspeed);
 		}
 	}
@@ -29,7 +29,7 @@ public class EnemyOrb2 : MonoBehaviour {
 		target = player.transform;
 		float distance = Orbspeed * Time.deltaTime;
 		transform.position = Vector3.MoveTowards (transform.position, target.position, distance);
-		Destroy (this.gameObject, 2f);
+		Destroy (this.gameObject, 15f);
 	}
 
 	void OnTriggerEnter2D(Collider2D other){

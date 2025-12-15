@@ -139,9 +139,12 @@ public class CharacterMovement : MonoBehaviour {
 	{
 
 		if (other.gameObject.tag == "slow") {
-			GetComponent<Score> ().buffsDebuffs ();
 			objectName = other.gameObject.tag;
 			player.SendMessage ("generlaBuffDebuff");
+			Score scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<Score> ();
+			if (scoreManager != null) {
+				scoreManager.buffsDebuffs();
+			}
 			m_SpriteRenderer.color = Color.red;
 			debuffText.text = debuffText.text + "Slow";
 			PlayerSpeed = 3f;
@@ -153,7 +156,10 @@ public class CharacterMovement : MonoBehaviour {
 		} else if (other.gameObject.tag == "speed") {
 			objectName = other.gameObject.tag;
 			player.SendMessage ("generlaBuffDebuff");
-			GetComponent<Score> ().buffsDebuffs ();
+			Score scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<Score> ();
+			if (scoreManager != null) {
+				scoreManager.buffsDebuffs();
+			}
 			m_SpriteRenderer.color = Color.cyan;
 			PlayerSpeed = 15f;
 			jumpForce = 500;
@@ -166,7 +172,10 @@ public class CharacterMovement : MonoBehaviour {
 		if (other.gameObject.tag == "freeze") {
 			objectName = other.gameObject.tag;
 			player.SendMessage ("freezeDebuff");
-			GetComponent<Score> ().buffsDebuffs ();
+			Score scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<Score> ();
+			if (scoreManager != null) {
+				scoreManager.buffsDebuffs();
+			}
 			m_SpriteRenderer.color = Color.blue;
 			debuffText.text = debuffText.text + "freeze";
 			player.constraints = RigidbodyConstraints2D.FreezePosition;
@@ -179,7 +188,10 @@ public class CharacterMovement : MonoBehaviour {
 		if (other.gameObject.tag == "instantDeath") {
 			objectName = other.gameObject.tag;
 			player.SendMessage ("health");
-			GetComponent<Score> ().buffsDebuffs ();
+			Score scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<Score> ();
+			if (scoreManager != null) {
+				scoreManager.buffsDebuffs();
+			}
 			m_SpriteRenderer.color = Color.yellow;
 			debuffText.text = debuffText.text + "instant death";
 			vulnerable = true;
@@ -191,7 +203,10 @@ public class CharacterMovement : MonoBehaviour {
 		} else if (other.gameObject.tag == "fullHealth") {
 			objectName = other.gameObject.tag;
 			player.SendMessage ("health");
-			GetComponent<Score> ().buffsDebuffs ();
+			Score scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<Score> ();
+			if (scoreManager != null) {
+				scoreManager.buffsDebuffs();
+			}
 			m_SpriteRenderer.color = Color.green;
 			lives = defaultlives;
 			lives_Percentage = (lives / defaultlives);
@@ -203,7 +218,10 @@ public class CharacterMovement : MonoBehaviour {
 		} else if (other.gameObject.tag == "firerate") {
 			objectName = other.gameObject.tag;
 			player.SendMessage ("fireRateBuff");
-			GetComponent<Score> ().buffsDebuffs ();
+			Score scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<Score> ();
+			if (scoreManager != null) {
+				scoreManager.buffsDebuffs();
+			}
 			m_SpriteRenderer.color = Color.gray;
 			GetComponent<weapon> ().BuffActiveTrue ();
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
@@ -220,15 +238,12 @@ public class CharacterMovement : MonoBehaviour {
 		} else if (other.gameObject.tag == "alter") {
 			objectName = other.gameObject.tag;
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
-				PlayerPrefs.SetInt ("difficulty", 1);
-				SceneManager.LoadScene ("lvl 1");
+				SceneManager.LoadScene ("Title and Menu");
 			}
 			if (SceneManager.GetActiveScene ().name == "lvl 1") {
-				PlayerPrefs.SetInt ("difficulty", 2);
 				SceneManager.LoadScene ("lvl 2");
 			}
 			if (SceneManager.GetActiveScene ().name == "lvl 2") {
-				
 				SceneManager.LoadScene ("Win");
 			}
 		}

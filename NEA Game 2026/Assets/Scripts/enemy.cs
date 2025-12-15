@@ -50,9 +50,9 @@ public class enemy : MonoBehaviour {
 			if (enemyHealth == 0) {
 				Destroy (this.gameObject);
 			}
-			Score scoreManager = GetComponent<Score> ();
+			Score scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<Score> ();
 			if (scoreManager != null) {
-				scoreManager.basicEnemy ();
+				scoreManager.basicEnemy();
 			}
 		}
 	}

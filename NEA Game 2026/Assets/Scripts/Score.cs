@@ -31,7 +31,7 @@ public class Score : MonoBehaviour {
 	}
 
 	public void advancedEnemy(){
-		score += 15;
+		score += 3;
 	}
 
 	public void buffsDebuffs(){
