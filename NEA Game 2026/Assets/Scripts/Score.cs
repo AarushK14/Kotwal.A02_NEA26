@@ -10,11 +10,10 @@ public class Score : MonoBehaviour {
 
 	public TextMeshProUGUI ScoreCounter;
 	public GameObject coin;
-	public int score;
+	public static int score;
 
 	// Use this for initialization
 	void Start () {
-		score = 0;
 	}
 	
 	// Update is called once per frame
@@ -23,8 +22,19 @@ public class Score : MonoBehaviour {
 	}
 	public void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "coin") {
-			score += 2;
+			score += 20;
 		}
+	}
 
+	public void basicEnemy(){
+		score += 10;
+	}
+
+	public void advancedEnemy(){
+		score += 15;
+	}
+
+	public void buffsDebuffs(){
+		score += 5;
 	}
 }

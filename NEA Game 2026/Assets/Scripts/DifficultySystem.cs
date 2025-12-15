@@ -14,19 +14,14 @@ public class DifficultySystem : MonoBehaviour {
 
 	// Use this for initialization
 	void Start (){
-		
 		ArrowSpeed = 10f;
 		PlayerSpeed = 10;
 		jumpForce = 380f;
 
 		if (SceneManager.GetActiveScene ().name == "tutorial") {
 			lives = 10f;
-			enemyHealth = 1;
-			Orbspeed = 3;
 		} else {
-			lives = 11 - 2 * PlayerPrefs.GetInt ("difficulty");
-			enemyHealth = 1 + PlayerPrefs.GetInt ("difficulty");
-			Orbspeed = PlayerPrefs.GetInt ("difficulty") * 5;
+			lives = 11 - 2 * PlayerPrefs.GetInt ("difficulty",0);
 		}
 	}
 	

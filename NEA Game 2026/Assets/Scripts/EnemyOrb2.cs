@@ -1,19 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyOrb2 : MonoBehaviour {
 
 	private Transform target;
 	public float Orbspeed;
 	GameObject player;
-	GameObject enemy2;
+	public GameObject enemy2;
 
 	// Use this for initialization
 	void Start () {
 		Orbspeed = 7;
 		player = GameObject.FindGameObjectWithTag("Player");
 		enemy2 = GameObject.FindGameObjectWithTag ("enemy2");
+		if (SceneManager.GetActiveScene ().name == "tutorial") {
+			Orbspeed = 3f;
+			Debug.Log (Orbspeed);
+		} else {
+			Orbspeed = PlayerPrefs.GetInt ("difficulty",0) * 5;;
+			Debug.Log (Orbspeed);
+		}
 	}
 
 	// Update is called once per frame

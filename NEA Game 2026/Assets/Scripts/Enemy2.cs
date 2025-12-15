@@ -67,12 +67,15 @@ public class Enemy2 : MonoBehaviour {
 	public void LoseLife(){
 		health = health - 1;
 		Debug.Log (health);
+		GetComponent<Score> ().advancedEnemy ();
 		if (health == 0) {
+			MyAnimator.SetBool ("death", true);
 			Destroy (this.gameObject);
 		}
 	}
 
 	public void SpawnOrb(Transform pos){
 		Instantiate (orb,pos.position,Quaternion.identity,this.gameObject.transform);
+		MyAnimator.SetBool ("attack", true);
 	}
 }

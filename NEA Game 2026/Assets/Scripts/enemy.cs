@@ -11,17 +11,17 @@ public class enemy : MonoBehaviour {
 	public GameObject player;
 	Animator MyAnimator;
 	public float enemyHealth;
-	private DifficultySystem variableRef;
 
 	// Use this for initialization
 	void Start () {
 		MyAnimator = GetComponent<Animator> ();
-		variableRef = GetComponent<DifficultySystem>();
 		player = GameObject.FindGameObjectWithTag ("Player");
 		if (SceneManager.GetActiveScene ().name == "tutorial") {
-			enemyHealth = 2f;
+			enemyHealth = 1f;
+			Debug.Log (enemyHealth);
 		} else {
-			enemyHealth	= 2f + PlayerPrefs.GetInt ("difficulty");	
+			enemyHealth	= 1f + PlayerPrefs.GetInt ("difficulty",0);
+			Debug.Log (enemyHealth);
 		}
 	}
 	
@@ -49,6 +49,10 @@ public class enemy : MonoBehaviour {
 			enemyHealth -= 1;
 			if (enemyHealth == 0) {
 				Destroy (this.gameObject);
+			}
+			Score scoreManager = GetComponent<Score> ();
+			if (scoreManager != null) {
+				scoreManager.basicEnemy ();
 			}
 		}
 	}
