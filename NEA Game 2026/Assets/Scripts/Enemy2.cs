@@ -41,11 +41,13 @@ public class Enemy2 : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "leftMarker") {
+			StartCoroutine (wait ());
 			transform.localScale = scaleRight;
 			transform.Translate(1* Time.deltaTime * enemySpeed, 0, 0);
 			dir = "right";
 		}
 		if (other.gameObject.tag == "rightMarker") {
+			StartCoroutine (wait ());
 			transform.localScale = scaleLeft;
 			transform.Translate(-1* Time.deltaTime * enemySpeed, 0, 0);
 			dir = "left";
@@ -80,5 +82,9 @@ public class Enemy2 : MonoBehaviour {
 	public void SpawnOrb(Transform pos){
 		Instantiate (orb,pos.position,Quaternion.identity,this.gameObject.transform);
 		MyAnimator.SetBool ("attack", true);
+	}
+
+	IEnumerator wait(){
+		yield return new WaitForSeconds (2);
 	}
 }
