@@ -266,7 +266,7 @@ public class CharacterMovement : MonoBehaviour {
 
 	IEnumerator CountDown(){
 		if (objectName == "slow") {
-			yield return new WaitForSeconds (8f);
+			yield return new WaitForSeconds (6f);
 			PlayerSpeed = 10f;
 			m_SpriteRenderer.color = Color.white;
 			debuffText.text = "Active Debuff: ";
@@ -275,7 +275,7 @@ public class CharacterMovement : MonoBehaviour {
 			}
 		}
 		if (objectName == "freeze") {
-			yield return new WaitForSeconds (8f);
+			yield return new WaitForSeconds (3f);
 			player.constraints = RigidbodyConstraints2D.FreezeRotation;
 			m_SpriteRenderer.color = Color.white;
 			debuffText.text = "Active Debuff: ";

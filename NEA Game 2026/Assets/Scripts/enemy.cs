@@ -11,9 +11,22 @@ public class enemy : MonoBehaviour {
 	public GameObject player;
 	Animator MyAnimator;
 	public float enemyHealth;
+	public float enemySpeed;
+	string dir;
+	Vector3 scaleLeft;
+	Vector3 scaleRight;
 
 	// Use this for initialization
 	void Start () {
+		enemySpeed = 6;
+		dir = "left";
+		if (SceneManager.GetActiveScene ().name == "tutorial" || SceneManager.GetActiveScene ().name == "lvl 1") {
+			scaleLeft = new Vector3 (17, 17, 1);
+			scaleRight = new Vector3 (-17, 17, 1);
+		} else {
+			scaleLeft = new Vector3 (12, 12, 1);
+			scaleRight = new Vector3 (-12, 12, 1);
+		}
 		MyAnimator = GetComponent<Animator> ();
 		player = GameObject.FindGameObjectWithTag ("Player");
 		if (SceneManager.GetActiveScene ().name == "tutorial") {
@@ -27,17 +40,11 @@ public class enemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (player.transform.position.x > transform.position.x) {
-			if (SceneManager.GetActiveScene ().name == "tutorial" || SceneManager.GetActiveScene ().name == "lvl 1") {
-				transform.localScale = new Vector2 (-17f, 17f);
-			} else {
-				transform.localScale = new Vector2 (-12f, 12f);
-			}
-		} 
-		if (SceneManager.GetActiveScene ().name == "tutorial" || SceneManager.GetActiveScene ().name == "lvl 1") {
-			transform.localScale = new Vector2 (17f, 17f);
-		} else {
-			transform.localScale = new Vector2 (12f, 12f);
+		if (dir == "left") {
+			transform.Translate (-1 * Time.deltaTime * enemySpeed, 0, 0);
+		}
+		if (dir == "right") {
+			transform.Translate (1 * Time.deltaTime * enemySpeed, 0, 0);
 		}
 	}
 
@@ -55,6 +62,18 @@ public class enemy : MonoBehaviour {
 				scoreManager.basicEnemy();
 			}
 		}
+
+		if (collision.tag == "leftMarker") {
+			transform.localScale = scaleRight;
+			transform.Translate(1* Time.deltaTime * enemySpeed, 0, 0);
+			dir = "right";
+		}
+		if (collision.tag == "rightMarker") {
+			transform.localScale = scaleLeft;
+			transform.Translate(-1* Time.deltaTime * enemySpeed, 0, 0);
+			dir = "left";
+		}
+
 	}
 
 	void OnTriggerStay2D(Collider2D collision){

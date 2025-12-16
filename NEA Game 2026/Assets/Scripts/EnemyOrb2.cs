@@ -17,7 +17,6 @@ public class EnemyOrb2 : MonoBehaviour {
 		enemy2 = GameObject.FindGameObjectWithTag ("enemy2");
 		if (SceneManager.GetActiveScene ().name == "tutorial") {
 			Orbspeed = 3f;
-			Debug.Log (Orbspeed);
 		} else {
 			Orbspeed = PlayerPrefs.GetInt ("difficulty",0) * 5;
 			Debug.Log (Orbspeed);

@@ -8,21 +8,11 @@ public class Enemy2 : MonoBehaviour {
 	private Animator MyAnimator;
 	public float enemySpeed;
 	private Rigidbody2D enemy2;
-	private string dir;
-	Vector3 scaleLeft;
-	Vector3 scaleRight;
-	private DifficultySystem VariableRef;
 	public int health;
 	public GameObject orb;
 
 	// Use this for initialization
 	void Start () {
-		enemySpeed = 6;
-		MyAnimator = GetComponent<Animator> ();
-		MyAnimator.SetBool ("walk", true);
-		dir = "left";
-		scaleLeft = new Vector3 (13, 13, 1);
-		scaleRight = new Vector3 (-13, 13, 1);
 		if (SceneManager.GetActiveScene ().name == "tutorial") {
 			health = 5;
 		} else {
@@ -31,27 +21,9 @@ public class Enemy2 : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		if (dir == "left") {
-			transform.Translate (-1 * Time.deltaTime * enemySpeed, 0, 0);
-		}
-		if (dir == "right") {
-			transform.Translate (1 * Time.deltaTime * enemySpeed, 0, 0);
-		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		if (other.gameObject.tag == "leftMarker") {
-			StartCoroutine (wait ());
-			transform.localScale = scaleRight;
-			transform.Translate(1* Time.deltaTime * enemySpeed, 0, 0);
-			dir = "right";
-		}
-		if (other.gameObject.tag == "rightMarker") {
-			StartCoroutine (wait ());
-			transform.localScale = scaleLeft;
-			transform.Translate(-1* Time.deltaTime * enemySpeed, 0, 0);
-			dir = "left";
-		}
 		if (other.gameObject.tag == "Player") {
 			Debug.Log ("detected!");
 			SpawnOrb (this.transform);
@@ -60,7 +32,7 @@ public class Enemy2 : MonoBehaviour {
 			}
 
 			if (health == 0) {
-				Destroy (other.gameObject);
+				Destroy (this.gameObject);
 			}
 		}
 
@@ -74,17 +46,14 @@ public class Enemy2 : MonoBehaviour {
 			scoreManager.advancedEnemy();
 		}
 		if (health == 0) {
-			MyAnimator.SetBool ("death", true);
+			//MyAnimator.SetBool ("death", true);
 			Destroy (this.gameObject);
 		}
 	}
 
 	public void SpawnOrb(Transform pos){
-		Instantiate (orb,pos.position,Quaternion.identity,this.gameObject.transform);
-		MyAnimator.SetBool ("attack", true);
-	}
-
-	IEnumerator wait(){
-		yield return new WaitForSeconds (2);
+		Instantiate (orb, pos.position, Quaternion.identity,this.gameObject.transform);
+		GameObject parent = this.gameObject;
+		//MyAnimator.SetBool ("attack", true);
 	}
 }
