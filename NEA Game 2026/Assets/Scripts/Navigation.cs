@@ -84,6 +84,10 @@ public class Navigation : MonoBehaviour {
 	public void MainMenu() {
 		Debug.Log ("Return back to main menu");
 		SceneManager.LoadScene ("Title and Menu");
+		Score scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<Score> ();
+		if (scoreManager != null) {
+			scoreManager.resetScore();
+		}
 	}
 
 	// this is for the profile button, it would direct you to the profiles menu where you can enter a username
@@ -101,5 +105,9 @@ public class Navigation : MonoBehaviour {
 		CurrentScene = SceneManager.GetActiveScene ().name;
 		SceneManager.LoadScene (CurrentScene);
 		Time.timeScale = 1f;
+		Score scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<Score> ();
+		if (scoreManager != null) {
+			scoreManager.resetScore();
+		}
 	}
 }

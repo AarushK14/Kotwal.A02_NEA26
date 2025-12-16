@@ -37,4 +37,8 @@ public class Score : MonoBehaviour {
 	public void buffsDebuffs(){
 		score += 5;
 	}
+
+	public void resetScore(){
+		score = 0;
+	}
 }
