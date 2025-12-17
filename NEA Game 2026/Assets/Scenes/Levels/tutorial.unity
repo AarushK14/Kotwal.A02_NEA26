@@ -2086,11 +2086,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4892395412914580, guid: 81071fe0539071e4cacad6211e2fcc2c,
     type: 2}
   m_PrefabInternal: {fileID: 608235966}
---- !u!1 &290133178 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1122066332339752, guid: b6bbfaa7625c0a0429a1375bdf6d3eb5,
-    type: 2}
-  m_PrefabInternal: {fileID: 1449851841}
 --- !u!4 &290133181 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4757738680147646, guid: b6bbfaa7625c0a0429a1375bdf6d3eb5,
@@ -2790,7 +2785,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 249dc92dfe1b05946b46f3a78e476bee, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a97855d07f4d6e44a9ebde99034c3434, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -3826,6 +3821,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114176410433895114, guid: 6e35b27654f1b0340924cd62dc282301,
+        type: 2}
+      propertyPath: ScoreCounter
+      value: 
+      objectReference: {fileID: 818174544}
+    - target: {fileID: 114176410433895114, guid: 6e35b27654f1b0340924cd62dc282301,
+        type: 2}
+      propertyPath: coin
+      value: 
+      objectReference: {fileID: 1684259920}
     - target: {fileID: 114785318814280834, guid: 6e35b27654f1b0340924cd62dc282301,
         type: 2}
       propertyPath: livescounter
@@ -3836,11 +3841,6 @@ Prefab:
       propertyPath: HealthBar
       value: 
       objectReference: {fileID: 601928459}
-    - target: {fileID: 114785318814280834, guid: 6e35b27654f1b0340924cd62dc282301,
-        type: 2}
-      propertyPath: debuff
-      value: 
-      objectReference: {fileID: 290133178}
     - target: {fileID: 114785318814280834, guid: 6e35b27654f1b0340924cd62dc282301,
         type: 2}
       propertyPath: debuffText
@@ -3861,16 +3861,6 @@ Prefab:
       propertyPath: spawnPointer
       value: 
       objectReference: {fileID: 1072893262}
-    - target: {fileID: 114176410433895114, guid: 6e35b27654f1b0340924cd62dc282301,
-        type: 2}
-      propertyPath: ScoreCounter
-      value: 
-      objectReference: {fileID: 818174544}
-    - target: {fileID: 114176410433895114, guid: 6e35b27654f1b0340924cd62dc282301,
-        type: 2}
-      propertyPath: coin
-      value: 
-      objectReference: {fileID: 1684259920}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e35b27654f1b0340924cd62dc282301, type: 2}
   m_IsPrefabAsset: 0

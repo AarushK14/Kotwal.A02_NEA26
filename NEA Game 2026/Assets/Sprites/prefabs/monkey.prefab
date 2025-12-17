@@ -90,7 +90,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1580683418878924}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -52.555, y: -1.665, z: 0}
+  m_LocalPosition: {x: -52.58, y: -1.68, z: 0}
   m_LocalScale: {x: 10.78, y: 9.83, z: 1}
   m_Children:
   - {fileID: 4487045830563884}
@@ -283,7 +283,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScoreCounter: {fileID: 0}
   coin: {fileID: 0}
-  score: 0
 --- !u!114 &114225818853052998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -295,10 +294,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56687cf096f913d44aaa57478497a6f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowShoot: {fileID: 8300000, guid: 3693277b5de25df4abbf9dd9a3cfc84d, type: 3}
+  arrowShoot: {fileID: 8300000, guid: 929b6153a1c3a8f4e934e65cc08cc008, type: 3}
   arrowHit: {fileID: 8300000, guid: 7b4df0e627d7e3343b52c0dae97fee92, type: 3}
   freeze: {fileID: 8300000, guid: 75f16a2f817353e428b3dbb6c5fa2270, type: 3}
-  hurt: {fileID: 8300000, guid: 398abb6a42125774d8a40499efa8089b, type: 3}
+  hurt: {fileID: 8300000, guid: 82b123550b49585488ad502063189d4b, type: 3}
   healthPickup: {fileID: 8300000, guid: b4e2ab81b5b38bc4c9919a94271fc038, type: 3}
   general: {fileID: 8300000, guid: 84ff2ae8db13f4a49899f9a32534328b, type: 3}
   firerate: {fileID: 8300000, guid: 71fcc885a523b7741b3f07e8e2c029bc, type: 3}
@@ -362,13 +361,10 @@ MonoBehaviour:
   on_ground: 0
   livescounter: {fileID: 0}
   HealthBar: {fileID: 0}
-  debuff: {fileID: 0}
   debuffText: {fileID: 0}
   instructions: {fileID: 0}
   Tip: {fileID: 0}
   spawnPointer: {fileID: 0}
-  knockbackForce: 0
-  orb: {fileID: 1257625173442692, guid: 39a9076a612e4b549bebbc364eb52f1d, type: 2}
 --- !u!212 &212359499869398344
 SpriteRenderer:
   m_ObjectHideFlags: 1
