@@ -262,6 +262,9 @@ public class CharacterMovement : MonoBehaviour {
 				SceneManager.LoadScene ("Lost");
 			}
 		}
+		if (other.gameObject.tag == "key") {
+			Destroy (other.gameObject);
+		}
 	}
 
 	IEnumerator CountDown(){

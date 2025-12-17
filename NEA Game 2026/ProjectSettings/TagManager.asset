@@ -25,6 +25,7 @@ TagManager:
   - fullHealth
   - enemy2Range
   - orbSpawnPoint
+  - key
   layers:
   - Default
   - TransparentFX

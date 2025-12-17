@@ -18,7 +18,7 @@ public class ChestManager : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "arrow") {
-			MyAnimator.Play ("chestOpened");
+			MyAnimator.SetTrigger ("chestOpened");
 		}
 	}
 }
