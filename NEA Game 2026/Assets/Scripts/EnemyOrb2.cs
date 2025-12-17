@@ -12,7 +12,6 @@ public class EnemyOrb2 : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Orbspeed = 7;
 		player = GameObject.FindGameObjectWithTag("Player");
 		enemy2 = GameObject.FindGameObjectWithTag ("enemy2");
 		if (SceneManager.GetActiveScene ().name == "tutorial") {
@@ -28,7 +27,7 @@ public class EnemyOrb2 : MonoBehaviour {
 		target = player.transform;
 		float distance = Orbspeed * Time.deltaTime;
 		transform.position = Vector3.MoveTowards (transform.position, target.position, distance);
-		Destroy (this.gameObject, 15f);
+		Destroy (this.gameObject, 4f);
 	}
 
 	void OnTriggerEnter2D(Collider2D other){

@@ -9,48 +9,75 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1234051916051270}
+  m_RootGameObject: {fileID: 1899679776532710}
   m_IsPrefabAsset: 1
---- !u!1 &1234051916051270
+--- !u!1 &1899679776532710
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4482290134352428}
-  - component: {fileID: 212156854550409718}
-  - component: {fileID: 95392370091299880}
+  - component: {fileID: 4123508391548172}
+  - component: {fileID: 212850116556730278}
+  - component: {fileID: 95435902041927042}
+  - component: {fileID: 114385907154153784}
+  - component: {fileID: 68196913206478764}
   m_Layer: 0
-  m_Name: Chest_0
+  m_Name: Chest_0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4482290134352428
+--- !u!4 &4123508391548172
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1234051916051270}
+  m_GameObject: {fileID: 1899679776532710}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.2572823, y: -0.20047897, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalPosition: {x: -43.29, y: -11.47, z: 0}
+  m_LocalScale: {x: 15, y: 15, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &95392370091299880
+--- !u!68 &68196913206478764
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1899679776532710}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.12358247, y: -0.06853587}
+  - {x: -0.1164528, y: -0.0638464}
+  - {x: -0.120283514, y: 0.05142708}
+  - {x: -0.09028906, y: 0.047878902}
+  - {x: -0.02266795, y: 0.058051303}
+  - {x: 0.025696311, y: 0.049412984}
+  - {x: 0.04415385, y: 0.06901258}
+  - {x: 0.10786184, y: 0.059361078}
+  - {x: 0.1293274, y: -0.005801837}
+  - {x: 0.12641196, y: -0.06849105}
+--- !u!95 &95435902041927042
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1234051916051270}
+  m_GameObject: {fileID: 1899679776532710}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9fc65c00bad20624184c46ecdbd2878e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8d73e24205371db499ea7b09ce737ace, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -59,12 +86,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!212 &212156854550409718
+--- !u!114 &114385907154153784
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1899679776532710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57f25f52b49aa974b922d2ebff85b584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!212 &212850116556730278
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1234051916051270}
+  m_GameObject: {fileID: 1899679776532710}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -91,12 +129,12 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -158316761
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b589769c5d21d804ca378ec09ca2f2c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 59e6d45736c224f4c85d9cf8a9050565, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.26, y: 0.15}

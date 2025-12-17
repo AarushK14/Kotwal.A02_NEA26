@@ -10,6 +10,7 @@ public class Enemy2 : MonoBehaviour {
 	private Rigidbody2D enemy2;
 	public int health;
 	public GameObject orb;
+	public GameObject player;
 
 	// Use this for initialization
 	void Start () {
@@ -18,9 +19,15 @@ public class Enemy2 : MonoBehaviour {
 		} else {
 			health = 5 + PlayerPrefs.GetInt ("difficulty");
 		}
+		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 	// Update is called once per frame
 	void Update () {
+		if (player.transform.position.x < transform.position.x) {
+			transform.rotation = Quaternion.Euler (0, 0, 0);
+		} else {
+			transform.rotation = Quaternion.Euler (0, 180, 0);
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
@@ -46,7 +53,6 @@ public class Enemy2 : MonoBehaviour {
 			scoreManager.advancedEnemy();
 		}
 		if (health == 0) {
-			//MyAnimator.SetBool ("death", true);
 			Destroy (this.gameObject);
 		}
 	}
@@ -54,6 +60,5 @@ public class Enemy2 : MonoBehaviour {
 	public void SpawnOrb(Transform pos){
 		Instantiate (orb, pos.position, Quaternion.identity,this.gameObject.transform);
 		GameObject parent = this.gameObject;
-		//MyAnimator.SetBool ("attack", true);
 	}
 }
