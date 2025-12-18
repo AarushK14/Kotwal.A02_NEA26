@@ -22,12 +22,12 @@ public class Score : MonoBehaviour {
 	}
 	public void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "coin") {
-			score += 20;
+			score += 10;
 		}
 	}
 
 	public void basicEnemy(){
-		score += 10;
+		score += 7;
 	}
 
 	public void advancedEnemy(){

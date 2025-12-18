@@ -56,6 +56,7 @@ public class enemy : MonoBehaviour {
 			enemyHealth -= 1;
 			if (enemyHealth == 0) {
 				Destroy (this.gameObject);
+				player.SendMessage ("W");
 			}
 			Score scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<Score> ();
 			if (scoreManager != null) {

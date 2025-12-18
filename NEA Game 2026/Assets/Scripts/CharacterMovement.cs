@@ -252,7 +252,7 @@ public class CharacterMovement : MonoBehaviour {
 			objectName = other.gameObject.tag;
 		}
 		if (other.gameObject.tag == "enemyOrb") {
-			lives -= 1f;
+			lives -= 0.5f;
 			player.SendMessage("hurtSound");
 			lives_Percentage = (lives / defaultlives);
 			if (lives <= 0 || vulnerable == true) {

@@ -13,6 +13,7 @@ public class SoundManager : MonoBehaviour {
 	public AudioClip general;
 	public AudioClip firerate;
 	public AudioClip coin;
+	//public AudioClip wHit;
 
 	// Use this for initialization
 	void Start () {
@@ -55,4 +56,8 @@ public class SoundManager : MonoBehaviour {
 	void coinPickup(){
 		audioControl.PlayOneShot (coin);
 	}
+
+	//void W(){
+		//audioControl.PlayOneShot (wHit);
+	//}
 }

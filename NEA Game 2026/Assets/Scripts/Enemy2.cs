@@ -11,15 +11,18 @@ public class Enemy2 : MonoBehaviour {
 	public int health;
 	public GameObject orb;
 	public GameObject player;
+	bool inContact;
+	string objectName;
 
 	// Use this for initialization
 	void Start () {
 		if (SceneManager.GetActiveScene ().name == "tutorial") {
-			health = 5;
+			health = 20;
 		} else {
-			health = 5 + PlayerPrefs.GetInt ("difficulty");
+			health = 20 + 4*PlayerPrefs.GetInt ("difficulty");
 		}
 		player = GameObject.FindGameObjectWithTag ("Player");
+		inContact = false;
 	}
 	// Update is called once per frame
 	void Update () {
@@ -28,21 +31,35 @@ public class Enemy2 : MonoBehaviour {
 		} else {
 			transform.rotation = Quaternion.Euler (0, 180, 0);
 		}
+
+
+		if (inContact == true) {
+			Detectable ();
+		}
 	}
 
-	void OnTriggerEnter2D(Collider2D other){
-		if (other.gameObject.tag == "Player") {
-			Debug.Log ("detected!");
-			SpawnOrb (this.transform);
-			if (SceneManager.GetActiveScene ().name == "tutorial") {	
-				GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>().instructions.text = "you're under attack! shoot the orb to kill the ranged enemy";
-			}
-
-			if (health == 0) {
-				Destroy (this.gameObject);
+	public void Detectable(){
+		if (inContact == true) {
+			if (objectName == "Player") {
+				Debug.Log ("detected!");
+				if (SceneManager.GetActiveScene ().name == "tutorial") {	
+					GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>().instructions.text = "you're under attack! shoot the orb to kill the ranged enemy";
+				}
+				StartCoroutine (coolDown ());
+				if (health == 0) {
+					Destroy (this.gameObject);
+				}
 			}
 		}
+	}
 
+	void OnTriggerStay2D(Collider2D other){
+		inContact = true;
+		objectName = other.gameObject.tag;
+	}
+
+	void OnTriggerExit2D(){
+		inContact = false;
 	}
 
 	public void LoseLife(){
@@ -60,5 +77,10 @@ public class Enemy2 : MonoBehaviour {
 	public void SpawnOrb(Transform pos){
 		Instantiate (orb, pos.position, Quaternion.identity,this.gameObject.transform);
 		GameObject parent = this.gameObject;
+	}
+
+	public IEnumerator coolDown(){
+		SpawnOrb (this.transform);
+		yield return new WaitForSeconds (2f);
 	}
 }
