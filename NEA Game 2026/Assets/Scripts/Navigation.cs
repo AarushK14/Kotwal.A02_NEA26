@@ -51,6 +51,7 @@ public class Navigation : MonoBehaviour {
 		Debug.Log ("Tutorial clicked!");
 		Time.timeScale = 1f;
 		SceneManager.LoadScene ("tutorial");
+		Debug.Log(PlayerPrefs.GetString("user"));
 	}
 
 	// when in the difficulty selection scene, this would take you to the easy level
