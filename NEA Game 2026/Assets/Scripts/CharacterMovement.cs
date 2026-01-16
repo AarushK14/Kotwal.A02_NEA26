@@ -164,7 +164,7 @@ public class CharacterMovement : MonoBehaviour {
 			PlayerSpeed = 15f;
 			jumpForce = 500;
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
-				instructions.text = "This is a buff!";
+				instructions.text = "This is a buff! It increases your speed and jump";
 			}
 			StartCoroutine (CountDown ());
 		} 
