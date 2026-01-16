@@ -80,7 +80,7 @@ public class CharacterMovement : MonoBehaviour {
 				instructions.text = "";
 			}
 		}
-		livescounter.text =(Mathf.Round(lives_Percentage*100)).ToString ()+"%";
+		livescounter.text =(Mathf.Round(lives_Percentage*100)).ToString ();
 		HealthBar.fillAmount = lives_Percentage;
 	}
 

@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b0fb64dcfd57944d9ff30edb19b63bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Orbspeed: 7
+  Orbspeed: 42.59
   enemy2: {fileID: 0}
 --- !u!212 &212926685811868252
 SpriteRenderer:
