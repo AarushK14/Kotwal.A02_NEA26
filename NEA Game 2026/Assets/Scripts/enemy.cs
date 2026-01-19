@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Created: Sprint 3 - Last Edited: Sprint 4
+// Created: Sprint 3 - Last Edited: Sprint 6
 // Purpose: Controlling the enemy, making sure they play the right animation and controlling which way they face based on users position
 
 public class enemy : MonoBehaviour {

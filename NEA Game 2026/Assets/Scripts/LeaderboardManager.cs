@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class LeaderboardManager : MonoBehaviour
 {
 
 	public Text score1;
-	public Text user1;
+	public TextMeshProUGUI user1;
 
 	void Start()
 	{

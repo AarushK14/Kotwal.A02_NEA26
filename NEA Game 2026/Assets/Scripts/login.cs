@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+// Created: Sprint 6 - Last Edited: Sprint 6
+// Purpose: Used to allow users to set a username for themselves
+
 public class login : MonoBehaviour {
 
 	private string input;
@@ -22,6 +25,7 @@ public class login : MonoBehaviour {
 		input = username;
 		Debug.Log (input);
 		PlayerPrefs.SetString ("user", input);
+		Debug.Log (PlayerPrefs.GetString ("user", ""));
 		scores.Add (PlayerPrefs.GetInt("userScore"));
 	}
 }

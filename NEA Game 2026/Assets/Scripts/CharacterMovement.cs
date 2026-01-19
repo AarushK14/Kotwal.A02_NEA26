@@ -332,6 +332,4 @@ public class CharacterMovement : MonoBehaviour {
 			}
 		}
 	}
-
-
 }

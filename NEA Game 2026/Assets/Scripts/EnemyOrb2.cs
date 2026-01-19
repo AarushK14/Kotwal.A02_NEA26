@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Created: Sprint 6 - Last Edited: Sprint 6
+// Purpose: Used to control the orb instantiated by the advanced enemies and make the advanced enemey lose health
+
 public class EnemyOrb2 : MonoBehaviour {
 
 	private Transform target;

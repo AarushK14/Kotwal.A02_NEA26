@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Created: Sprint 6 - Last Edited: Sprint 6
+// Purpose: to make and control advanced enemies and make them spawn orbs which follow the player.
+
 public class Enemy2 : MonoBehaviour {
 
 	private Animator MyAnimator;

@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-// Created: Sprint 1 - Last Edited: Sprint 4
+// Created: Sprint 1 - Last Edited: Sprint 6
 // Purpose: To navigate between different scenes
 
 public class Navigation : MonoBehaviour {
