@@ -6,7 +6,7 @@ using TMPro;
 public class LeaderboardManager : MonoBehaviour
 {
 
-	public Text score1;
+	public TextMeshProUGUI score1;
 	public TextMeshProUGUI user1;
 
 	void Start()
