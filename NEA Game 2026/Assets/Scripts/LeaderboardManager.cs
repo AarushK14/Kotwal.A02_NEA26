@@ -11,12 +11,15 @@ public class LeaderboardManager : MonoBehaviour
 
 	void Start()
 	{
-		
+		int sc = PlayerPrefs.GetInt ("userScore", 0);
+		score1.text = sc.ToString ();
+		string user = PlayerPrefs.GetString ("user", "");
+		user1.text = user;
+
 	}
 		
 	void update()
 	{
-		score1.text = PlayerPrefs.GetInt ("userScore", 0).ToString ();
-		user1.text = PlayerPrefs.GetString ("user", "");
+		
 	}
 }
