@@ -238,7 +238,7 @@ public class CharacterMovement : MonoBehaviour {
 		} else if (other.gameObject.tag == "alter") {
 			objectName = other.gameObject.tag;
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
-				SceneManager.LoadScene ("Title and Menu");
+				SceneManager.LoadScene ("Difficulty selection");
 			}
 			if (SceneManager.GetActiveScene ().name == "lvl 1") {
 				SceneManager.LoadScene ("lvl 2");

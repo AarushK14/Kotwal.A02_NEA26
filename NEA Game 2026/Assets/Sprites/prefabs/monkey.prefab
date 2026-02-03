@@ -90,7 +90,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1580683418878924}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -52.58, y: -1.68, z: 0}
+  m_LocalPosition: {x: -53.55, y: -2.26, z: 0}
   m_LocalScale: {x: 10.78, y: 9.83, z: 1}
   m_Children:
   - {fileID: 4487045830563884}
@@ -297,12 +297,11 @@ MonoBehaviour:
   arrowShoot: {fileID: 8300000, guid: 3693277b5de25df4abbf9dd9a3cfc84d, type: 3}
   arrowHit: {fileID: 8300000, guid: 7b4df0e627d7e3343b52c0dae97fee92, type: 3}
   freeze: {fileID: 8300000, guid: 75f16a2f817353e428b3dbb6c5fa2270, type: 3}
-  hurt: {fileID: 8300000, guid: 82b123550b49585488ad502063189d4b, type: 3}
+  hurt: {fileID: 0}
   healthPickup: {fileID: 8300000, guid: b4e2ab81b5b38bc4c9919a94271fc038, type: 3}
   general: {fileID: 8300000, guid: 84ff2ae8db13f4a49899f9a32534328b, type: 3}
   firerate: {fileID: 8300000, guid: 71fcc885a523b7741b3f07e8e2c029bc, type: 3}
   coin: {fileID: 8300000, guid: 31638e7201a1e6d4db9ff8b931cb4cb9, type: 3}
-  wHit: {fileID: 8300000, guid: 01d8ae954001d8648b868ad951b5fe77, type: 3}
 --- !u!114 &114304296211640364
 MonoBehaviour:
   m_ObjectHideFlags: 1

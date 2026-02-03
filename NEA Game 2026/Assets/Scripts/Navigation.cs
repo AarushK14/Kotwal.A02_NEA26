@@ -31,7 +31,7 @@ public class Navigation : MonoBehaviour {
 
 	// this would take you to the difficulty selection scene
 	public void Play() {
-		SceneManager.LoadScene ("Difficulty Selection");
+		SceneManager.LoadScene ("profiles");
 	}
 
 	// this would take you to the setting where you can customize contols
@@ -89,12 +89,6 @@ public class Navigation : MonoBehaviour {
 		if (scoreManager != null) {
 			scoreManager.resetScore();
 		}
-	}
-
-	// this is for the profile button, it would direct you to the profiles menu where you can enter a username
-	public void Profile() {
-		Debug.Log ("Profile clicked");
-		SceneManager.LoadScene ("profiles");
 	}
 		
 	public void resume(){
