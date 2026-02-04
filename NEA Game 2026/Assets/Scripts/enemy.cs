@@ -15,6 +15,7 @@ public class enemy : MonoBehaviour {
 	string dir;
 	Vector3 scaleLeft;
 	Vector3 scaleRight;
+	public GameObject coin;
 
 	// Use this for initialization
 	void Start () {
@@ -55,8 +56,13 @@ public class enemy : MonoBehaviour {
 			Destroy (collision.gameObject);
 			enemyHealth -= 1;
 			if (enemyHealth == 0) {
+				int x = Random.Range (1, 10);
+				Debug.Log (x);
 				Destroy (this.gameObject);
-				player.SendMessage ("W");
+				if (x == 4 || x == 7) {
+					Instantiate (coin, gameObject.transform.position , Quaternion.identity);
+				}
+				//player.SendMessage ("W");
 			}
 			Score scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<Score> ();
 			if (scoreManager != null) {
