@@ -46,6 +46,12 @@ public class Navigation : MonoBehaviour {
 		SceneManager.LoadScene ("Leaderboard");
 	}
 
+	// this will take you to the difficulty selection screen
+	public void DifficultySelection() {
+		Debug.Log ("Loading difficulty selection");
+		SceneManager.LoadScene ("Difficulty selection");
+	}
+
 	// this bit of code will take you to the tutoral where you can learn the contols of the game
 	public void Tutorial() {
 		Debug.Log ("Tutorial clicked!");

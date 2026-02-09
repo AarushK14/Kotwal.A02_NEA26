@@ -15,7 +15,6 @@ public class LeaderboardManager : MonoBehaviour
 		score1.text = sc.ToString ();
 		string user = PlayerPrefs.GetString ("user", "");
 		user1.text = user;
-
 	}
 		
 	void update()

@@ -19,7 +19,7 @@ public class Score : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		ScoreCounter.text = "Score: " + score.ToString ();
-		PlayerPrefs.SetInt ("userScore1", score);
+		PlayerPrefs.SetInt ("userScore", score);
 	}
 	public void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "coin") {
