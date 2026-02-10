@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 // Created: Sprint 3 - Last Edited: Sprint 4
 // Purpose: Controlling the score counter and making changes to it based on what item the player collides with
@@ -20,6 +21,9 @@ public class Score : MonoBehaviour {
 	void Update () {
 		ScoreCounter.text = "Score: " + score.ToString ();
 		PlayerPrefs.SetInt ("userScore", score);
+		if (SceneManager.GetActiveScene ().name == "Title and Menu") {
+			score = 0;
+		}
 	}
 	public void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "coin") {

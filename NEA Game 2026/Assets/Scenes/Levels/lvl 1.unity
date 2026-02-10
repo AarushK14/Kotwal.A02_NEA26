@@ -10218,7 +10218,7 @@ Prefab:
     - target: {fileID: 114881072876185130, guid: 256284094380ad342acd5ffc8bcf1da4,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MainMenu
+      value: Leaderboard
       objectReference: {fileID: 0}
     - target: {fileID: 114881072876185130, guid: 256284094380ad342acd5ffc8bcf1da4,
         type: 2}
@@ -10279,6 +10279,16 @@ Prefab:
         type: 2}
       propertyPath: m_AnchoredPosition.y
       value: 80.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114510421054992922, guid: 256284094380ad342acd5ffc8bcf1da4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 519241982}
+    - target: {fileID: 114510421054992922, guid: 256284094380ad342acd5ffc8bcf1da4,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MainMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 256284094380ad342acd5ffc8bcf1da4, type: 2}
