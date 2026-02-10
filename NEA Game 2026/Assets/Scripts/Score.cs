@@ -21,9 +21,6 @@ public class Score : MonoBehaviour {
 	void Update () {
 		ScoreCounter.text = "Score: " + score.ToString ();
 		PlayerPrefs.SetInt ("userScore", score);
-		if (SceneManager.GetActiveScene ().name == "Title and Menu") {
-			score = 0;
-		}
 	}
 	public void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "coin") {

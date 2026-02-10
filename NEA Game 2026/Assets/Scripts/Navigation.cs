@@ -91,10 +91,6 @@ public class Navigation : MonoBehaviour {
 	public void MainMenu() {
 		Debug.Log ("Return back to main menu");
 		SceneManager.LoadScene ("Title and Menu");
-		Score scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<Score> ();
-		if (scoreManager != null) {
-			scoreManager.resetScore();
-		}
 	}
 		
 	public void resume(){

@@ -123,6 +123,7 @@ public class CharacterMovement : MonoBehaviour {
 				Debug.Log ("End of game");
 				MyAnimator.Play ("death");
 				SceneManager.LoadScene ("Lost");
+				GetComponent<Score> ().resetScore ();
 			}
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
 				instructions.text = "you're under attack! shoot to kill them";

@@ -883,7 +883,6 @@ GameObject:
   - component: {fileID: 1042733212}
   - component: {fileID: 1042733211}
   - component: {fileID: 1042733214}
-  - component: {fileID: 1042733215}
   m_Layer: 5
   m_Name: EventSystem
   m_TagString: Untagged
@@ -961,19 +960,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score1: {fileID: 591763328}
   user1: {fileID: 1753380515}
---- !u!114 &1042733215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1042733209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6edf7090e1ea3024885dc492a6a185e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ScoreCounter: {fileID: 0}
-  coin: {fileID: 0}
 --- !u!1 &1223294488
 GameObject:
   m_ObjectHideFlags: 0
@@ -1835,7 +1821,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1042733215}
+      - m_Target: {fileID: 0}
         m_MethodName: resetScore
         m_Mode: 1
         m_Arguments:
