@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 // Created: Sprint 3 - Last Edited: Sprint 6
 // Purpose: Controlling the enemy, making sure they play the right animation and controlling which way they face based on users position
 
-public class enemy : MonoBehaviour {
+public class basicEnemy : MonoBehaviour {
 
 	public GameObject player;
 	Animator MyAnimator;
@@ -64,7 +64,7 @@ public class enemy : MonoBehaviour {
 				}
 				//player.SendMessage ("W");
 			}
-			Score scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<Score> ();
+			scoreController scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<scoreController> ();
 			if (scoreManager != null) {
 				scoreManager.basicEnemy();
 			}

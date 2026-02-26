@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class shoot : MonoBehaviour
+public class arrowController : MonoBehaviour
 {
 	float ArrowSpeed = 8.5f;
 	private Vector3 moveDirection;

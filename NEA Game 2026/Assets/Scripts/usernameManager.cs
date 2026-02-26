@@ -6,7 +6,7 @@ using TMPro;
 // Created: Sprint 6 - Last Edited: Sprint 6
 // Purpose: Used to allow users to set a username for themselves
 
-public class login : MonoBehaviour {
+public class usernameManager : MonoBehaviour {
 
 	private string input;
 	static List<int> scores =  new List<int> {};

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 // Created: Sprint 6 - Last Edited: Sprint 6
 // Purpose: Used to control the orb instantiated by the advanced enemies and make the advanced enemey lose health
 
-public class EnemyOrb2 : MonoBehaviour {
+public class enemyOrbController : MonoBehaviour {
 
 	private Transform target;
 	public float Orbspeed;
@@ -41,7 +41,7 @@ public class EnemyOrb2 : MonoBehaviour {
 			Debug.Log ("Sucess");
 			Destroy (other.gameObject);
 			Destroy (this.gameObject);
-			GetComponentInParent<Enemy2>().SendMessage ("LoseLife");
+			GetComponentInParent<advancedEnemyController>().SendMessage ("LoseLife");
 		}
 	}
 }

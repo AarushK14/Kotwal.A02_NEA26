@@ -102,7 +102,7 @@ public class Navigation : MonoBehaviour {
 		CurrentScene = SceneManager.GetActiveScene ().name;
 		SceneManager.LoadScene (CurrentScene);
 		Time.timeScale = 1f;
-		Score scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<Score> ();
+		scoreController scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<scoreController> ();
 		if (scoreManager != null) {
 			scoreManager.resetScore();
 		}

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 // Created: Sprint 1 - Last Edited: Sprint 4
 // Purpose: To allow character move based on the key pressed and add playability to the game.
 
-public class control : MonoBehaviour {
+public class playerAnimations : MonoBehaviour {
 
 	Animator MyAnimator;
 

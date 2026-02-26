@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class hitbox : MonoBehaviour {
+public class basicEnemyMovement : MonoBehaviour {
 
 	public float speed;
 	private string dir;

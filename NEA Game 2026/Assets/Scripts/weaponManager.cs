@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class weapon : MonoBehaviour
+public class weaponManager : MonoBehaviour
 {
 	public Transform aimTransform;
 	public GameObject arrowprefab;
@@ -54,7 +54,7 @@ public class weapon : MonoBehaviour
 		player.SendMessage ("arrowShootSound");
 
 		// Send direction into shoot script
-		shoot s = currentArrow.GetComponent<shoot>();
+		arrowController s = currentArrow.GetComponent<arrowController>();
 		s.Direction(direction);
 
 		// Destroy after 1 second

@@ -6,7 +6,7 @@ using TMPro;
 // Created: Sprint 2 - Last Edited: Sprint 4
 // Purpose: Controlling the coin, destroying them on collision and also incrementing the coin counter.
 
-public class coin : MonoBehaviour {
+public class coinManager : MonoBehaviour {
 	
 	public GameObject Player;
 	public TextMeshProUGUI coincounter;

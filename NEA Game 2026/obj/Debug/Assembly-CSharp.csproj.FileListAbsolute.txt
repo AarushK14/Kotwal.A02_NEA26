@@ -1,6 +1,9 @@
+X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\Assembly-CSharp.dll
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\Assembly-CSharp.pdb
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\Boo.Lang.dll
+X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\Cinemachine.dll
+X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\com.unity.cinemachine.editor.dll
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\mscorlib.dll
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\Unity.Locator.dll
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\Unity.PackageManagerUI.Editor.dll
@@ -18,8 +21,6 @@ X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.AudioModule.
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.BaselibModule.dll
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.ClothModule.dll
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.CloudWebServicesModule.dll
-X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.ClusterInputModule.dll
-X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.ClusterRendererModule.dll
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.CoreModule.dll
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.CrashReportingModule.dll
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.DirectorModule.dll
@@ -46,6 +47,7 @@ X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.ProfilerModu
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.ScreenCaptureModule.dll
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.SharedInternalsModule.dll
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.SpatialTracking.dll
+X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.SpatialTrackingModule.dll
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.SpriteMaskModule.dll
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.SpriteShapeModule.dll
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.StandardEvents.dll
@@ -74,10 +76,13 @@ X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.UnityWebRequ
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.VehiclesModule.dll
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.VideoModule.dll
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.VRModule.dll
+X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.WebGLModule.dll
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.WindModule.dll
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.XRModule.dll
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityScript.dll
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityScript.Lang.dll
+X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.ClusterInputModule.dll
+X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.ClusterRendererModule.dll
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\Unity.Cecil.dll
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\Unity.SerializationLogic.dll
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\Unity.DataContract.dll
@@ -100,8 +105,6 @@ X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.AudioModule.
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.BaselibModule.xml
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.ClothModule.xml
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.CloudWebServicesModule.xml
-X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.ClusterInputModule.xml
-X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.ClusterRendererModule.xml
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.CoreModule.xml
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.CrashReportingModule.xml
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.DirectorModule.xml
@@ -123,6 +126,7 @@ X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.Physics2DMod
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.ProfilerModule.xml
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.ScreenCaptureModule.xml
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.SharedInternalsModule.xml
+X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.SpatialTrackingModule.xml
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.SpriteMaskModule.xml
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.SpriteShapeModule.xml
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.StreamingModule.xml
@@ -156,11 +160,7 @@ X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.Networking.x
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.GoogleAudioSpatializer.xml
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.HoloLens.xml
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.SpatialTracking.xml
-X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.ClusterInputModule.xml
+X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.ClusterRendererModule.xml
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\obj\Debug\Assembly-CSharp.dll
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\obj\Debug\Assembly-CSharp.pdb
-X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.SpatialTrackingModule.dll
-X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.SpatialTrackingModule.xml
-X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\Cinemachine.dll
-X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\com.unity.cinemachine.editor.dll
-X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.WebGLModule.dll

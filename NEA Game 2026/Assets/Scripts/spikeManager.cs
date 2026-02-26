@@ -5,7 +5,7 @@ using UnityEngine;
 // Created: Sprint 2 - Last Edited: Sprint 4
 // purpose - used to allow the player to respawn when the players interacts with a spike
 
-public class spikes : MonoBehaviour {
+public class spikeManager : MonoBehaviour {
 
 	private void OnCollisionEnter2D(Collision2D other)
 	{

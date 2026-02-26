@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 // Created: Sprint 6 - Last Edited: Sprint 6
 // Purpose: to make and control advanced enemies and make them spawn orbs which follow the player.
 
-public class Enemy2 : MonoBehaviour {
+public class advancedEnemyController : MonoBehaviour {
 
 	private Animator MyAnimator;
 	public float enemySpeed;
@@ -68,7 +68,7 @@ public class Enemy2 : MonoBehaviour {
 	public void LoseLife(){
 		health = health - 1;
 		Debug.Log (health);
-		Score scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<Score> ();
+		scoreController scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<scoreController> ();
 		if (scoreManager != null) {
 			scoreManager.advancedEnemy();
 		}

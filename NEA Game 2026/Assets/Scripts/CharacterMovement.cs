@@ -123,7 +123,7 @@ public class CharacterMovement : MonoBehaviour {
 				Debug.Log ("End of game");
 				MyAnimator.Play ("death");
 				SceneManager.LoadScene ("Lost");
-				GetComponent<Score> ().resetScore ();
+				GetComponent<scoreController> ().resetScore ();
 			}
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
 				instructions.text = "you're under attack! shoot to kill them";
@@ -142,7 +142,7 @@ public class CharacterMovement : MonoBehaviour {
 		if (other.gameObject.tag == "slow") {
 			objectName = other.gameObject.tag;
 			player.SendMessage ("generlaBuffDebuff");
-			Score scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<Score> ();
+			scoreController scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<scoreController> ();
 			if (scoreManager != null) {
 				scoreManager.buffsDebuffs();
 			}
@@ -157,7 +157,7 @@ public class CharacterMovement : MonoBehaviour {
 		} else if (other.gameObject.tag == "speed") {
 			objectName = other.gameObject.tag;
 			player.SendMessage ("generlaBuffDebuff");
-			Score scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<Score> ();
+			scoreController scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<scoreController> ();
 			if (scoreManager != null) {
 				scoreManager.buffsDebuffs();
 			}
@@ -173,7 +173,7 @@ public class CharacterMovement : MonoBehaviour {
 		if (other.gameObject.tag == "freeze") {
 			objectName = other.gameObject.tag;
 			player.SendMessage ("freezeDebuff");
-			Score scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<Score> ();
+			scoreController scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<scoreController> ();
 			if (scoreManager != null) {
 				scoreManager.buffsDebuffs();
 			}
@@ -189,7 +189,7 @@ public class CharacterMovement : MonoBehaviour {
 		if (other.gameObject.tag == "instantDeath") {
 			objectName = other.gameObject.tag;
 			player.SendMessage ("health");
-			Score scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<Score> ();
+			scoreController scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<scoreController> ();
 			if (scoreManager != null) {
 				scoreManager.buffsDebuffs();
 			}
@@ -204,7 +204,7 @@ public class CharacterMovement : MonoBehaviour {
 		} else if (other.gameObject.tag == "fullHealth") {
 			objectName = other.gameObject.tag;
 			player.SendMessage ("health");
-			Score scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<Score> ();
+			scoreController scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<scoreController> ();
 			if (scoreManager != null) {
 				scoreManager.buffsDebuffs();
 			}
@@ -219,12 +219,12 @@ public class CharacterMovement : MonoBehaviour {
 		} else if (other.gameObject.tag == "firerate") {
 			objectName = other.gameObject.tag;
 			player.SendMessage ("fireRateBuff");
-			Score scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<Score> ();
+			scoreController scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<scoreController> ();
 			if (scoreManager != null) {
 				scoreManager.buffsDebuffs();
 			}
 			m_SpriteRenderer.color = Color.gray;
-			GetComponent<weapon> ().BuffActiveTrue ();
+			GetComponent<weaponManager> ().BuffActiveTrue ();
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
 				instructions.text = "This is a buff! it increases your firerate";
 			}
@@ -315,7 +315,7 @@ public class CharacterMovement : MonoBehaviour {
 		if (objectName == "firerate") {
 			yield return new WaitForSeconds (5f);
 			m_SpriteRenderer.color = Color.white;
-			GetComponent<weapon> ().BuffActiveFalse ();
+			GetComponent<weaponManager> ().BuffActiveFalse ();
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
 				instructions.text = "";
 			} 

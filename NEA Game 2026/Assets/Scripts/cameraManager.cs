@@ -5,7 +5,7 @@ using UnityEngine;
 // Created: Sprint 2 - Last Edited: Sprint 4
 // Purpose: To allow the camera to follow the player.
 
-public class Cam : MonoBehaviour {
+public class cameraManager : MonoBehaviour {
 
 	public GameObject player;
 	public float offset;

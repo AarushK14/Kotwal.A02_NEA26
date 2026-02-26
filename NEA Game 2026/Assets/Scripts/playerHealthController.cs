@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class health : MonoBehaviour {
+public class playerHealthController : MonoBehaviour {
 
 	int lives = 5;
 	GameObject player;
