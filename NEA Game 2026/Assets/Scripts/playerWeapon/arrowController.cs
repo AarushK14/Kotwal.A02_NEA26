@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class arrowController : MonoBehaviour
 {
-	float ArrowSpeed = 8.5f;
+	float ArrowSpeed = 10f;
 	private Vector3 moveDirection;
 
 	public void Direction(Vector3 dir)
