@@ -15,8 +15,11 @@ public class enemyOrbController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		// Finds the player and the advanced enemy in the scene
 		player = GameObject.FindGameObjectWithTag("Player");
 		enemy2 = GameObject.FindGameObjectWithTag ("enemy2");
+
+		// Sets orb travel speed based on current level or difficulty setting
 		if (SceneManager.GetActiveScene ().name == "tutorial") {
 			Orbspeed = 3f;
 		} else {
@@ -27,16 +30,22 @@ public class enemyOrbController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		// Targets the player and moves the orb toward them every frame
 		target = player.transform;
 		float distance = Orbspeed * Time.deltaTime;
 		transform.position = Vector3.MoveTowards (transform.position, target.position, distance);
+
+		// Automatically cleans up the orb after 4 seconds
 		Destroy (this.gameObject, 4f);
 	}
 
+	// Handles what happens when the orb touches something
 	void OnTriggerEnter2D(Collider2D other){
+		// If it hits the player, the orb disappears
 		if (other.tag == "Player"){
 			Destroy (this.gameObject);
 		}
+		// If it hits an arrow, destroy both and tell the parent enemy to lose health
 		else if (other.gameObject.tag == "arrow") {
 			Debug.Log ("Sucess");
 			Destroy (other.gameObject);

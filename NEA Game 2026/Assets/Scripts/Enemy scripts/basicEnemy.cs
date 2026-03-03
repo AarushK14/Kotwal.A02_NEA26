@@ -12,15 +12,17 @@ public class basicEnemy : MonoBehaviour {
 	Animator MyAnimator;
 	public float enemyHealth;
 	public float enemySpeed;
-	string dir;
+	string dir; // Holds the current movement direction
 	Vector3 scaleLeft;
 	Vector3 scaleRight;
-	public GameObject coin;
+	public GameObject coin; // Item to drop on death
 
 	// Use this for initialization
 	void Start () {
 		enemySpeed = 6;
 		dir = "left";
+
+		// Set enemy size based on the level
 		if (SceneManager.GetActiveScene ().name == "tutorial" || SceneManager.GetActiveScene ().name == "lvl 1") {
 			scaleLeft = new Vector3 (17, 17, 1);
 			scaleRight = new Vector3 (-17, 17, 1);
@@ -28,19 +30,21 @@ public class basicEnemy : MonoBehaviour {
 			scaleLeft = new Vector3 (12, 12, 1);
 			scaleRight = new Vector3 (-12, 12, 1);
 		}
+
 		MyAnimator = GetComponent<Animator> ();
 		player = GameObject.FindGameObjectWithTag ("Player");
+
+		// Set health based on difficulty settings
 		if (SceneManager.GetActiveScene ().name == "tutorial") {
 			enemyHealth = 1f;
-			Debug.Log (enemyHealth);
 		} else {
 			enemyHealth	= 1f + PlayerPrefs.GetInt ("difficulty",0);
-			Debug.Log (enemyHealth);
 		}
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
+		// Moves the enemy left or right constantly
 		if (dir == "left") {
 			transform.Translate (-1 * Time.deltaTime * enemySpeed, 0, 0);
 		}
@@ -51,57 +55,56 @@ public class basicEnemy : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collision){
 
+		// Logic for getting hit by an arrow
 		if (collision.tag == "arrow") {
 			player.SendMessage ("arrowHitSound");
 			Destroy (collision.gameObject);
 			enemyHealth -= 1;
+
 			if (enemyHealth == 0) {
-				int x = Random.Range (1, 10);
-				Debug.Log (x);
+				int x = Random.Range (1, 10); // Random chance to drop a coin
 				Destroy (this.gameObject);
 				if (x == 4 || x == 7) {
 					Instantiate (coin, gameObject.transform.position , Quaternion.identity);
 				}
-				//player.SendMessage ("W");
 			}
+
+			// Update the score manager
 			scoreController scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<scoreController> ();
 			if (scoreManager != null) {
 				scoreManager.basicEnemy();
 			}
 		}
 
+		// Turn around if hitting a movement marker
 		if (collision.tag == "leftMarker") {
 			transform.localScale = scaleRight;
-			transform.Translate(1* Time.deltaTime * enemySpeed, 0, 0);
 			dir = "right";
 		}
 		if (collision.tag == "rightMarker") {
 			transform.localScale = scaleLeft;
-			transform.Translate(-1* Time.deltaTime * enemySpeed, 0, 0);
 			dir = "left";
 		}
 
 	}
 
+	// Trigger attack animation if touching player
 	void OnTriggerStay2D(Collider2D collision){
 		if (collision.tag == "Player") {
 			MyAnimator.SetTrigger ("attack");
 			StartCoroutine (playHit ());
 		}
-
 	}
 
+	// Go back to idle when player leaves
 	private void OnTriggerExit2D(Collider2D other){
 		if (other.gameObject.tag == "Player") {
-			Debug.Log ("this works!");
 			MyAnimator.SetTrigger ("idle");
-			Debug.Log ("this works too!");
 		}
 	}
 
+	// Small delay for attack timing
 	IEnumerator playHit(){
 		yield return new WaitForSeconds (2f);
 	}
 }
-
-// ideas: get the health for enemy, add a smiliar sytem to the player one for health and health bar.

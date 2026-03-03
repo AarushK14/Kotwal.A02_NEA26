@@ -6,22 +6,22 @@ using TMPro;
 
 public class playerHealthController : MonoBehaviour {
 
-	int lives = 5;
+	int lives = 5; // Starting number of lives
 	GameObject player;
 	GameObject enemy;
 	public Animator MyAnimator;
 
 	// Use this for initialization
 	void Start () {
+		// Prints current lives to the console at the start
 		Debug.Log (lives);
 	}
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
+	// This function handles taking damage
 	public void dmg(){
-		lives -= 1;
+		lives -= 1; // Take away one life
+
+		// If lives run out, play death animation and load the Game Over scene
 		if (lives < 0) {
 			MyAnimator.SetTrigger ("death");
 			SceneManager.LoadScene ("Lost");

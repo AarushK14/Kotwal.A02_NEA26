@@ -7,18 +7,19 @@ using UnityEngine;
 
 public class spikeManager : MonoBehaviour {
 
+	// Detects when the player physically touches the spike
 	private void OnCollisionEnter2D(Collision2D other)
 	{
 		Debug.Log("Spiked!");
+		// Tells the player script to run the resetPosition function
 		Hero.SendMessage("resetPosition");
 	}
+
 	GameObject Hero;
-	// Use this for initialization
-	void Start () {
-	}
 
 	// Update is called once per frame
 	void Update () {
+		// Constantly finds the player object in the scene
 		Hero = GameObject.FindGameObjectWithTag("Player");
 	}
 }

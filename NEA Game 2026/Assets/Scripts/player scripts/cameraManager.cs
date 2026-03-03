@@ -8,22 +8,19 @@ using UnityEngine;
 public class cameraManager : MonoBehaviour {
 
 	public GameObject player;
-	public float offset;
+	public float offset; // Distance the camera looks ahead
 	private Vector3 Playerposition;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
 	// Update is called once per frame
 	void Update () {
-		
-		transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 0.7f, -10f); // this would be used to update the cameras position
 
-		Playerposition = new Vector3 (player.transform.position.x, player.transform.position.y, -10f); // this would get the players position as a 3d vector which would bhe sued to update the camer's position allowing the camera to follow the player
+		// Basic follow: sets camera position directly to player with a small height boost
+		transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 0.7f, -10f); 
 
-		// this IF statement would be used to move the camera to left / right by a set amount basied on where the character is facing, this would look cool and allow a nice transition whils plaaying the game.
+		// Gets the current player position to calculate the look-ahead offset
+		Playerposition = new Vector3 (player.transform.position.x, player.transform.position.y, -10f); 
+
+		// Shifts the camera view left or right based on which way the player is facing
 		if (player.transform.localScale.x > 0) {
 			Playerposition = new Vector3 (Playerposition.x + offset, Playerposition.y, Playerposition.z);
 		} 

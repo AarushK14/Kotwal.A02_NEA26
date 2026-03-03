@@ -14,19 +14,17 @@ public class DifficultySystem : MonoBehaviour {
 
 	// Use this for initialization
 	void Start (){
+		// Set default values for player movement and attacks
 		ArrowSpeed = 10f;
 		PlayerSpeed = 10;
 		jumpForce = 380f;
 
+		// Check if current level is the tutorial to set specific life count
 		if (SceneManager.GetActiveScene ().name == "tutorial") {
 			lives = 10f;
 		} else {
+			// Calculate lives based on the difficulty setting saved in PlayerPrefs
 			lives = 11 - 2 * PlayerPrefs.GetInt ("difficulty",0);
 		}
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 }

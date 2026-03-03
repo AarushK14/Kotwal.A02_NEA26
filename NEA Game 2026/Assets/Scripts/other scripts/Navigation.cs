@@ -15,14 +15,16 @@ public class Navigation : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		// Hides the pause menu at the start of playable levels
 		if (SceneManager.GetActiveScene ().name == "tutorial" || SceneManager.GetActiveScene ().name == "lvl 1" || SceneManager.GetActiveScene ().name == "lvl 2" || SceneManager.GetActiveScene ().name == "lvl 3") {
 			pauseMenu = GameObject.FindGameObjectWithTag ("pauseMenu");
 			pauseMenu.SetActive (false);
 		}
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
+		// Opens the pause menu and freezes time when Escape is pressed
 		if (Input.GetKeyDown (KeyCode.Escape)) {
 			pauseMenu.SetActive(true);
 			Time.timeScale = 0f;
@@ -64,7 +66,7 @@ public class Navigation : MonoBehaviour {
 	public void Easy() {
 		Debug.Log ("Easy selected!");
 		Time.timeScale = 1f;
-		PlayerPrefs.SetInt ("difficulty", 1);
+		PlayerPrefs.SetInt ("difficulty", 1); // Saves difficulty setting
 		SceneManager.LoadScene ("lvl 1");
 		Debug.Log(PlayerPrefs.GetInt ("difficulty"));
 	}
@@ -92,12 +94,14 @@ public class Navigation : MonoBehaviour {
 		Debug.Log ("Return back to main menu");
 		SceneManager.LoadScene ("Title and Menu");
 	}
-		
+
+	// Resumes the game and closes the pause menu
 	public void resume(){
 		Time.timeScale = 1f;
 		pauseMenu.SetActive (false);
 	}
 
+	// Restarts the current level and resets the score
 	public void restart(){
 		CurrentScene = SceneManager.GetActiveScene ().name;
 		SceneManager.LoadScene (CurrentScene);

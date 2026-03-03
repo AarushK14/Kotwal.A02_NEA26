@@ -10,12 +10,8 @@ public class ChestManager : MonoBehaviour {
 	void Start () {
 		MyAnimator = GetComponent<Animator> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
+	// plays the opening animation for the chest if collides with arrow
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "arrow") {
 			MyAnimator.SetTrigger ("chestOpened");

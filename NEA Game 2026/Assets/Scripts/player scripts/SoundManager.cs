@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour {
 
-	private AudioSource audioControl;
+	private AudioSource audioControl; // The component that plays the sounds
 	public AudioClip arrowShoot;
 	public AudioClip arrowHit;
 	public AudioClip freeze;
@@ -17,47 +17,47 @@ public class SoundManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		// Get the AudioSource component from this object
 		audioControl = GetComponent<AudioSource> ();	
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
+	// Play sound when an arrow is fired
 	void arrowShootSound(){
 		audioControl.PlayOneShot (arrowShoot);
 	}
 
+	// Play sound when an arrow hits something
 	void arrowHitSound(){
 		audioControl.PlayOneShot (arrowHit);
 	}
 
+	// Play sound for the freeze debuff
 	void freezeDebuff(){
 		audioControl.PlayOneShot (freeze);
 	}
 
+	// Play sound when the player takes damage
 	void hurtSound(){
 		audioControl.PlayOneShot (hurt);
 	}
 
+	// Play sound when picking up health
 	void health(){
 		audioControl.PlayOneShot (healthPickup);
 	}
 
-	void generlaBuffDebuff(){
+	// Play sound for general status changes
+	void generalBuffDebuff(){
 		audioControl.PlayOneShot (general);
 	}
 
+	// Play sound for the fire rate power-up
 	void fireRateBuff(){
 		audioControl.PlayOneShot (firerate);
 	}
 
+	// Play sound when a coin is collected
 	void coinPickup(){
 		audioControl.PlayOneShot (coin);
 	}
-
-	//void W(){
-		//audioControl.PlayOneShot (wHit);
-	//}
 }
