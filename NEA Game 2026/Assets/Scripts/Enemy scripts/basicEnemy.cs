@@ -10,8 +10,8 @@ public class basicEnemy : MonoBehaviour {
 
 	public GameObject player;
 	Animator MyAnimator;
-	public float enemyHealth;
-	public float enemySpeed;
+	public int enemyHealth;
+	public int enemySpeed;
 	string dir; // Holds the current movement direction
 	Vector3 scaleLeft;
 	Vector3 scaleRight;
@@ -36,9 +36,9 @@ public class basicEnemy : MonoBehaviour {
 
 		// Set health based on difficulty settings
 		if (SceneManager.GetActiveScene ().name == "tutorial") {
-			enemyHealth = 1f;
+			enemyHealth = 1;
 		} else {
-			enemyHealth	= 1f + PlayerPrefs.GetInt ("difficulty",0);
+			enemyHealth	= 1 + PlayerPrefs.GetInt ("difficulty",0);
 		}
 	}
 

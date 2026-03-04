@@ -8,8 +8,6 @@ using UnityEngine.SceneManagement;
 
 public class advancedEnemyController : MonoBehaviour {
 
-	private Animator MyAnimator;
-	public float enemySpeed;
 	private Rigidbody2D enemy2;
 	public int health;
 	public GameObject orb; // The orb the enemy shoots
