@@ -35,6 +35,8 @@ public class CharacterMovement : MonoBehaviour {
 	private string objectName;
 	private Transform orbSpawnPos;
 	private Transform enemy2;
+	public TextMeshProUGUI coincounter; // UI text for the coin count
+	int coinCount; // Starting number of coins
 
 	// Use this for initialization
 	void Start () {
@@ -55,6 +57,9 @@ public class CharacterMovement : MonoBehaviour {
 		}
 		spawnPoint = spawnPointer.position; // sets the spawn point of the player
 		vulnerable = false;
+		coinCount = 0;
+		// Finds the UI element for the coin counter
+		coincounter = GameObject.FindGameObjectWithTag ("coinCounter").GetComponent<TextMeshProUGUI>();
 	}
 
 	// Update is called once per frame
@@ -83,6 +88,8 @@ public class CharacterMovement : MonoBehaviour {
 		}
 		livescounter.text =(Mathf.Round(lives_Percentage*100)).ToString (); // converts the health of the player into a percentage and updates the text holder with the %age
 		HealthBar.fillAmount = lives_Percentage; // fills the image with the same percentage as the player health
+		// Updates the UI display
+		coincounter.text = "Coins: " + coinCount.ToString ();
 	}
 
 	void OnCollisionEnter2D(Collision2D other)
@@ -145,7 +152,7 @@ public class CharacterMovement : MonoBehaviour {
 		// If the player touches the "slow" object
 		if (other.gameObject.tag == "slow") {
 			objectName = other.gameObject.tag; // Save the tag name for the timer
-			player.SendMessage ("generlaBuffDebuff"); // Tell the player script to play a sound/effect
+			player.SendMessage ("generalBuffDebuff"); // Tell the player script to play a sound/effect
 			// Try to find the score manager to record a debuff was picked up
 			scoreController scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<scoreController> ();
 			if (scoreManager != null) {
@@ -163,7 +170,7 @@ public class CharacterMovement : MonoBehaviour {
 			// If the player touches the "speed" object instead
 		} else if (other.gameObject.tag == "speed") {
 			objectName = other.gameObject.tag;
-			player.SendMessage ("generlaBuffDebuff");
+			player.SendMessage ("generalBuffDebuff");
 			scoreController scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<scoreController> ();
 			if (scoreManager != null) {
 				scoreManager.buffsDebuffs();
@@ -240,9 +247,11 @@ public class CharacterMovement : MonoBehaviour {
 				instructions.text = "This is a buff! it increases your firerate";
 			}
 			StartCoroutine (CountDown ());
-			// If it's a coin
+			// If the player touches the coin
 		} else if (other.gameObject.tag == "coin") {
 			objectName = other.gameObject.tag;
+			coinCount += 1;
+			Destroy (other.gameObject);
 			player.SendMessage ("coinPickup");
 			// Only show the coin tip if we are in the tutorial scene
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
