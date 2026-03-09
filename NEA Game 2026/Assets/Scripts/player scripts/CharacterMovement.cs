@@ -293,6 +293,10 @@ public class CharacterMovement : MonoBehaviour {
 		// If touching a key, remove the key from the game
 		if (other.gameObject.tag == "key") {
 			Destroy (other.gameObject);
+			scoreController scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<scoreController> ();
+			if (scoreManager != null) {
+				scoreManager.keyPickup();
+			}
 		}
 	}
 

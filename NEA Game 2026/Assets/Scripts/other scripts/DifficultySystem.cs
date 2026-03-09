@@ -24,7 +24,7 @@ public class DifficultySystem : MonoBehaviour {
 			lives = 10f;
 		} else {
 			// Calculate lives based on the difficulty setting saved in PlayerPrefs
-			lives = 11 - 2 * PlayerPrefs.GetInt ("difficulty",0);
+			lives = 11 - (2 * PlayerPrefs.GetInt ("difficulty",0));
 		}
 	}
 }

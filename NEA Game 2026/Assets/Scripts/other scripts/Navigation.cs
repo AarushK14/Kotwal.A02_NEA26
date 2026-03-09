@@ -31,7 +31,7 @@ public class Navigation : MonoBehaviour {
 		}
 	}
 
-	// this would take you to the difficulty selection scene
+	// this would take you to the profiles scene
 	public void Play() {
 		SceneManager.LoadScene ("profiles");
 	}
@@ -62,7 +62,7 @@ public class Navigation : MonoBehaviour {
 		Debug.Log(PlayerPrefs.GetString("user"));
 	}
 
-	// when in the difficulty selection scene, this would take you to the easy level
+	// when in the difficulty selection scene, this would set the difficulty of the game to easy, and update the features of the game to match the following difficulty
 	public void Easy() {
 		Debug.Log ("Easy selected!");
 		Time.timeScale = 1f;
@@ -71,7 +71,7 @@ public class Navigation : MonoBehaviour {
 		Debug.Log(PlayerPrefs.GetInt ("difficulty"));
 	}
 
-	// this would take you to the medium difficulty levels
+	// when in the difficulty selection scene, this would set the difficulty of the game to easy, and update the features of the game to match the following difficulty
 	public void Medium() {
 		Debug.Log ("Medium selected!");
 		Time.timeScale = 1f;
@@ -80,7 +80,7 @@ public class Navigation : MonoBehaviour {
 		Debug.Log(PlayerPrefs.GetInt ("difficulty"));
 	}
 
-	// this will take you to the hard levels
+	// when in the difficulty selection scene, this would set the difficulty of the game to easy, and update the features of the game to match the following difficulty
 	public void Hard() {
 		Debug.Log ("Hard selected!");
 		Time.timeScale = 1f;

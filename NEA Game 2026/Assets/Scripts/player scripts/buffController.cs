@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class buffController : MonoBehaviour {
 
-	public GameObject buffItem;
 	public GameObject player;
 
 	// Runs when something touches the buff item

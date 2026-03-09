@@ -9,8 +9,6 @@ using TMPro;
 public class usernameManager : MonoBehaviour {
 
 	private string input;
-	// Static list to keep track of scores across different instances
-	static List<int> scores =  new List<int> {};
 
 	// Function to capture the username from an input field
 	public void readInput(string username){
@@ -19,7 +17,5 @@ public class usernameManager : MonoBehaviour {
 		// Saves the entered username to PlayerPrefs
 		PlayerPrefs.SetString ("user", input);
 		Debug.Log (PlayerPrefs.GetString ("user", ""));
-		// Adds the current user's score to the local list of scores
-		scores.Add (PlayerPrefs.GetInt("userScore"));
 	}
 }

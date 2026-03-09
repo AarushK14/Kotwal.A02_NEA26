@@ -51,7 +51,7 @@ public class advancedEnemyController : MonoBehaviour {
 					GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>().instructions.text = "you're under attack! shoot the orb to kill the ranged enemy";
 				}
 				// Shoots an orb
-				StartCoroutine (coolDown ());
+				StartCoroutine (orbControl ());
 
 				if (health == 0) {
 					Destroy (this.gameObject);
@@ -95,7 +95,7 @@ public class advancedEnemyController : MonoBehaviour {
 	}
 
 	// Wait time between shooting orbs
-	public IEnumerator coolDown(){
+	public IEnumerator orbControl(){
 		SpawnOrb (this.transform);
 		yield return new WaitForSeconds (2f);
 	}

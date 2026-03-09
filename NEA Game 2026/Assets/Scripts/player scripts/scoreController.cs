@@ -10,7 +10,6 @@ using UnityEngine.SceneManagement;
 public class scoreController : MonoBehaviour {
 
 	public TextMeshProUGUI ScoreCounter; // UI text display for the score
-	public GameObject coin;
 	public static int score; // Static so the score stays the same across levels
 
 	// Update is called once per frame
@@ -47,4 +46,9 @@ public class scoreController : MonoBehaviour {
 	public void resetScore(){
 		score = 0;
 	}
-}
+
+	// award points for picking up a key
+	public void keyPickup(){
+		score += 25;
+	}
+} 
