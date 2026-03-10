@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
 
-// Created: Sprint 1 - Last Edited: Sprint 4
+// Created: Sprint 1 - Last Edited: Sprint 5
 // Purpose: To allow character move based on the key pressed and add playability to the game.
 
 public class CharacterMovement : MonoBehaviour {
@@ -263,7 +263,7 @@ public class CharacterMovement : MonoBehaviour {
 			objectName = other.gameObject.tag;
 			// Check current level name to decide which scene to load next
 			if (SceneManager.GetActiveScene ().name == "tutorial") {
-				SceneManager.LoadScene ("Title and Menu");
+				SceneManager.LoadScene ("Difficulty selection");
 			}
 			if (SceneManager.GetActiveScene ().name == "lvl 1") {
 				SceneManager.LoadScene ("lvl 2");
@@ -288,6 +288,10 @@ public class CharacterMovement : MonoBehaviour {
 				Debug.Log ("End of game");
 				MyAnimator.Play ("death");
 				SceneManager.LoadScene ("Lost");
+				scoreController scoreManager = GameObject.FindGameObjectWithTag ("Player").GetComponent<scoreController> ();
+				if (scoreManager != null) {
+					scoreManager.resetScore();
+				}
 			}
 		}
 		// If touching a key, remove the key from the game

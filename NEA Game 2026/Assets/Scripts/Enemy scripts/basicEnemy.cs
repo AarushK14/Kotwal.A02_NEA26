@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
+using UnityEngine.UI;
 
 // Created: Sprint 3 - Last Edited: Sprint 5
 // Purpose: Controlling the enemy, making sure they play the right animation and controlling which way they face based on users position
@@ -60,7 +62,6 @@ public class basicEnemy : MonoBehaviour {
 			player.SendMessage ("arrowHitSound");
 			Destroy (collision.gameObject);
 			enemyHealth -= 1;
-
 			if (enemyHealth == 0) {
 				int x = Random.Range (1, 10); // Random chance to drop a coin
 				Destroy (this.gameObject);
