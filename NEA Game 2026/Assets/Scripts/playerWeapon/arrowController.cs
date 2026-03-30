@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//created: sprint 2 - last edited: sprint 2
+//used to control the direction and movement of the arrow.
+
 public class arrowController : MonoBehaviour
 {
 	float ArrowSpeed = 10f; // How fast the arrow flies

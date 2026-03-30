@@ -3,20 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Created: Sprint  - Last Edited: Sprint 
+// Purpose: used to set the values of variable based on the opted difficulty.
+
 public class DifficultySystem : MonoBehaviour {
 
-	public float PlayerSpeed;
 	public float lives;
-	public float enemyHealth;
 	public float jumpForce;
-	public float ArrowSpeed;
-	public float Orbspeed;
 
 	// Use this for initialization
 	void Start (){
 		// Set default values for player movement and attacks
-		ArrowSpeed = 10f;
-		PlayerSpeed = 10;
 		jumpForce = 380f;
 
 		// Check if current level is the tutorial to set specific life count

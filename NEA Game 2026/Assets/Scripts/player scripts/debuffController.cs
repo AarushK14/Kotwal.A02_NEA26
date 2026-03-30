@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//created: sprint 4 - last edited: sprint 4
+//used to control the debuff after collision with player
+
 public class debuffController : MonoBehaviour {
 
 	public GameObject player;

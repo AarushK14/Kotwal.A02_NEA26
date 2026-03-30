@@ -163,4 +163,3 @@ X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.ClusterInput
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.ClusterRendererModule.xml
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\obj\Debug\Assembly-CSharp.dll
 X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\obj\Debug\Assembly-CSharp.pdb
-X:\GitHub\Kotwal.A02_NEA26\NEA Game 2026\Temp\bin\Debug\UnityEngine.WebGLModule.dll

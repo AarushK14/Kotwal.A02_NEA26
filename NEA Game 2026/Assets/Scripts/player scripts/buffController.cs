@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//created: sprint 4 - last edited: sprint 4
+//used to control the buff after collision with player
+
 public class buffController : MonoBehaviour {
 
 	public GameObject player;

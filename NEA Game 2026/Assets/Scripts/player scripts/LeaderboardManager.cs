@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
 
+// Created: Sprint 6 - Last Edited: Sprint 6
+// Purpose: used to display the usernames and scores on the leaderboard
+
 public class LeaderboardManager : MonoBehaviour
 {
 
@@ -12,8 +15,8 @@ public class LeaderboardManager : MonoBehaviour
 	void Start()
 	{
 		// Grabs the saved score from PlayerPrefs, defaults to 0 if not found
-		int sc = PlayerPrefs.GetInt ("userScore", 0);
-		score1.text = sc.ToString ();
+		int score = PlayerPrefs.GetInt ("userScore", 0);
+		score1.text = score.ToString ();
 
 		// Grabs the saved username from PlayerPrefs, defaults to empty if not found
 		string user = PlayerPrefs.GetString ("user", "");

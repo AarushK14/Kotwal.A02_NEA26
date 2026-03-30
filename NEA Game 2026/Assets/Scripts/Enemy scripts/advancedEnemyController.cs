@@ -47,7 +47,7 @@ public class advancedEnemyController : MonoBehaviour {
 			if (objectName == "Player") {
 				Debug.Log ("detected!");
 				// Shows tutorial text if in tutorial scene
-				if (SceneManager.GetActiveScene ().name == "tutorial") {	
+				if (SceneManager.GetActiveScene ().name == "tutorial") {    
 					GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>().instructions.text = "you're under attack! shoot the orb to kill the ranged enemy";
 				}
 				// Shoots an orb
@@ -83,7 +83,7 @@ public class advancedEnemyController : MonoBehaviour {
 		}
 
 		// Kill enemy if health is gone
-		if (health == 0) {
+		if (health <= 0) {
 			Destroy (this.gameObject);
 		}
 	}
@@ -91,7 +91,6 @@ public class advancedEnemyController : MonoBehaviour {
 	// Spawns the orb at the enemy position
 	public void SpawnOrb(Transform pos){
 		Instantiate (orb, pos.position, Quaternion.identity,this.gameObject.transform);
-		GameObject parent = this.gameObject;
 	}
 
 	// Wait time between shooting orbs

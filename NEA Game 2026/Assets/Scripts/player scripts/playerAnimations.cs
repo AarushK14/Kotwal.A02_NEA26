@@ -38,10 +38,6 @@ public class playerAnimations : MonoBehaviour {
 			// If no movement keys are pressed, go back to idle
 		} else if (Input.GetAxis ("Horizontal") == 0) {
 			MyAnimator.SetTrigger ("idle");
-		} 
-		// Open the pause scene if Escape is pressed
-		else if (Input.GetKey (KeyCode.Escape)) {
-			SceneManager.LoadScene ("pause");
 		}
 	}
 }

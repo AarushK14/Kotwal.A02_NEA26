@@ -6,15 +6,14 @@ using TMPro;
 using UnityEngine.UI;
 
 // Created: Sprint 3 - Last Edited: Sprint 5
-// Purpose: Controlling the enemy, making sure they play the right animation and controlling which way they face based on users position
-
+// Purpose: controlling the movement of the basic enemies, their attacks and health
 public class basicEnemy : MonoBehaviour {
 
 	public GameObject player;
 	Animator MyAnimator;
 	public int enemyHealth;
 	public int enemySpeed;
-	string dir; // Holds the current movement direction
+	string direction; // Holds the current movement direction
 	Vector3 scaleLeft;
 	Vector3 scaleRight;
 	public GameObject coin; // Item to drop on death
@@ -22,7 +21,7 @@ public class basicEnemy : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		enemySpeed = 6;
-		dir = "left";
+		direction = "left";
 
 		// Set enemy size based on the level
 		if (SceneManager.GetActiveScene ().name == "tutorial" || SceneManager.GetActiveScene ().name == "lvl 1") {
@@ -42,15 +41,16 @@ public class basicEnemy : MonoBehaviour {
 		} else {
 			enemyHealth	= 1 + PlayerPrefs.GetInt ("difficulty",0);
 		}
+		Debug.Log (enemyHealth);
 	}
 
 	// Update is called once per frame
 	void Update () {
 		// Moves the enemy left or right constantly
-		if (dir == "left") {
+		if (direction == "left") {
 			transform.Translate (-1 * Time.deltaTime * enemySpeed, 0, 0);
 		}
-		if (dir == "right") {
+		if (direction == "right") {
 			transform.Translate (1 * Time.deltaTime * enemySpeed, 0, 0);
 		}
 	}
@@ -80,11 +80,11 @@ public class basicEnemy : MonoBehaviour {
 		// Turn around if hitting a movement marker
 		if (collision.tag == "leftMarker") {
 			transform.localScale = scaleRight;
-			dir = "right";
+			direction = "right";
 		}
 		if (collision.tag == "rightMarker") {
 			transform.localScale = scaleLeft;
-			dir = "left";
+			direction = "left";
 		}
 
 	}

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 // Created: Sprint 6 - Last Edited: Sprint 6
-// Purpose: Used to control the orb instantiated by the advanced enemies and make the advanced enemey lose health
+// Purpose: used to control the instantiation of the enemy orb, controlling, and managing the health of the advanced enemy
 
 public class enemyOrbController : MonoBehaviour {
 
@@ -47,7 +47,6 @@ public class enemyOrbController : MonoBehaviour {
 		}
 		// If it hits an arrow, destroy both and tell the parent enemy to lose health
 		else if (other.gameObject.tag == "arrow") {
-			Debug.Log ("Sucess");
 			Destroy (other.gameObject);
 			Destroy (this.gameObject);
 			GetComponentInParent<advancedEnemyController>().SendMessage ("LoseLife");

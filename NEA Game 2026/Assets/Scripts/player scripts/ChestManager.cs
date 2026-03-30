@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Created: Sprint 4 - Last Edited: Sprint 4
+// Purpose: To allow character move based on the key pressed and add playability to the ga
+
 public class ChestManager : MonoBehaviour {
 
 	Animator MyAnimator;

@@ -10,10 +10,9 @@ public class SoundManager : MonoBehaviour {
 	public AudioClip freeze;
 	public AudioClip hurt;
 	public AudioClip healthPickup;
-	public AudioClip general;
+	public AudioClip BuffDebuff;
 	public AudioClip firerate;
 	public AudioClip coin;
-	//public AudioClip wHit;
 
 	// Use this for initialization
 	void Start () {
@@ -48,7 +47,7 @@ public class SoundManager : MonoBehaviour {
 
 	// Play sound for general status changes
 	void generalBuffDebuff(){
-		audioControl.PlayOneShot (general);
+		audioControl.PlayOneShot (BuffDebuff);
 	}
 
 	// Play sound for the fire rate power-up

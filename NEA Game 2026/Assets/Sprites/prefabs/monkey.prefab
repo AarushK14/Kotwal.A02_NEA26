@@ -282,7 +282,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreCounter: {fileID: 0}
-  coin: {fileID: 0}
 --- !u!114 &114225818853052998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -299,7 +298,7 @@ MonoBehaviour:
   freeze: {fileID: 8300000, guid: 75f16a2f817353e428b3dbb6c5fa2270, type: 3}
   hurt: {fileID: 0}
   healthPickup: {fileID: 8300000, guid: b4e2ab81b5b38bc4c9919a94271fc038, type: 3}
-  general: {fileID: 8300000, guid: 84ff2ae8db13f4a49899f9a32534328b, type: 3}
+  BuffDebuff: {fileID: 8300000, guid: 84ff2ae8db13f4a49899f9a32534328b, type: 3}
   firerate: {fileID: 8300000, guid: 71fcc885a523b7741b3f07e8e2c029bc, type: 3}
   coin: {fileID: 8300000, guid: 31638e7201a1e6d4db9ff8b931cb4cb9, type: 3}
 --- !u!114 &114304296211640364
@@ -365,6 +364,7 @@ MonoBehaviour:
   instructions: {fileID: 0}
   Tip: {fileID: 0}
   spawnPointer: {fileID: 0}
+  coincounter: {fileID: 0}
 --- !u!212 &212359499869398344
 SpriteRenderer:
   m_ObjectHideFlags: 1
